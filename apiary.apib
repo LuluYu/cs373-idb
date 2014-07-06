@@ -4,35 +4,26 @@ HOST: http://www.google.com
 # Flappy World
 Notes API is a *short texts saving* service similar to its physical paper presence on your table.
 
-# Group Notes
-Notes related resources of the **Notes API**
+# Group Languages
+Examples related to the languages of the **Flappy World API**
 
-## Notes Collection [/notes]
-### List all Notes [GET]
+## Notes Collection [/api/languages]
+### List all Languages[GET]
 + Response 200 (application/json)
 
         [{
-          "id": 1, "title": "Jogging in park"
+          "id": 1, "name": "Chinese"
         }, {
-          "id": 2, "title": "Pick-up posters from post-office"
+          "id": 2, "name": "Spanish"
         }]
 
-### Create a Note [POST]
-+ Request (application/json)
-
-        { "title": "Buy cheese and bread for breakfast." }
-
-+ Response 201 (application/json)
-
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
-
-## Note [/notes/{id}]
-A single Note object with all its details
+## Language [/api/languages/{id}]
+A single Language object with all its details
 
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
+    + id (required, number, `1`) ... Numeric `id` of the Language perform action with. Has example value.
 
-### Retrieve a Note [GET]
+### Retrieve a Language [GET]
 + Response 200 (application/json)
 
     + Header
@@ -41,7 +32,5 @@ A single Note object with all its details
 
     + Body
 
-            { "id": 2, "title": "Pick-up posters from post-office" }
+            { "id": 2, "name": "Spanish", "script": "Latin Alphabet", "description": "Something about Spanish xD", "area": [1, 3, 4], "picture": "http://picture.link.here.jpg" }
 
-### Remove a Note [DELETE]
-+ Response 204
