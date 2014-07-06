@@ -8,14 +8,14 @@
 
 <h2>Languages</h2>
 <ul>
-	<li><a href="Chinese.html">Chinese</a></li>
+	<li><a href="{% url 'content_display.views.chinese' %}">Chinese</a></li>
 	<li>Tibetan</li>
 </ul>
 
 <h2>Activities</h2>
 <table width="100%" border="0">
 <tr>
-	<th><a href="">Scenery</a></th>
+	<th><a href="{% url 'content_display.views.sceneries' %}">Scenery</a></th>
 	<th><a href="">Housing</a></th>
 	<th><a href="">Cultural</a></th>
 </tr><tr>
@@ -39,7 +39,5 @@
 	</td>
 </tr>
 </table>
-
-<h4><a href="index.html">Home</a></h4>
 
 </body></html>

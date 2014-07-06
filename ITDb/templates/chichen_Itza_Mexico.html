@@ -7,14 +7,14 @@
 <h2>Languages</h2>
 <ul>
 	<li><a href="">Spanish</a></li>
-	<li><a href="English.html">English</a></li>
+	<li><a href="{% url 'content_display.views.english' %}">English</a></li>
 </ul>
 
 <h2>Activities</h2>
 <table width="100%" border="0">
 	<tr>
-         <th><a href="">Scenery</a></th>
-         <th><a href="">Historical</a></th>
+         <th><a href="{% url 'content_display.views.sceneries' %}">Scenery</a></th>
+         <th><a href="{% url 'content_display.views.sceneries' %}">Historical</a></th>
          <th><a href="">Food</a></th>
 	</tr><tr>
 		<td>

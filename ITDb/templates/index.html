@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html><heaD>
+ <title>Tourist destinations</title>
+</head><body>
+
+<h1>Tourist destinations</h1>
+
+<table width="100%" border="1">
+ <tr>
+ 	<th>Cities</th>
+ 	<th>Languages</th>
+ 	<th>Activities</th>
+ </tr><tr>
+ 	<td>
+ 		<ul>
+ 			<li><a href="{% url 'content_display.views.lijiang_China' %}">Li Jiang, China</a></li>
+ 			<li><a href="{% url 'content_display.views.chichen_Itza_Mexico' %}">Chichen Itza, Mexico</a></li>
+ 			<li><a href="{% url 'content_display.views.capeTown_SouthAfrica' %}">Cape Town, South Africa</a></li>
+ 		</ul>
+ 	</td>
+ 	<td>
+ 		<ul>
+ 			<li><a href="{% url 'content_display.views.english' %}">English</a></li>
+ 			<li><a href="">Spanish</a></li>
+ 			<li><a href="{% url 'content_display.views.chinese' %}">Chinese</a></li>
+ 		</ul>
+ 	</td>
+ 	<td>
+ 		<ul>
+ 			<li><a href="{% url 'content_display.views.sceneries' %}">Scenery</a></li>
+ 			<li><a href="{% url 'content_display.views.historical' %}">Historical</a></li>
+ 			<li><a href="">Housing</a></li>
+ 		</ul>
+ 	</td>
+ </tr>
+</table>
+
+</body></html>

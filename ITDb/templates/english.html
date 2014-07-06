@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html><head>
+<title>English</title>
+</head><body>
+
+<h1>The English Language</h1>
+
+<table width="100%" border="1">
+<tr>
+	<th>Cities</th>
+	<th>Activities</th>
+</tr>
+<tr>
+	<td><a href="{% url 'content_display.views.capeTown_SouthAfrica' %}">Cape Town, South Africa</a></td>
+	<td>
+		<ul>
+			<li><a href="{% url 'content_display.views.sceneries' %}">Scenery</a></li>
+			<li><a href="">Housing</a></li>
+			<li>Outdoor Recreation</li>
+		</ul>
+	</td>
+</tr>
+<tr>
+	<td>
+		United States
+	</td>
+	<td>
+		<ul>
+			<li><a href="">Food</a></li>
+			<li><a href="">Shopping</a></li>
+			<li><a href="{% url 'content_display.views.historical' %}">Historical</a></li>
+		</ul>
+	</td>
+</tr>
+<tr>
+	<td><a href="{% url 'content_display.views.chichen_Itza_Mexico' %}">Chichen Itza, Mexico</td>
+	<td>
+		<ul>
+			<li><a href="{% url 'content_display.views.sceneries' %}">Scenery</a></li>
+			<li><a href="{% url 'content_display.views.historical' %}">Historical</a></li>
+			<li><a href="">Food</a></li>
+		</ul>
+	</td>
+</tr>
+</table>
+
+<h4><a href="{% url 'content_display.views.index' %}">Home</a></h4>
+
+</body></html>

@@ -7,44 +7,44 @@ so that later we can style it and have navigation bar on all pages
 <div class="nav container">
 
     <li><a class="active" href="index.html">Home</a></li>
-    
+
     <li class="dropdown">Cities
         <ul class="dropdown-menu">
-            
+
             <li><a href="LijiangChina.html">Li Jiang, China</a></li>
-            
+
             <li><a href="ChichenItzaMexico.html">Chichen Itza, Mexico</a></li>
-            
+
             <li><a href="CapeTownSouthAfrica.html">Cape Town, South Africa</a></li>
-                
+
         </ul>
     </li>
 
     <li class="dropdown">Languages
         <ul class="dropdown-menu">
-            
+
             <li><a href="English.html">English</a></li>
-            
+
             <li><a href="Spanish.html">Spanish</a></li>
-            
+
             <li><a href="Chinese.html">Chinese</a></li>
-                
+
         </ul>
     </li>
 
     <li class="dropdown">Activities
         <ul class="dropdown-menu">
-            
+
             <li>Scenery</li>
-            
+
             <li>Historical</li>
-            
+
             <li>Housing</li>
-                
+
         </ul>
     </li>
- 
-</div> 
+
+</div>
 This is for menu ideas just trying it out-->
 <body>
 <h1>Cape Town, South Africa</h1>
@@ -55,7 +55,7 @@ This is for menu ideas just trying it out-->
 
 <h2>Languages</h2>
 <ul>
-    <li><a href="English.html">English</a></li>
+    <li><a href="{% url 'content_display.views.english' %}">English</a></li>
     <li>Afrikaans</li>
     <li>Xhosa</li>
 </ul>
@@ -63,7 +63,7 @@ This is for menu ideas just trying it out-->
 <h2>Activities</h2>
 <table width="100%" border="1">
 <tr>
-    <th><a href="Sceneries.html">Scenery</a></th>
+    <th><a href="{% url 'content_display.views.sceneries' %}">Scenery</a></th>
     <th><a href="">Housing</a></th>
     <th><a>Outdoor Recreation</a></th>
 </tr><tr>
@@ -94,7 +94,7 @@ This is for menu ideas just trying it out-->
 </tr>
 </table>
 
-<h4><a href="index.html">Home</a></h4>
+<h4><a href="{% url 'content_display.views.index' %}">Home</a></h4>
 
 </body>
 </html>
