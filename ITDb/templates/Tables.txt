@@ -1,0 +1,29 @@
+Activities:
+Name
+Description
+Pictures (urls)
+Video (urls)
+Coord
+Type
+
+Cities:
+Id
+name
+description
+pictures
+video
+coords
+size
+altitude
+climate
+languages
+population
+time zone
+
+Languages:
+id
+name
+writing-system
+description
+spoken in
+pictures
