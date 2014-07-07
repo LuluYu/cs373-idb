@@ -7,7 +7,7 @@ Notes API is a *short texts saving* service similar to its physical paper presen
 # Group Languages
 Examples related to the languages of the **Flappy World API**
 
-## Notes Collection [/api/languages]
+## Languages Collection [/api/languages]
 ### List all Languages[GET]
 + Response 200 (application/json)
 
@@ -22,7 +22,7 @@ A single Language object with all its details
 
 ### Retrieve a Language by id[GET]
 + Parameters
-    + id (required, number, `2`) ... Numeric `id` of the Language perform action with. Has example value.
+    + id (required, number, `2`) ... Numeric `id` of the Language to perform action with. Has example value.
 
 + Response 200 (application/json)
 
@@ -34,6 +34,8 @@ A single Language object with all its details
 
             { "id": 2, "name": "Spanish", "script": "Latin Alphabet", "description": "Something about Spanish xD", "area": [1, 3, 4], "picture": "http://picture.link.here.jpg" }
 
+## Language [/api/languages/name/{name}]
+A single Language object with all its details
 ### Retrieve a Language by name [GET]
 + Parameters
     + name (required, string, `Spanish`) ... String `name` of the Language perform action with. Has example value.
@@ -47,3 +49,92 @@ A single Language object with all its details
     + Body
 
             { "id": 2, "name": "Spanish", "script": "Latin Alphabet", "description": "Something about Spanish xD", "area": [1, 3, 4], "picture": "http://picture.link.here.jpg" }
+
+# Group Cities 
+Examples related to the cities of the **Flappy World API** 
+
+## Cities Collection [/api/cities] 
+### List all Cities[GET] 
++ Response 200 (application/json) 
+
+        [{
+            "id": 1, "name": "Li Juang", "description": "some text", ... 
+        }, {
+            "id": 2, "name": "Chichen Itza", "description": "some text", ...
+        }] 
+
+## City [/api/cities/id/{id}] 
+A single City object with all its details 
+
+### Retrieve a City by id[GET] 
++ Parameters 
+    + id (required, number, `2`) ... Numeric `id` of the City to perform action with. 
+    
++ Response 200 (application/json) 
+
+    + Header 
+        
+            X-My-Header: The Value 
+            
+    + Body 
+        
+            { "id": 2, "name": "Chichen Itza", "description": "some text ... } 
+
+## City [/api/cities/name/{name}] 
+A single City object with all its details 
+
+### Retrieve a City by name[GET] 
++ Parameters 
+    + name (required, string, `Chichen Itza`) ... String `name` of the City to perform action with. 
+    
++ Response 200 (application/json) 
+
+    + Header 
+        
+            X-My-Header: The Value 
+            
+    + Body 
+        
+            { "id": 2, "name": "Chichen Itza", "description": "some text ... } 
+
+
+# Group Acitvities 
+Examples related to the activities of the **Flappy World API** 
+
+## Activities Collection [/api/activities/type/{type}] 
+### List all Activities of a given type[GET] 
++ Parameters 
+    + type (required, string, `Scenery`) ... String `type` of the activity to perform action with. 
+
++ Response 200 (application/json) 
+    
+    + Header
+           
+            X-My-Header: The Value 
+
+    + Body 
+
+            [{
+                "id": 1, "name": "Some scenery activity", "description": "some text", "type": "Scenery", ... 
+            }, {
+                "id": 2, "name": "Some other scenery activity", "description": "some text", "type": "Scenery", ... 
+            }] 
+
+## Activity [/api/activities/id/{id}] 
+A single Activity object with all its details 
+
+### Retrieve an Activity by id[GET] 
++ Parameters 
+    + id (required, number, `1`) ... Numeric `id` of the Activity to perform action with. 
+    
++ Response 200 (application/json) 
+
+    + Header 
+        
+            X-My-Header:The Value 
+        
+    + Body 
+    
+            { "id":1, "name": "Some scenery activity", "description": some text", "type": "Scenery", ... } 
+            
+            
