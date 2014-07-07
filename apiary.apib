@@ -17,13 +17,13 @@ Examples related to the languages of the **Flappy World API**
           "id": 2, "name": "Spanish"
         }]
 
-## Language [/api/languages/{id}]
+## Language [/api/languages/id/{id}]
 A single Language object with all its details
 
+### Retrieve a Language by id[GET]
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Language perform action with. Has example value.
+    + id (required, number, `2`) ... Numeric `id` of the Language perform action with. Has example value.
 
-### Retrieve a Language [GET]
 + Response 200 (application/json)
 
     + Header
@@ -34,3 +34,16 @@ A single Language object with all its details
 
             { "id": 2, "name": "Spanish", "script": "Latin Alphabet", "description": "Something about Spanish xD", "area": [1, 3, 4], "picture": "http://picture.link.here.jpg" }
 
+### Retrieve a Language by name [GET]
++ Parameters
+    + name (required, string, `Spanish`) ... String `name` of the Language perform action with. Has example value.
+    
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "name": "Spanish", "script": "Latin Alphabet", "description": "Something about Spanish xD", "area": [1, 3, 4], "picture": "http://picture.link.here.jpg" }
