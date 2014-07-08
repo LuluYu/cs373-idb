@@ -1,0 +1,58 @@
+LANGUAGES
+
+A get to /languages
+Return: JSON dictionary with all languages
+Ex: [{
+      "id": 1, "name": "Chinese"
+    }, {
+      "id": 2, "name": "Spanish"
+    }]
+
+A get to /languages/id/{actual_id}
+Return: A specific language with its details
+Ex:
+	{ "id": 2, "name": "Spanish", "script": "Latin Alphabet", "description": "Something about Spanish xD", "area": [1, 3, 4], "picture": "http://picture.link.here.jpg" }
+
+
+A get to /languages/name/{actual_name}
+Return: A specific language with its details
+Ex: 
+	{ "id": 2, "name": "Spanish", "script": "Latin Alphabet", "description": "Something about Spanish xD", "area": [1, 3, 4], "picture": "http://picture.link.here.jp
+
+CITIES
+
+A get to /cities
+Return: JSON dictionary with all cites, id's, description
+Ex:
+	[{
+        "id": 1, "name": "Li Juang", "description": "some text", ... 
+    }, {
+        "id": 2, "name": "Chichen Itza", "description": "some text", ...
+    }]
+
+ A get to /cities/id/{actual_id}
+ Return: A specific City object with all its details
+ Ex:
+ 	{ "id": 2, "name": "Chichen Itza", "description": "some text", ... }
+
+
+A get to /cities/name/{actual_name}
+Return: A specific City object with all its details
+Ex:
+	{ "id": 2, "name": "Chichen Itza", "description": "some text", ... }
+
+ACTIVITIES
+
+A get to /activities/type/{actual_type}
+Return: A JSON dictionary with all info
+Ex:
+	[{
+        "id": 1, "name": "Some scenery activity", "description": "some text", "type": "Scenery", ... 
+    }, {
+        "id": 2, "name": "Some other scenery activity", "description": "some text", "type": "Scenery", ... 
+    }] 	 
+
+A get to /activities/id/{actual_id}
+Return: A specific Activity object with all its details
+Ex:
+	{ "id":1, "name": "Some scenery activity", "description": some text", "type": "Scenery", ... }
