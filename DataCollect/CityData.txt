@@ -1,4 +1,4 @@
-City: Li Jiang
+﻿City: Li Jiang
 http://www.youtube.com/watch?v=vijcI_Rlixs
 Description: Lìjiāng(丽江) is a prefecture-level city in the northwest of Yunnan, China. It has an area of 8,193 sq. mi and had a population of 1,244,769 at the 2010 census. Lijiang City replaced the former administrative region of Lijiang Prefecture which was under the rule of the Mu family local commanders during the Ming Dynasty and Qing Dynasty. In ancient times, it used to be the center of silk embroidery in the southwest of China and the most important place of the Ancient Southern Silk Road, also called the Ancient Tea and Horse Road or Ancient tea route.
 Language: Chinese(中文), Tibetan(བོད་སྐད།)
@@ -24,3 +24,31 @@ Activities: Food - Street Food Thursday
 			Historical - Berlin Wall
 			Shopping - North Mitte
 
+City: Cape Town
+Country: South Africa
+Population: 3,740,026
+Size: 944 sq mi
+altitude: 0 - 5,217.8 ft
+climate: mediterranean
+timeZone: SAST
+Languages: Afrikaans 35.7%, Xhosa/Zulu 29.8%, English 28.4%, Other 6.1%
+
+Activities/Atractions:
+	Table Mountain
+	Cape town beaches
+	Sports:
+	Football(soccer): Ajax Cape Town, Santos Football Club
+	Cricket: Cape Cobras, Western Province Cricket
+	Rugby: Stormers
+	Field Hockey: Western Province Hockey
+	Swimming
+	Surfing
+	Jetskiing
+	Great White Shark Cage Diving
+	
+	Safari:
+	Sightseeing, and wildlife observing
+	
+Videos:
+http://www.youtube.com/watch?v=MMP28f1sBG0 
+http://www.youtube.com/watch?v=3blMqMRZKBk&list=PLyzVHL-qTD0mlQvSP_P5A3ri4XRE5C7uR&index=5
