@@ -48,3 +48,15 @@ exit
 git pull
 ls
 exit
+ls
+git add .
+git commit -m "fixed layout with Jose"
+git push
+git pull
+exit
+ls
+git pull
+exit
+ls
+git pull
+exit
