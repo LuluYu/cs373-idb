@@ -1,0 +1,34 @@
+# JOE state file v1.0
+search
+	backwards 0
+	ignore 0
+	replace 0
+	block_restrict 0
+done
+macros
+done
+files
+	".git/MERGE_MSG\n"
+	".git/COMMIT_EDITMSG\n"
+done
+find
+done
+replace
+done
+run
+done
+build
+done
+grep
+done
+cmd
+done
+math
+done
+yank
+	":"
+done
+file_pos
+	0 ".git/MERGE_MSG"
+	0 ".git/COMMIT_EDITMSG"
+done
