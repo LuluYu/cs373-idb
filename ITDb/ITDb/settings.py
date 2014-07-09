@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'content_display',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -52,7 +53,7 @@ ROOT_URLCONF = 'ITDb.urls'
 
 WSGI_APPLICATION = 'ITDb.wsgi.application'
 
-TEMPLATE_DIRS = ('./ITDb/templates')
+TEMPLATE_DIRS = ('/home/FlappyBirds/ITDb/templates/')
 
 
 # Database
