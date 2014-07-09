@@ -67,22 +67,27 @@
 	  map = new google.maps.Map(document.getElementById('map-canvas'),
 	      mapOptions);
 
+	  var img = ('/staic/styles_design/marker.png');
+
 	  var marker = new google.maps.Marker({
 	  	position: new google.maps.LatLng(20.6829,-88.5686), 
 	  	map: map,
-	  	title: 'Chichen Itza, Mexico'
+	  	title: 'Chichen Itza, Mexico',
+	  	icon : img
 	  })
 
 	  var marker = new google.maps.Marker({
 	  	position: new google.maps.LatLng(-33.944612, 18.476158),
 	  	map: map,
-	  	title: 'Cape Town, South Africa'
+	  	title: 'Cape Town, South Africa',
+	  	icon: img
 	  })
 
 	  var marker = new google.maps.Marker({
 	  	position: new google.maps.LatLng(26.864663, 100.229130),
 	  	map: map,
-	  	title: 'Li Jiang, China'
+	  	title: 'Li Jiang, China',
+	  	icon: img
 	  })
 	}
 
