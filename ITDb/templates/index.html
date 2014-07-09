@@ -55,22 +55,28 @@
 
 <!-- Google API and Key-->
 <script type="text/javascript"
-	src="https://maps.googleapis.com/maps/api/js?Key=AIzaSyDqgEKn9SN-A15a5emKo1kFGamx7AXYRq4" > 
+
+	src="https://maps.googleapis.com/maps/api/js?Key=AIzaSyDqgEKn9SN-A15a5emKo1kFGamx7AXYRq4" >
+
 </script>
 <script>
 	var map;
 	function initialize() {
 	  var mapOptions = {
+
 	    zoom: 3,
+
 	    center: new google.maps.LatLng(24.770348, 166.152628)
 	  };
 	  map = new google.maps.Map(document.getElementById('map-canvas'),
 	      mapOptions);
 
+
 	  var img = url('/staic/styles_design/marker.png');
 
+
 	  var marker = new google.maps.Marker({
-	  	position: new google.maps.LatLng(20.6829,-88.5686), 
+	  	position: new google.maps.LatLng(20.6829,-88.5686),
 	  	map: map,
 	  	title: 'Chichen Itza, Mexico',
 	  	icon : img
@@ -149,7 +155,9 @@
 	</div>
 
 
+
     <div class="mapmar" id="map-canvas"> </div>
+
 
 
 
