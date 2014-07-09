@@ -72,31 +72,69 @@
 	      mapOptions);
 
 
-	  var img = url('/staic/styles_design/marker.png');
+	  var img = url('/static/styles_design/marker.png');
 
 
 	  var marker = new google.maps.Marker({
 	  	position: new google.maps.LatLng(20.6829,-88.5686),
 	  	map: map,
 	  	title: 'Chichen Itza, Mexico',
-	  	icon : img
+	  	icon : img,
+	  	draggable: false,
+	  	optimized:false
 	  })
 
 	  var marker = new google.maps.Marker({
 	  	position: new google.maps.LatLng(-33.944612, 18.476158),
 	  	map: map,
 	  	title: 'Cape Town, South Africa',
-	  	icon: img
+	  	icon: img,
+	  	draggable: false,
+	  	optimized:false
 	  })
 
 	  var marker = new google.maps.Marker({
 	  	position: new google.maps.LatLng(26.864663, 100.229130),
 	  	map: map,
 	  	title: 'Li Jiang, China',
-	  	icon: img
+	  	icon: img,
+	  	draggable: false,
+	  	optimized:false
 	  })
+
+	   google.maps.event.addListener(marker, 'mouseover', function() {
+        if (this.getAnimation() == null || typeof this.getAnimation() === 'undefined') {
+            
+            /* 
+            Because of the google maps bug of moving cursor several times over and out of marker
+            causes bounce animation to break - we use small timer before triggering the bounce animation
+            */
+            
+            clearTimeout(bounceTimer);
+            
+            var that = this;
+             
+            bounceTimer = setTimeout(function(){
+                 that.setAnimation(google.maps.Animation.BOUNCE);
+            },
+            500);
+ 
+        }
+    });
+    
+    google.maps.event.addListener(marker, 'mouseout', function() {
+        
+         if (this.getAnimation() != null) {
+            this.setAnimation(null);
+         }
+         
+         // If we already left marker, no need to bounce when timer is ready
+         clearTimeout(bounceTimer);
+        
+    });
 	}
 
+	
 	google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
