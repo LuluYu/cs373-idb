@@ -63,14 +63,16 @@
 	var map;
 	function initialize() {
 	  var mapOptions = {
-	    zoom: 2,
+
+	    zoom: 4,
+
 	    center: new google.maps.LatLng(24.770348, 166.152628)
 	  };
 	  map = new google.maps.Map(document.getElementById('map-canvas'),
 	      mapOptions);
 
 	  var marker = new google.maps.Marker({
-	  	position: new google.maps.LatLng(20.6829,-88.5686), 
+	  	position: new google.maps.LatLng(20.6829,-88.5686),
 	  	map: map,
 	  	title: 'Chichen Itza, Mexico'
 	  })
