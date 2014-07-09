@@ -101,21 +101,15 @@
 	  	draggable: true,
 	  	optimized:false
 	  })
-	  GEvent.addListener(this, "mouseover", function() {
-   var ToPixel = new GPoint();
-   var AddOffset = new GPoint();
-   var ToLatlag = new GLatLng();
-   var currentProjection = G_NORMAL_MAP.getProjection();
-   ToPixel = currentProjection.fromLatLngToPixel(**this.latlng**, this.map.getZoom());
-   AddOffset = new GPoint(ToPixel.x,ToPixel.y-2);
-   ToLatlag = currentProjection.fromPixelToLatLng(AddOffset,this.map.getZoom());
-   this.setLatLng(ToLatlag);
-   this.redraw(true);
-}); 
+	}
+	function toggleBounce() {
 
-GEvent.addListener(this, "mouseout", function() {
-   this.setLatLng(this.latlng);
-});
+  if (marker.getAnimation() != null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }
+}
 	
 	google.maps.event.addDomListener(window, 'load', initialize);
 
