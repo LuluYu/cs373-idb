@@ -66,7 +66,7 @@
 
 	    zoom: 3,
 
-	    center: new google.maps.LatLng(24.770348, 166.152628)
+	    center: new google.maps.LatLng(39.726867, 13.282401)
 	  };
 	  map = new google.maps.Map(document.getElementById('map-canvas'),
 	      mapOptions);
@@ -101,39 +101,21 @@
 	  	draggable: true,
 	  	optimized:false
 	  })
+	  GEvent.addListener(this, "mouseover", function() {
+   var ToPixel = new GPoint();
+   var AddOffset = new GPoint();
+   var ToLatlag = new GLatLng();
+   var currentProjection = G_NORMAL_MAP.getProjection();
+   ToPixel = currentProjection.fromLatLngToPixel(**this.latlng**, this.map.getZoom());
+   AddOffset = new GPoint(ToPixel.x,ToPixel.y-2);
+   ToLatlag = currentProjection.fromPixelToLatLng(AddOffset,this.map.getZoom());
+   this.setLatLng(ToLatlag);
+   this.redraw(true);
+}); 
 
-	   google.maps.event.addListener(marker, 'mouseover', function() {
-        if (this.getAnimation() == null || typeof this.getAnimation() === 'undefined') {
-            
-            /* 
-            Because of the google maps bug of moving cursor several times over and out of marker
-            causes bounce animation to break - we use small timer before triggering the bounce animation
-            */
-            
-            clearTimeout(bounceTimer);
-            
-            var that = this;
-             
-            bounceTimer = setTimeout(function(){
-                 that.setAnimation(google.maps.Animation.BOUNCE);
-            },
-            500);
- 
-        }
-    });
-    
-    google.maps.event.addListener(marker, 'mouseout', function() {
-        
-         if (this.getAnimation() != null) {
-            this.setAnimation(null);
-         }
-         
-         // If we already left marker, no need to bounce when timer is ready
-         clearTimeout(bounceTimer);
-        
-    });
-	}
-
+GEvent.addListener(this, "mouseout", function() {
+   this.setLatLng(this.latlng);
+});
 	
 	google.maps.event.addDomListener(window, 'load', initialize);
 
