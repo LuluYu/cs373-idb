@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html><head>
 <title>Cape Town, South Africa</title>
-</head>
+</head>-->
 <!--This is for menu ideas just trying things out
 so that later we can style it and have navigation bar on all pages
 <div class="nav container">
@@ -46,7 +46,7 @@ so that later we can style it and have navigation bar on all pages
 
 </div>
 This is for menu ideas just trying it out-->
-<body>
+<!--<body>
 <h1>Cape Town, South Africa</h1>
 
 
@@ -97,4 +97,314 @@ This is for menu ideas just trying it out-->
 <h4><a href="{% url 'content_display.views.index' %}">Home</a></h4>
 
 </body>
-</html>
+</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Flappy World : Cape Town</title>
+
+  <!-- ESTO QUE ESTA AQUI -->
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="navbar.css" rel="stylesheet">
+    <!-- ESTP QUE ESTA AQUI!!!! -->
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
+
+    <script src="../static/bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+</head>
+
+<style type="text/css">
+ @font-face { font-family:awesome; src:url("../static/styles_design/flappyBirdFont.TTF"); } 
+  .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+    background-color: #e2a846;
+    color:#ffffff;
+  }
+  .bgimg {
+    background-image: url("../static/styles_design/bg.png"); 
+    /*height: 158px;*/
+    margin-top: -20px;
+    background-repeat: repeat-x;
+    background-color: #f8e0a7; 
+    /*padding-bottom: 20px;
+     margin-left:-20px;
+  margin-right:-30px;*/
+  }
+  .logo{
+    background-image: url("../static/styles_design/logo.png");
+    height: 110px;
+    width: 305px;
+    padding-top:20px;
+    margin-top: 50px;
+    margin-left: 50px;
+    background-repeat: no-repeat;
+  }
+  .search{
+    margin-top: 60px;
+    margin-left: 60px;
+    width: 350px;
+  }
+  .dropb{
+    width: 30%;
+  }
+
+   .bgPic {
+    background-image: url("../static/styles_design/capetown_dark.jpg");
+    background-repeat:no-repeat; 
+    background-position:center center; 
+    background-size:cover; 
+    padding:20px 60px; 
+    height: 400px;
+    margin-top: -69px;
+    margin-bottom: -50px;
+    margin-left: -30px;
+    margin-right: -60px;
+    background-repeat: repeat-x;
+
+  }
+
+    .bgimg2 {
+    background-image: url("../static/styles_design/midbg.png");
+    /*height: 158px;*/
+    /*height: 520px;*/
+    padding:20px 60px; 
+    margin-top: -10px;
+    margin-bottom: 15px;
+    margin-left: -10px;
+    margin-right: -30px;
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-color: #d3f4ff;
+  }
+
+.bar1 {
+    background-image: url("../static/styles_design/bar.png");
+    height: 13px;
+    margin-top: -30px;
+    margin-bottom: 10px;
+    margin-left: -10px;
+    margin-right: -30px;
+    background-repeat: repeat-x;
+    background-color: #f8e0a7;
+  }
+
+  .bar2 {
+    background-image: url("../static/styles_design/bar.png");
+    height: 13px;
+    margin-top: -10px;
+    margin-bottom: -15px;
+    margin-left: -10px;
+    margin-right: -10px;
+    background-repeat: repeat-x;
+    background-color: #f8e0a7;
+  }
+
+
+
+
+  .lang{
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 70px;
+  }
+
+   html, body, #map-canvas {
+    height: 100%;
+    margin: 0px;
+    /*margin-top: -20px;*/
+    margin-right: -30px;
+    padding: 0px;
+
+  }
+
+   .lang h1 {
+    text-shadow: 0px 0px 5px #000;
+    color: #fefba7;
+    font-family:awesome;
+  }
+
+
+</style>
+
+<!-- Google Map -->
+<script type="text/javascript"
+
+  src="https://maps.googleapis.com/maps/api/js?Key=AIzaSyDqgEKn9SN-A15a5emKo1kFGamx7AXYRq4" >
+
+</script>
+<script>
+  var map;
+  function initialize() {
+    var mapOptions = {
+
+      zoom: 6,
+
+      center: new google.maps.LatLng(20.6829,-88.5686)
+    };
+    map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
+
+
+    var img = '../static/styles_design/marker.png';
+
+
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(20.6829,-88.5686),
+      map: map,
+      title: 'Chichen Itza, Mexico',
+      icon : img,
+      draggable: false,
+      optimized:false
+    })
+
+  }
+
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
+<body>
+
+  <div class="bgimg container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <a href="/index/"><div class="logo">
+
+        </div></a><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+      <div class="col-lg-6">
+        <div class="input-group search">
+          <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
+                </form>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+  </div>
+
+
+  <div class="navbar navbar-custom" role="navigation">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+          <li class="dropdown ">
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><a href="{% url 'content_display.views.lijiang_China' %}">Li Jiang, China</a></li>
+                  <li><a href="{% url 'content_display.views.chichen_Itza_Mexico' %}">Chichen Itza, Mexico</a></li>
+                  <li><a href="{% url 'content_display.views.capeTown_SouthAfrica' %}">Cape Town, South Africa</a></li>
+                  <li class="divider"></li>
+              </ul>
+          </li>
+          <li class="dropdown ">
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><a href="{% url 'content_display.views.english' %}">English</a></li>
+                  <li><a href="{% url 'content_display.views.spanish' %}">Spanish</a></li>
+                  <li><a href="{% url 'content_display.views.chinese' %}">Chinese</a></li>
+              </ul>
+          </li>
+          <li class="dropdown ">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="{% url 'content_display.views.sceneries' %}">Sceneries</a></li>
+              <li><a href="{% url 'content_display.views.historical' %}">Historical</a></li>
+              <li><a href="#">Housing</a></li>
+            </ul>
+          </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="jumbotron container-fluid">
+      <div class="bgPic">
+        <div class="col-md-6">
+          <h1><font face = "Tahoma" color = "White">Cape Town </font><small><font face = "Tahoma" color = "White">South Africa</small></font></h1>
+          <p><font face = "Tahoma" color = "White">Cape Town is the second-most populous city in South Africa, after Johannesburg, and the provincial capital and primate city of the Western Cape. The City is famous for its harbour, for its natural setting in the Cape floral kingdom, as well as the such well known landmarks as Table Mountain and Cape Point. Cape Town is located on the shore of Table Bay.</font></p>
+          <p><a class="btn btn-primary btn-lg" role="button">Home</a></p>
+        </div>
+      </div>
+  </div>
+
+     <div class="bar1 container-fluid"></div>
+
+
+
+  <div class="bgimg2 container-fluid">
+    <div class="row">
+      <div class="lang">
+        <h1>Language</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p><a class="btn btn-lg btn-warning" href="/English/" role="button">English</a></p>
+      </div><!-- /.col-lg-6 -->
+      <div class="col-md-3">
+        <p><a class="btn btn-lg btn-warning" href="#" role="button">Afrikaans</a></p>
+      </div><!-- /.col-lg-6 -->
+      <div class="col-md-3">
+        <p><a class="btn btn-lg btn-warning" href="#" role="button">Xhosa</a></p>
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+
+
+
+
+      <div class="row">
+        <div class="lang">
+          <h1 class="text-align:center">Activities</h1>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="lang">
+            <img src="../static/styles_design/lugulake1.jpg"  class="img-thumbnail" alt="Responsive image">
+          </div>
+        </div><!-- /.col-lg-6 -->
+        <div class="col-md-3">
+          <div class="lang">
+            <img src="../static/styles_design/pudacuonationalpark2.jpg"  class="img-thumbnail" alt="Responsive image">
+          </div>
+        </div><!-- /.col-lg-6 -->
+        <div class="col-md-3">
+          <div class="lang">
+            <img src="../static/styles_design/oldtownoflijiang.jpg"  class="img-thumbnail" alt="Responsive image">
+          </div>
+        </div><!-- /.col-lg-6 -->
+      </div><!-- /.row -->
+      <div class="row">
+        <div class="col-md-3">
+          <div class="lang">
+            <img src="../static/styles_design/jadedragonsnowmountain1.jpg"  class="img-thumbnail" alt="Responsive image">
+          </div>
+        </div><!-- /.col-lg-6 -->
+      </div>
+  </div>
+
+  <div class="bar2 container-fluid"></div>
+
+  <div class="mapmar" id="map-canvas"> <h1>hello</h1></div>
+
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="../static/bootstrap/js/docs.min.js"></script>
+<!-- ESTO AQUI -->
+</body></html>
+
+<!-- border, box-shadow, media-screen -->
