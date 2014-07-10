@@ -116,6 +116,44 @@
 
 </style>
 
+<!-- Google Map -->
+<script type="text/javascript"
+
+  src="https://maps.googleapis.com/maps/api/js?Key=AIzaSyDqgEKn9SN-A15a5emKo1kFGamx7AXYRq4" >
+
+</script>
+<script>
+  var map;
+  function initialize() {
+    var mapOptions = {
+
+      zoom: 5,
+
+      center: new google.maps.LatLng(20.6829,-88.5686)
+    };
+    map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
+
+
+    var img = '/static/styles_design/marker.png';
+
+
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(20.6829,-88.5686),
+      map: map,
+      title: 'Chichen Itza, Mexico',
+      icon : img,
+      draggable: false,
+      optimized:false
+    })
+
+  }
+
+  
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
 
 <body>
 
@@ -201,9 +239,8 @@
   		</div><!-- /.row -->
 	</div>
 
-
-	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7630308.489825898!2d-89.57822119999999!3d20.963091699999886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5670e55921ff95%3A0x8d80ca03f96180a7!2sChichen+Itza!5e0!3m2!1sen!2sus!4v1404891690225" width="1400" height="500" frameborder="0" style="border:0"></iframe>
-
+  <div class="mapmar" id="map-canvas"> </div>
+	
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
