@@ -86,3 +86,21 @@ git commit -m "separated cities, activities, languages into separate models"
 git push
 git pull
 exit
+ls
+cd ITDb
+ls
+cd ..
+ls
+git status
+git add ITDB/content_display/test.out
+git add ITDB/content_display/tests.out
+exit
+git status
+git add ITDb/content_display/tests.out
+git status
+git add ITDb/content_display/models.py
+git add ITDb/content_display/tests.py
+git status
+git add ITDb/templates/activities.html
+ls
+exit
