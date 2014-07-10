@@ -75,14 +75,13 @@
 
 	  var img = '/static/styles_design/marker.png';
 
-
 	  var marker = new google.maps.Marker({
 	  	position: new google.maps.LatLng(20.6829,-88.5686),
 	  	map: map,
 	  	title: 'Chichen Itza, Mexico',
 	  	icon : img,
 	  	draggable: false,
-	  	optimized:false
+	  	optimized:false,
 	  })
 
 	  var marker = new google.maps.Marker({
@@ -104,8 +103,7 @@
 	  })
 	}
 
-
-	google.maps.event.addDomListener(window, 'load', initialize);
+	google.maps.event.addDomListener(window, 'load', initialize)
 
 </script>
 
