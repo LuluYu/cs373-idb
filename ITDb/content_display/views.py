@@ -35,6 +35,9 @@ def sceneries (request):
 def historical (request):
     return render_to_response('historical.html')
 
+def housing (request):
+    return render_to_response('housing.html')
+
 # languages 
 
 def chinese (request):
