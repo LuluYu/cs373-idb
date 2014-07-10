@@ -23,17 +23,17 @@
 </head>
 
 <style type="text/css">
- @font-face { font-family:awesome; src:url("../static/styles_design/flappyBirdFont.TTF"); } 
+ @font-face { font-family:awesome; src:url("../static/styles_design/flappyBirdFont.TTF"); }
   .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
     background-color: #e2a846;
     color:#ffffff;
   }
   .bgimg {
-  	background-image: url("../static/styles_design/bg.png"); 
+  	background-image: url("../static/styles_design/bg.png");
   	/*height: 158px;*/
   	margin-top: -20px;
   	background-repeat: repeat-x;
-  	background-color: #f8e0a7; 
+  	background-color: #f8e0a7;
     /*padding-bottom: 20px;
      margin-left:-20px;
  	margin-right:-30px;*/
@@ -58,16 +58,15 @@
 
    .bgPic {
   	background-image: url("../static/styles_design/chichen-itza-mexico-2009_dark.png");
-    background-repeat:no-repeat; 
-    background-position:center center; 
-    background-size:cover; 
-    padding:20px 60px; 
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
+    padding:20px 60px;
   	height: 400px;
   	margin-top: -69px;
   	margin-bottom: -50px;
   	margin-left: -30px;
-  	margin-right: -60px;
-  	background-repeat: repeat-x;
+  	margin-right: -30px;
 
   }
 
@@ -75,11 +74,11 @@
   	background-image: url("../static/styles_design/midbg.png");
   	/*height: 158px;*/
   	/*height: 520px;*/
-    padding:20px 60px; 
+    padding:20px 60px;
   	margin-top: -10px;
-  	margin-bottom: 15px;
+  	/*margin-bottom: 15px;*/
   	margin-left: -10px;
-  	margin-right: -30px;
+  	/*margin-right: -30px;*/
     background-position: bottom;
   	background-repeat: repeat-x;
   	background-color: #d3f4ff;
@@ -91,7 +90,7 @@
   	margin-top: -30px;
   	margin-bottom: 10px;
   	margin-left: -10px;
-  	margin-right: -30px;
+  	/*margin-right: -30px;*/
   	background-repeat: repeat-x;
   	background-color: #f8e0a7;
   }
@@ -107,7 +106,9 @@
   	background-color: #f8e0a7;
   }
 
-
+  .nomargin {
+      margin-bottom: 0px;
+  }
 
 
   .lang{
@@ -120,7 +121,7 @@
     height: 100%;
     margin: 0px;
     /*margin-top: -20px;*/
-    margin-right: -30px;
+    /*margin-right: -30px;*/
     padding: 0px;
 
   }
@@ -224,11 +225,11 @@
     </div>
   </div>
 
-	<div class="jumbotron container-fluid">
+	<div class="jumbotron container-fluid nomargin">
 			<div class="bgPic">
         <div class="col-md-6">
     			<h1><font face = "Tahoma" color = "White">Chichen Itza </font><small><font face = "Tahoma" color = "White">Mexico</font></small></h1>
-    			<p><font face = "Tahoma" color = "White">This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</font></p>
+    			<p align="justify"><font face = "Tahoma" color = "White">Chichen Itza was a large pre-Columbian city built by the Maya people of the Post Classic. The archaeological site is located in the municipality of Tinum, in the Mexican state of Yucatán. It was one of the largest Mayan cities and it was likely to have been one of the mythical great cities, or Tollans, referred to in later Mesoamerican literature. Nowadays, Chichen Itza is one of the most visited archaeological sites in Mexico and has an estimated 1.2 million tourists visiting the ruins every year.</font></p>
 
         </div>
         <div class="col-md-6"></div>
@@ -247,7 +248,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-3">
-				<p><a class="btn btn-lg btn-warning" href="#" role="button">Spanish</a></p>
+				<p><a class="btn btn-lg btn-warning" href="#" role="button">Spanish Español</a></p>
 			</div><!-- /.col-lg-6 -->
 			<div class="col-md-3">
 				<p><a class="btn btn-lg btn-warning" href="/English/" role="button">English</a></p>
@@ -289,7 +290,7 @@
       </div>
 	</div>
 
-  <div class="bar2 container-fluid"></div>
+  <!--<div class="bar2 container-fluid"></div>-->
 
   <div class="mapmar" id="map-canvas"> <h1>hello</h1></div>
 

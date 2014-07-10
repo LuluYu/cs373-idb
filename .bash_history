@@ -60,3 +60,47 @@ exit
 ls
 git pull
 exit
+git pull
+git pull
+git add ITDb/templates/chichen_Itza_Mexico.html
+git commit -m "changed font face"
+git push
+git add ITDb/templates/chichen_Itza_Mexico.html
+git commit -m "took the learn more button off"
+git push
+git pull
+git status
+git add ITDb/templates/chichen_Itza_Mexico.html
+git commit -m "Font fix"
+gitpush
+git push
+git pull
+ls
+git status
+git add .
+git add ITDb/ITDb/activities/
+git add ITDb/ITDb/cities/
+git add ITdb/Itdb/languages
+git add ITDb/ITDb/languages/
+git commit -m "separated cities, activities, languages into separate models"
+git push
+git pull
+exit
+ls
+cd ITDb
+ls
+cd ..
+ls
+git status
+git add ITDB/content_display/test.out
+git add ITDB/content_display/tests.out
+exit
+git status
+git add ITDb/content_display/tests.out
+git status
+git add ITDb/content_display/models.py
+git add ITDb/content_display/tests.py
+git status
+git add ITDb/templates/activities.html
+ls
+exit

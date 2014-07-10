@@ -1,64 +1,25 @@
-<!-- <html><head>
-<title>Chinese</title>
-</head><body>
-
-<h1>The Chinese Language</h1>
-
-<table width="100%" border="1">
-<tr>
-	<th>Cities</th>
-	<th>Activities</th>
-</tr>
-<tr>
-	<td><a href="{% url 'content_display.views.lijiang_China' %}">Li Jiang, China</a></td>
-	<td>
-		<ul>
-			<li><a href="{% url 'content_display.views.sceneries' %}">Scenery</a></li>
-			<li><a href="">Housing</a></li>
-			<li><a href="">Cultural</a></li>
-		</ul>
-	</td>
-</tr>
-<tr>
-	<td>
-		<a href="">Nan Jing, China</a>
-	</td>
-	<td>
-		<ul>
-			<li><a href="">Food</a></li>
-			<li><a href="">Shopping</a></li>
-			<li><a href="{% url 'content_display.views.historical' %}">Historical</a></li>
-		</ul>
-	</td>
-</tr>
-<tr>
-	<td>Singapore, Singapore</td>
-	<td>
-		<ul>
-			<li><a href="">Shopping</a></li>
-		</ul>
-	</td>
-</tr>
-</table>
-
-<h4><a href="{% url 'content_display.views.index' %}">Home</a></h4>
-
-</body></html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Flappy World : Chinese</title>
 
-	<!-- ESTO QUE ESTA AQUI -->
-	<meta charset="utf-8">
+  <!-- ESTO QUE ESTA AQUI -->
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap core CSS -->
-    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="navbar.css" rel="stylesheet">
     <!-- ESTP QUE ESTA AQUI!!!! -->
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
+
+    <script src="/static/bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+    </head>
 
 <style type="text/css">
   .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
@@ -95,9 +56,9 @@
   	margin-top: -69px;
   	margin-bottom: -50px;
   	margin-left: -30px;
-  	margin-right: -60px;
+  	margin-right: -30px;
   	background-repeat: repeat-x;
-    padding:20px 60px; 
+    padding:20px 60px;
 
   }
 
@@ -142,12 +103,13 @@
   	margin-top: -10px;
   	margin-bottom: -15px;
   	margin-left: -10px;
-  	margin-right: -10px;
   	background-repeat: repeat-x;
   	background-color: #f8e0a7;
   }
 
-
+  .nomargin {
+    margin-bottom: 0px;
+  }
 
 
   .lang{
@@ -157,13 +119,12 @@
   }
 
 
+
 </style>
 
-</head>
 
 
 <body>
-
 	<div class="bgimg container-fluid">
 		<div class="row">
 			<div class="col-lg-6">
@@ -179,46 +140,47 @@
 				</div><!-- /input-group -->
 			</div><!-- /.col-lg-6 -->
 		</div><!-- /.row -->
-	</div>
+		</div>
+
+
+      <div class="navbar navbar-custom" role="navigation">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+              <li class="dropdown ">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="/Lijiang_China/">Li Jiang, China</a></li>
+                      <li><a href="/Chichen_Itza_Mexico/">Chichen Itza, Mexico</a></li>
+                      <li><a href="/Cape_Town_South_Africa/">Cape Town, South Africa</a></li>
+                      <li class="divider"></li>
+                  </ul>
+              </li>
+              <li class="dropdown ">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="/English/">English</a></li>
+                      <li><a href="/Spanish/">Spanish</a></li>
+                      <li><a href="/Chinese/">Chinese</a></li>
+                  </ul>
+              </li>
+              <li class="dropdown ">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/sceneries/">Sceneries</a></li>
+                  <li><a href="/historical/">Historical</a></li>
+                  <li><a href="#">Housing</a></li>
+                </ul>
+              </li>
+          </ul>
+        </div>
+     </div>
 
 
 
-  <div class="navbar navbar-custom" role="navigation">
-    <div class="container-fluid">
-      <ul class="nav navbar-nav">
-          <li class="dropdown ">
-              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                  <li><a href="{% url 'content_display.views.lijiang_China' %}">Li Jiang, China</a></li>
-                  <li><a href="{% url 'content_display.views.chichen_Itza_Mexico' %}">Chichen Itza, Mexico</a></li>
-                  <li><a href="{% url 'content_display.views.capeTown_SouthAfrica' %}">Cape Town, South Africa</a></li>
-                  <li class="divider"></li>
-              </ul>
-          </li>
-          <li class="dropdown ">
-              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                  <li><a href="{% url 'content_display.views.english' %}">English</a></li>
-                  <li><a href="{% url 'content_display.views.spanish' %}">Spanish</a></li>
-                  <li><a href="{% url 'content_display.views.chinese' %}">Chinese</a></li>
-              </ul>
-          </li>
-          <li class="dropdown ">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="{% url 'content_display.views.sceneries' %}">Sceneries</a></li>
-              <li><a href="{% url 'content_display.views.historical' %}">Historical</a></li>
-              <li><a href="#">Housing</a></li>
-            </ul>
-          </li>
-      </ul>
-    </div>
-  </div>
-
-	<div class="jumbotron container-fluid">
+	<div class="jumbotron container-fluid nomargin">
 			<div class="bgPic">
 				<h1>Chinese (中文)</h1>
-				<p>After the fall of the Northern Song dynasty, and during the reign of the Jin and Yuan dynasties in northern China, a common speech developed based on the dialects of the North China Plain around the capital, a language referred to as Old Mandarin. The present Chinese language varieties developed from regional variants of Old Chinese and Middle Chinese. In the early years of the Republic of China, intellectuals of the New Culture Movement, such as Hu Shih and Chen Duxiu, successfully campaigned for the replacement of Literary Chinese as the written standard by written vernacular Chinese, which was based on northern dialects. A parallel priority was the definition of a standard national language. After much dispute between proponents of northern and southern dialects and an abortive attempt at an artificial pronunciation, the National Language Unification Commission finally settled on the Beijing dialect in 1932, which is retained till today.</p>
+				<p align="justify">After the fall of the Northern Song dynasty, and during the reign of the Jin and Yuan dynasties in northern China, a common speech developed based on the dialects of the North China Plain around the capital, a language referred to as Old Mandarin. The present Chinese language varieties developed from regional variants of Old Chinese and Middle Chinese. In the early years of the Republic of China, intellectuals of the New Culture Movement, such as Hu Shih and Chen Duxiu, successfully campaigned for the replacement of Literary Chinese as the written standard by written vernacular Chinese, which was based on northern dialects. A parallel priority was the definition of a standard national language. After much dispute between proponents of northern and southern dialects and an abortive attempt at an artificial pronunciation, the National Language Unification Commission finally settled on the Beijing dialect in 1932, which is retained till today.</p>
 				<p><a class="btn btn-primary btn-lg" href="http://en.wikipedia.org/wiki/Mandarin_Chinese" role="button" target="_blank">Learn more &raquo;</a></p>
 				<h3>Script</h3>
 				<img src="../static/styles_design/chinesescript.jpg">
@@ -227,9 +189,9 @@
 					<div class="col-md-3">
 						<p><a class="btn btn-lg btn-warning" href="/Lijiang_China/" role="button">Li Jiang, China</a></p>
 					</div><!-- /.col-lg-6 -->
-					<div class="col-md-3">
+					<!-- <div class="col-md-3">
 						<p><a class="btn btn-lg btn-warning" href="#" role="button">Nan Jing, China</a></p>
-					</div><!-- /.col-lg-6 -->
+					</div> --><!-- /.col-lg-6 -->
 				</div><!-- /.row -->
 			</div>
 	</div>
@@ -238,9 +200,10 @@
 
 
 
+
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-
+ <script type="/static/bootstrap/js/docs.min.js"></script>
 
 </body>
 </html>
