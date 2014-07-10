@@ -13,11 +13,18 @@
     <!-- Custom styles for this template -->
     <link href="navbar.css" rel="stylesheet">
     <!-- ESTP QUE ESTA AQUI!!!! -->
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
 
+    <script src="/static/bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
 
 </head>
 
 <style type="text/css">
+ @font-face { font-family:awesome; src:url("/static/styles_design/flappyBirdFont.TTF"); }
   .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
     background-color: #e2a846;
     color:#ffffff;
@@ -120,6 +127,12 @@
     padding: 0px
   }
 
+   .lang h1 {
+  	text-shadow: 0px 0px 5px #000;
+  	color: #fefba7;
+  	font-family:awesome;
+  }
+
 
 </style>
 
@@ -173,7 +186,7 @@
     })
   }
 
-  
+
   google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
@@ -228,10 +241,10 @@
 				<p><a class="btn btn-lg btn-warning" href="/English/" role="button">English</a></p>
 			</div><!-- /.col-lg-6 -->
 		</div><!-- /.row -->
-	
 
 
-	
+
+
   		<div class="row">
   			<div class="lang">
   				<h1 class="text-align:center">Activities</h1>
@@ -263,7 +276,7 @@
 	</div>
 
   <div height="500px" id="map-canvas"> <h1>hello</h1></div>
-	
+
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
