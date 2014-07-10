@@ -50,15 +50,23 @@
 <head>
 	<title>Flappy World : Chinese</title>
 
-	<!-- ESTO QUE ESTA AQUI -->
-	<meta charset="utf-8">
+  <!-- ESTO QUE ESTA AQUI -->
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap core CSS -->
-    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="navbar.css" rel="stylesheet">
     <!-- ESTP QUE ESTA AQUI!!!! -->
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
+
+    <script src="/static/bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+    </head>
 
 <style type="text/css">
   .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
@@ -71,6 +79,7 @@
   	margin-top: -20px;
   	background-repeat: repeat-x;
   	background-color: #f8e0a7;
+  	margin-right:-30px;
   }
   .logo{
   	background-image: url("../static/styles_design/logo.png");
@@ -97,7 +106,7 @@
   	margin-left: -30px;
   	margin-right: -60px;
   	background-repeat: repeat-x;
-    padding:20px 60px; 
+    padding:20px 60px;
 
   }
 
@@ -157,9 +166,9 @@
   }
 
 
+
 </style>
 
-</head>
 
 
 <body>
@@ -182,38 +191,37 @@
 	</div>
 
 
-
-  <div class="navbar navbar-custom" role="navigation">
-    <div class="container-fluid">
-      <ul class="nav navbar-nav">
-          <li class="dropdown ">
-              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                  <li><a href="{% url 'content_display.views.lijiang_China' %}">Li Jiang, China</a></li>
-                  <li><a href="{% url 'content_display.views.chichen_Itza_Mexico' %}">Chichen Itza, Mexico</a></li>
-                  <li><a href="{% url 'content_display.views.capeTown_SouthAfrica' %}">Cape Town, South Africa</a></li>
-                  <li class="divider"></li>
-              </ul>
-          </li>
-          <li class="dropdown ">
-              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                  <li><a href="{% url 'content_display.views.english' %}">English</a></li>
-                  <li><a href="{% url 'content_display.views.spanish' %}">Spanish</a></li>
-                  <li><a href="{% url 'content_display.views.chinese' %}">Chinese</a></li>
-              </ul>
-          </li>
-          <li class="dropdown ">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="{% url 'content_display.views.sceneries' %}">Sceneries</a></li>
-              <li><a href="{% url 'content_display.views.historical' %}">Historical</a></li>
-              <li><a href="#">Housing</a></li>
-            </ul>
-          </li>
-      </ul>
-    </div>
-  </div>
+      <div class="navbar navbar-custom" role="navigation">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+              <li class="dropdown ">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="/Lijiang_China/">Li Jiang, China</a></li>
+                      <li><a href="/Chichen_Itza_Mexico/">Chichen Itza, Mexico</a></li>
+                      <li><a href="/Cape_Town_South_Africa/">Cape Town, South Africa</a></li>
+                      <li class="divider"></li>
+                  </ul>
+              </li>
+              <li class="dropdown ">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="/English/">English</a></li>
+                      <li><a href="/Spanish/">Spanish</a></li>
+                      <li><a href="/Chinese/">Chinese</a></li>
+                  </ul>
+              </li>
+              <li class="dropdown ">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/sceneries/">Sceneries</a></li>
+                  <li><a href="/historical/">Historical</a></li>
+                  <li><a href="#">Housing</a></li>
+                </ul>
+              </li>
+          </ul>
+        </div>
+      </div>
 
 	<div class="jumbotron container-fluid">
 			<div class="bgPic">
@@ -238,9 +246,10 @@
 
 
 
+
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-
+ <script type="/static/bootstrap/js/docs.min.js"></script>
 
 </body>
 </html>

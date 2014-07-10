@@ -1,100 +1,289 @@
 <!DOCTYPE html>
-<html><head>
-<title>Cape Town, South Africa</title>
+<html lang="en">
+<head>
+	<title>Cape Town</title>
+
+	<!-- ESTO QUE ESTA AQUI -->
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="navbar.css" rel="stylesheet">
+    <!-- ESTP QUE ESTA AQUI!!!! -->
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
+
+    <script src="/static/bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
 </head>
-<!--This is for menu ideas just trying things out
-so that later we can style it and have navigation bar on all pages
-<div class="nav container">
 
-    <li><a class="active" href="index.html">Home</a></li>
+<style type="text/css">
+ @font-face { font-family:awesome; src:url("/static/styles_design/flappyBirdFont.TTF"); }
+  .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+    background-color: #e2a846;
+    color:#ffffff;
+  }
+  .bgimg {
+  	background-image: url("/static/styles_design/bg.png");
+  	/*height: 158px;*/
+  	margin-top: -20px;
+  	background-repeat: repeat-x;
+  	background-color: #f8e0a7;
+    padding-bottom: 20px;
+     margin-left:-20px;
+ 	margin-right:-30px;
+  }
+  .logo{
+  	background-image: url("/static/styles_design/logo.png");
+  	height: 110px;
+  	width: 305px;
+  	margin-top: 50px;
+  	margin-left: 50px;
+  	background-repeat: no-repeat;
+  }
+  .search{
+  	margin-top: 60px;
+  	margin-left: 60px;
+  	width: 350px;
+  }
+  .dropb{
+  	width: 30%;
+  }
 
-    <li class="dropdown">Cities
-        <ul class="dropdown-menu">
+   .bgPic {
+  	background-image: url("/static/styles_design/capeTownMain.png");
+  	height: 400px;
+  	margin-top: -69px;
+  	margin-bottom: -50px;
+  	margin-left: -30px;
+  	margin-right: -60px;
+  	background-repeat: repeat-x;
 
-            <li><a href="LijiangChina.html">Li Jiang, China</a></li>
+  }
 
-            <li><a href="ChichenItzaMexico.html">Chichen Itza, Mexico</a></li>
+    .bgimg2 {
+  	background-image: url("/static/styles_design/midbg.png");
+  	/*height: 158px;*/
+  	/*height: 520px;*/
 
-            <li><a href="CapeTownSouthAfrica.html">Cape Town, South Africa</a></li>
+  	margin-top: -10px;
+  	margin-bottom: 15px;
+  	margin-left: -10px;
+  	margin-right: -30px;
+    background-position: bottom;
+  	background-repeat: repeat-x;
+  	background-color: #d3f4ff;
+  }
 
-        </ul>
-    </li>
+.bar1 {
+  	background-image: url("/static/styles_design/bar.png");
+  	height: 13px;
+  	margin-top: -30px;
+  	margin-bottom: 10px;
+  	margin-left: -10px;
+  	margin-right: -30px;
+  	background-repeat: repeat-x;
+  	background-color: #f8e0a7;
+  }
 
-    <li class="dropdown">Languages
-        <ul class="dropdown-menu">
+  .bar2 {
+  	background-image: url("/static/styles_design/bar.png");
+  	height: 13px;
+  	margin-top: -10px;
+  	margin-bottom: -15px;
+  	margin-left: -10px;
+  	margin-right: -10px;
+  	background-repeat: repeat-x;
+  	background-color: #f8e0a7;
+  }
 
-            <li><a href="English.html">English</a></li>
 
-            <li><a href="Spanish.html">Spanish</a></li>
 
-            <li><a href="Chinese.html">Chinese</a></li>
 
-        </ul>
-    </li>
+  .lang{
+  	text-shadow: 0px 0px 5px #000;
+  	font-size: 35px;
+  	color: #fefba7;
+  	font-family:awesome;
+  	margin-top: 40px;
+  	margin-bottom: 30px;
+  	margin-left: 70px;
+  }
 
-    <li class="dropdown">Activities
-        <ul class="dropdown-menu">
+   html, body, #map-canvas {
+    height: 100%;
+    margin: 0px;
+    margin-top: -20px;
+    margin-right: -30px;
+    padding: 0px;
 
-            <li>Scenery</li>
+  }
 
-            <li>Historical</li>
 
-            <li>Housing</li>
+	.lang2{
+	  	margin-top: 40px;
+  	margin-bottom: 30px;
+  	margin-left: 30px;
+	 }
 
-        </ul>
-    </li>
 
-</div>
-This is for menu ideas just trying it out-->
+  .jumbotron h1{
+  	text-shadow: 0px 0px 5px #000;
+  	color: #fefba7;
+  	font-family:awesome;
+  }
+
+  .firstcharacter { color: #fefba7; font-size: 60px; line-height: 60px; font-family: awesome; text-shadow: 0px 0px 20px #000;}
+
+
+
+</style>
+
+<!-- Google Map -->
+<script type="text/javascript"
+
+  src="https://maps.googleapis.com/maps/api/js?Key=AIzaSyDqgEKn9SN-A15a5emKo1kFGamx7AXYRq4" >
+
+</script>
+<script>
+  var map;
+  function initialize() {
+    var mapOptions = {
+
+      zoom: 6,
+
+      center: new google.maps.LatLng(-33.944612, 18.476158)
+    };
+    map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
+
+
+    var img = '/static/styles_design/marker.png';
+
+
+     var marker = new google.maps.Marker({
+	  	position: new google.maps.LatLng(-33.944612, 18.476158),
+	  	map: map,
+	  	title: 'Cape Town, South Africa',
+	  	icon: img,
+	  	draggable: false,
+	  	optimized:false
+    })
+
+  }
+
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
 <body>
-<h1>Cape Town, South Africa</h1>
+
+	<div class="bgimg container-fluid">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="logo">
+
+				</div><!-- /input-group -->
+			</div><!-- /.col-lg-6 -->
+			<div class="col-lg-6">
+				<div class="input-group search">
+					<form class="navbar-form navbar-right">
+								<input type="text" class="form-control" placeholder="Search...">
+								</form>
+				</div><!-- /input-group -->
+			</div><!-- /.col-lg-6 -->
+		</div><!-- /.row -->
+	</div>
 
 
-<h2>Description</h2>
-<p>Cape Town is the second-most populous city in South Africa, after Johannesburg, and the provincial capital and primate city of the Western Cape. The City is famous for its harbour, for its natural setting in the Cape floral kingdom, as well as the such well known landmarks as Table Mountain and Cape Point. Cape Town is located on the shore of Table Bay</p>
 
-<h2>Languages</h2>
-<ul>
-    <li><a href="{% url 'content_display.views.english' %}">English</a></li>
-    <li>Afrikaans</li>
-    <li>Xhosa</li>
-</ul>
+	<div class="jumbotron container-fluid">
+			<div class="bgPic">
+        <div class="col-md-6">
+    			<h1>Cape Town  <small><font color="white">South Africa</font></small></h1>
+    			<p><font face = "Tahoma" color = "white">Today Cape Town is one of the top tourist destinations in the world. Voted Favourite Foreign City by the UK Telegraph in 2004 and is the only city in the world situated on the Indian and Atlantic Oceans.
+                And if it’s the food you’re after, Cape Town has an eclectic mix of local African food, Cape Malay dishes and specialised restaurants serving international cuisine.
+                Activities range from indoor to outdoor and even below the waterline! </font></p>
 
-<h2>Activities</h2>
-<table width="100%" border="1">
-<tr>
-    <th><a href="{% url 'content_display.views.sceneries' %}">Scenery</a></th>
-    <th><a href="">Housing</a></th>
-    <th><a>Outdoor Recreation</a></th>
-</tr><tr>
-    <td>
-        <ul>
-            <li>Table Mountain</li>
-            <li>Cape Point</li>
-            <li>Table Bay</li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-            <li>Table Bay Hotel</li>
-            <li>Victoria & Alfred Hotel</li>
-            <li>Blackheath Lodge</li>
-            <li>Cape Grace</li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-            <li>Great White Shark Cage Diving</li>
-            <li>Safari</li>
-            <li>Swimming</li>
-            <li>Surfing</li>
-            <li>Ballooning</li>
-        </ul>
-    </td>
-</tr>
-</table>
+        </div>
+        <div class="col-md-6"></div>
+			</div>
+	</div>
 
-<h4><a href="{% url 'content_display.views.index' %}">Home</a></h4>
+     <div class="bar1 container-fluid"></div>
 
-</body>
-</html>
+
+
+	<div class="bgimg2 container-fluid">
+		<div class="row">
+			<div class="lang2">
+				<span class="firstcharacter">Language</span>
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<p><a class="btn btn-lg btn-warning" href="/Afrikaans/" role="button">Afrikaans</a></p>
+			</div><!-- /.col-lg-6 -->
+			<div class="col-md-3">
+				<p><a class="btn btn-lg btn-warning" href="/Xhosa/" role="button">Xhosa</a></p>
+			</div><!-- /.col-lg-6 -->
+		</div><!-- /.row -->
+
+
+
+
+  		<div class="row">
+  			<div class="lang2">
+				<span class="firstcharacter">Activities</span>
+			</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-4">
+  				<div class="lang">
+  					<p>Outdoor Recreation</p>
+  						<a href="/sceneries/">
+  						<img src="/static/styles_design/cape1.jpeg"  class="img-thumbnail" alt="Responsive image">
+  						</a>
+  				</div>
+  			</div><!-- /.col-lg-6 -->
+  			<div class="col-md-4">
+  				<div class="lang">
+  					<p>Scenery</p>
+  					<a href="/sceneries/">
+  					<img src="/static/styles_design/cape2.jpg"  class="img-thumbnail" alt="Responsive image">
+  					</a>
+  				</div>
+  			</div><!-- /.col-lg-6 -->
+  			<div class="col-md-4">
+  				<div class="lang">
+  					<p>Housing</p>
+  					<a href="/historical/">
+  					<img src="/static/styles_design/cape3.jpg"  class="img-thumbnail" alt="Responsive image">
+  					</a>
+  				</div>
+  			</div><!-- /.col-lg-6 -->
+  		</div><!-- /.row -->
+	</div>
+
+  <div class="bar2 container-fluid"></div>
+
+  <div class="mapmar" id="map-canvas"> <h1>hello</h1></div>
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="/static/bootstrap/js/docs.min.js"></script>
+<!-- ESTO AQUI -->
+</body></html>
+
+<!-- border, box-shadow, media-screen -->

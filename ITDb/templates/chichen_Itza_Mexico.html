@@ -34,7 +34,7 @@
   	margin-top: -20px;
   	background-repeat: repeat-x;
   	background-color: #f8e0a7;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
      margin-left:-20px;
  	margin-right:-30px;
   }
@@ -70,6 +70,7 @@
   	background-image: url("/static/styles_design/midbg.png");
   	/*height: 158px;*/
   	/*height: 520px;*/
+
   	margin-top: -10px;
   	margin-bottom: 15px;
   	margin-left: -10px;
@@ -105,6 +106,10 @@
 
 
   .lang{
+  	text-shadow: 0px 0px 5px #000;
+  	font-size: 35px;
+  	color: #fefba7;
+  	font-family:awesome;
   	margin-top: 40px;
   	margin-bottom: 30px;
   	margin-left: 70px;
@@ -119,11 +124,22 @@
 
   }
 
-   .lang h1 {
+
+	.lang2{
+	  	margin-top: 40px;
+  	margin-bottom: 30px;
+  	margin-left: 30px;
+	 }
+
+
+  .jumbotron h1{
   	text-shadow: 0px 0px 5px #000;
   	color: #fefba7;
   	font-family:awesome;
   }
+
+  .firstcharacter { color: #fefba7; font-size: 60px; line-height: 60px; font-family: awesome; text-shadow: 0px 0px 20px #000;}
+
 
 
 </style>
@@ -190,8 +206,8 @@
 	<div class="jumbotron container-fluid">
 			<div class="bgPic">
         <div class="col-md-6">
-    			<h1><font face = "Tahoma" color = "White">Chichen Itza </font><small><font face = "Tahoma" color = "White">Mexico</font></small></h1>
-    			<p><font face = "Tahoma" color = "White">This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</font></p>
+    			<h1>Chichen Itza  <small><font color="white">Mexico</font></small></h1>
+    			<p><font face = "Tahoma" color = "white">Chichen Itza which means “at the mouth of the well of Itza “, is the 2nd most visited archeological site of Mexico today. The Kukulkan Pyramid in Chichen-Itza which known as “El Castillo” (the castle), is one of the new seven wonders of the world elected in 07.07.2007. It is exactly 24 m. high considering the upper platform. Apart from the Kukulkan Pyramid, in Chichen Itza there many other archaeological sites to visit, all carrying traces from Mayan Culture in many ways.</font></p>
 
         </div>
         <div class="col-md-6"></div>
@@ -204,13 +220,14 @@
 
 	<div class="bgimg2 container-fluid">
 		<div class="row">
-			<div class="lang">
-		 		<h1>Language</h1>
+			<div class="lang2">
+				<span class="firstcharacter">Language</span>
+
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-3">
-				<p><a class="btn btn-lg btn-warning" href="#" role="button">Spanish</a></p>
+				<p><a class="btn btn-lg btn-warning" href="/Spanish/" role="button">Spanish</a></p>
 			</div><!-- /.col-lg-6 -->
 			<div class="col-md-3">
 				<p><a class="btn btn-lg btn-warning" href="/English/" role="button">English</a></p>
@@ -221,29 +238,39 @@
 
 
   		<div class="row">
-  			<div class="lang">
-  				<h1 class="text-align:center">Activities</h1>
+  			<div class="lang2">
+				<span class="firstcharacter">Activities</span>
 
-  			</div>
+			</div>
   		</div>
   		<div class="row">
   			<div class="col-md-3">
   				<div class="lang">
-  					<img src="/static/styles_design/chichen1.jpg"  class="img-thumbnail" alt="Responsive image">
+  					<p>Historical</p>
+  						<a href="/historical/">
+  						<img src="/static/styles_design/chichen1.	jpg"  class="img-thumbnail" alt="Responsive image">
+  						</a>
   				</div>
   			</div><!-- /.col-lg-6 -->
   			<div class="col-md-3">
   				<div class="lang">
+  					<p>Scenery</p>
+  					<a href="/sceneries/">
   					<img src="/static/styles_design/chichen2.jpg"  class="img-thumbnail" alt="Responsive image">
+  					</a>
   				</div>
   			</div><!-- /.col-lg-6 -->
   			<div class="col-md-3">
   				<div class="lang">
+  					<p>Family</p>
+  					<a href="#">
   					<img src="/static/styles_design/chichen3.jpg"  class="img-thumbnail" alt="Responsive image">
+  					</a>
   				</div>
   			</div><!-- /.col-lg-6 -->
   			<div class="col-md-3">
   				<div class="lang">
+  					<p>Nature</p>
   					<img src="/static/styles_design/chichen4.jpg"  class="img-thumbnail" alt="Responsive image">
   				</div>
   			</div><!-- /.col-lg-6 -->
