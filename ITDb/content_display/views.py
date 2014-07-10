@@ -15,8 +15,27 @@ def hello_template (request):
 def index (request):
     return render_to_response('index.html')
 
+
+# cities 
+
 def lijiang_China (request):
     return render_to_response('lijiang_China.html')
+
+def capeTown_SouthAfrica (request):
+    return render_to_response('capeTown_SouthAfrica.html')
+
+def chichen_Itza_Mexico (request):
+    return render_to_response('chichen_Itza_Mexico.html')
+
+# activities 
+
+def sceneries (request):
+    return render_to_response('sceneries.html')
+
+def historical (request):
+    return render_to_response('historical.html')
+
+# languages 
 
 def chinese (request):
     return render_to_response('chinese.html')
@@ -24,15 +43,5 @@ def chinese (request):
 def english (request):
     return render_to_response('english.html')
 
-def sceneries (request):
-    return render_to_response('sceneries.html')
-
-def capeTown_SouthAfrica (request):
-    return render_to_response('capeTown_SouthAfrica.html')
-
-def historical (request):
-    return render_to_response('historical.html')
-
-def chichen_Itza_Mexico (request):
-    return render_to_response('chichen_Itza_Mexico.html')
-
+def spanish (request):
+    return render_to_response('spanish.html')
