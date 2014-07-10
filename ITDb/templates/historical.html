@@ -1,15 +1,329 @@
 <!DOCTYPE html>
-<html><head>
-<title>Historical Locations</title>
-</head><body>
+<html lang="en">
+<head>
+	<title>Flappy World : Historical</title>
+
+  <!-- ESTO QUE ESTA AQUI -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="navbar.css" rel="stylesheet">
+    <!-- ESTP QUE ESTA AQUI!!!! -->
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
+
+    <script src="/static/bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+    </head>
+
+<style type="text/css">
+  .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+    background-color: #e2a846;
+    color:#ffffff;
+    width:100%;
+  }
+  .bgimg {
+  	background-image: url("../static/styles_design/bg.png");
+  	/*height: 158px;*/
+  	margin-top: -20px;
+  	background-repeat: repeat-x;
+  	background-color: #f8e0a7;
+  }
+  .logo{
+  	background-image: url("../static/styles_design/logo.png");
+  	height: 110px;
+  	width: 305px;
+  	margin-top: 50px;
+  	margin-left: 50px;
+  	background-repeat: no-repeat;
+  }
+  .search{
+  	margin-top: 60px;
+  	margin-left: 60px;
+  	width: 350px;
+  }
+  .dropb{
+  	width: 100%;
+  	margin-right: 15px;
+  }
+
+     .bgPic {
+    background-image: url("../static/styles_design/chichen-itza-mexico-2009_dark.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
+    padding:20px 60px;
+    height: 410px;
+    margin-top: -69px;
+    margin-bottom: -56px;
+    margin-left:-5%;
+    margin-right:-2.5%;
+
+    background-repeat: repeat-x;
+
+  }
+
+     .bgPic2 {
+    background-image: url("../static/styles_design/lijiang_dark.jpg");
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
+    padding:20px 60px;
+    height: 418px;
+    margin-top: -69px;
+    margin-bottom: -70px;
+    margin-left:-5%;
+    margin-right:-2.5%;
+    background-repeat: repeat-x;
+
+  }
+
+      .bgPic3 {
+    background-image: url("../static/styles_design/safari2.jpg");
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
+    padding:20px 60px;
+    height: 430px;
+    margin-top: -112px;
+    margin-bottom: -70px;
+    margin-left:-5%;
+    margin-right:-2.5%;
+    background-repeat: repeat-x;
+  }
+
+    .bgimg2 {
+  	background-image: url("../static/styles_design/midbg.png");
+  	/*height: 158px;*/
+  	height: 245px;
+  	margin-top: -10px;
+  	margin-bottom: -10px;
+  	background-repeat: repeat-x;
+  	background-color: #f8e0a7;
+  }
+
+   .bgimg3 {
+  	background-image: url("../static/styles_design/flappy.png");
+  	/*height: 158px;*/
+  	height: 350px;
+  	margin-top: -22px;
+  	margin-bottom: -10px;
+
+  	background-repeat: repeat-x;
+  	background-color: #f8e0a7;
+  }
+
+.bar1 {
+  	background-image: url("../static/styles_design/bar.png");
+  	height: 13px;
+  	margin-top: -30px;
+  	margin-bottom: bottom;
+
+  	background-repeat: repeat-x;
+  	background-color: #f8e0a7;
+  }
+
+  .bar2 {
+  	background-image: url("../static/styles_design/bar.png");
+  	height: 13px;
+  	margin-top: -10px;
+  	margin-bottom: bottom;
+
+  	background-repeat: repeat-x;
+  	background-color: #f8e0a7;
+  }
+   .bar3 {
+  	background-image: url("../static/styles_design/bar.png");
+  	height: 13px;
+  	margin-top: -10px;
+  	margin-bottom: bottom;
+
+  	background-repeat: repeat-x;
+  	background-color: #f8e0a7;
+  }
+  .bar4 {
+  	background-image: url("../static/styles_design/bar.png");
+  	height: 13px;
+  	margin-top: -10px;
+  	margin-bottom: bottom;
+
+  	background-repeat: repeat-x;
+  	background-color: #f8e0a7;
+  }
 
 
-<h1>Historical Locations</h1>
-<div>
-	<p>Nan Jing, China - Corresponding Languages : <a href="{% url 'content_display.views.chinese' %}">Chinese</a></p>
-	<p><a href="{% url 'content_display.views.chichen_Itza_Mexico' %}">Chichen Itza, Mexico</a> - Corresponding Language : <a href="">Spanish</a></p>
-	<p>Vatican City - Corresponding Languages : Italian, English</p>
-</div>
+  .lang{
+  	margin-top: 40px;
+  	margin-bottom: 30px;
+  	margin-left: 70px;
+  }
 
-<h4><a href="{% url 'content_display.views.index' %}">Home</a></h4>
-</body></html>
+
+
+</style>
+
+
+
+<body>
+	<div class="bgimg container-fluid">
+		<div class="row">
+			<div class="col-lg-6">
+        <a href="/index/"><div class="logo">
+
+        </div></a><!-- /input-group -->
+			</div><!-- /.col-lg-6 -->
+			<div class="col-lg-6">
+				<div class="input-group search">
+					<form class="navbar-form navbar-right">
+								<input type="text" class="form-control" placeholder="Search...">
+								</form>
+				</div><!-- /input-group -->
+			</div><!-- /.col-lg-6 -->
+		</div><!-- /.row -->
+		</div>
+
+
+      <div class="navbar navbar-custom" role="navigation">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+              <li class="dropdown ">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="/Lijiang_China/">Li Jiang, China</a></li>
+                      <li><a href="/Chichen_Itza_Mexico/">Chichen Itza, Mexico</a></li>
+                      <li><a href="/Cape_Town_South_Africa/">Cape Town, South Africa</a></li>
+                      <li class="divider"></li>
+                  </ul>
+              </li>
+              <li class="dropdown ">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="/English/">English</a></li>
+                      <li><a href="/Spanish/">Spanish</a></li>
+                      <li><a href="/Chinese/">Chinese</a></li>
+                  </ul>
+              </li>
+              <li class="dropdown ">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/sceneries/">Sceneries</a></li>
+                  <li><a href="/historical/">Historical</a></li>
+                  <li><a href="#">Housing</a></li>
+                </ul>
+              </li>
+          </ul>
+        </div>
+     </div>
+
+
+
+  <div class="jumbotron container-fluid">
+      <div class="bgPic">
+        <div class="col-md-6">
+        <a href="/Chichen_Itza_Mexico/">
+          <h1><font face = "Tahoma" color = "White">Chichen Itza</font><small><font face = "Tahoma" color = "White"> Mexico</small></font></h1>
+          </a>
+          <p><font face = "Tahoma" color = "White">The Maya temple in Chichen Itza is one of the best scenic attractions in Chichen Itza.
+          Chichen Itza is one of the most visited archaeological sites in Mexico; an estimated 1.2 million tourists visit the ruins every year.</font></p>
+        </div>
+        <div class="col-md-6">
+			<div class="row">
+			    <div class="lang">
+		 		    <h1><font face = "Tahoma" color = "White">Language</font></h1>
+		    	</div>
+		    </div>
+		    <div class="row">
+			    <div class="col-md-3">
+				    <p><a class="btn btn-lg btn-warning" href="#" role="button">Spanish Español</a></p>
+		    	</div><!-- /.col-lg-6 -->
+				<div class="col-md-3"></div>
+			    <div class="col-md-3">
+			    	<p><a class="btn btn-lg btn-warning" href="/English/" role="button">English</a></p>
+		    	</div><!-- /.col-lg-6 -->
+		    </div><!-- /.row -->
+         </div>
+      </div>
+  </div>
+
+
+
+    <div class="jumbotron container-fluid">
+      <div class="bgPic2">
+        <div class="col-md-6">
+        <a href="/Lijiang_China/">
+          <h1><font face = "Tahoma" color = "White">Li Jiang </font><small><font face = "Tahoma" color = "White">China</small></font></h1>
+          </a>
+          <p><font face = "Tahoma" color = "White">Lìjiāng(丽江) is a prefecture-level city in the northwest of Yunnan, China. It has an area of 8,193 sq. mi and had a population of 1,244,769 at the 2010 census. Lijiang City replaced the former administrative region of Lijiang Prefecture which was under the rule of the Mu family local commanders during the Ming Dynasty and Qing Dynasty. In ancient times, it used to be the center of silk embroidery in the southwest of China and the most important place of the Ancient Southern Silk Road, also called the Ancient Tea and Horse Road or Ancient tea route.</font></p>
+
+        </div>
+         <div class="col-md-6">
+			<div class="row">
+			    <div class="lang">
+		 		    <h1><font face = "Tahoma" color = "White">Language</font></h1>
+		    	</div>
+		    </div>
+		    <div class="row">
+			    <div class="col-md-3">
+				   <p><a class="btn btn-lg btn-warning" href="/Chinese/" role="button">Chinese 中文</a></p>
+		    	</div><!-- /.col-lg-6 -->
+				<div class="col-md-3"></div>
+			    <div class="col-md-3">
+			    	<p><a class="btn btn-lg btn-warning" href="#" role="button">Tibetan བོད་སྐད།</a></p>
+		    	</div><!-- /.col-lg-6 -->
+		    </div><!-- /.row -->
+         </div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+    <div class="jumbotron container-fluid">
+      <div class="bgPic3">
+        <div class="col-md-6">
+         <a href="/Cape_Town_South_Africa/">
+          <h1><font face = "Tahoma" color = "White">Cape Town </font><small><font face = "Tahoma" color = "White">South Africa</small></font></h1>
+          </a>
+          <p><font face = "Tahoma" color = "White">Cape Town is the second-most populous city in South Africa, after Johannesburg, and the provincial capital and primate city of the Western Cape. The City is famous for its harbour, for its natural setting in the Cape floral kingdom. It is a very scenic city. You can take in the the beautiful scenery on the safari tours.</font></p>
+        </div>
+         <div class="col-md-6">
+			<div class="row">
+			    <div class="lang">
+		 		    <h1><font face = "Tahoma" color = "White">Language</font></h1>
+		    	</div>
+		    </div>
+		    <div class="row">
+			    <div class="col-md-3">
+				    <p><a class="btn btn-lg btn-warning" href="#" role="button">Afrikaans</a></p>
+		    	</div><!-- /.col-lg-6 -->
+			    <div class="col-md-3">
+			    	<p><a class="btn btn-lg btn-warning" href="/English/" role="button">English</a></p>
+		    	</div><!-- /.col-lg-6 -->
+			    <div class="col-md-3">
+			    	<p><a class="btn btn-lg btn-warning" href="#" role="button">Xhosa IsiXhosa</a></p>
+		    	</div><!-- /.col-lg-6 -->
+		    </div><!-- /.row -->
+         </div>
+      </div>
+  </div>
+
+
+
+  <div class="bar3 container-fluid"></div>
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+ <script type="/static/bootstrap/js/docs.min.js"></script>
+
+</body>
+</html>
