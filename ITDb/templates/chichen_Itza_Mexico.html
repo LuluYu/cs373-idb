@@ -134,9 +134,9 @@
   function initialize() {
     var mapOptions = {
 
-      zoom: 5,
+      zoom: 3,
 
-      center: new google.maps.LatLng(20.6829,-88.5686)
+      center: new google.maps.LatLng(-2.605433, 17.703638)
     };
     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
@@ -154,13 +154,29 @@
       optimized:false
     })
 
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(-33.944612, 18.476158),
+      map: map,
+      title: 'Cape Town, South Africa',
+      icon: img,
+      draggable: false,
+      optimized:false
+    })
+
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(26.864663, 100.229130),
+      map: map,
+      title: 'Li Jiang, China',
+      icon: img,
+      draggable: false,
+      optimized:false
+    })
   }
 
   
   google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
-
 
 <body>
 
@@ -246,7 +262,7 @@
   		</div><!-- /.row -->
 	</div>
 
-  <div id="map-canvas"> </div>
+  <div class="mapmar" id="map-canvas"> </div>
 	
 	<!-- Bootstrap core JavaScript
     ================================================== -->
