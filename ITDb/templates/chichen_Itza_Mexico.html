@@ -13,11 +13,18 @@
     <!-- Custom styles for this template -->
     <link href="navbar.css" rel="stylesheet">
     <!-- ESTP QUE ESTA AQUI!!!! -->
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
 
+    <script src="/static/bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
 
 </head>
 
 <style type="text/css">
+ @font-face { font-family:awesome; src:url("/static/styles_design/flappyBirdFont.TTF"); }
   .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
     background-color: #e2a846;
     color:#ffffff;
@@ -47,7 +54,7 @@
   }
 
    .bgPic {
-  	background-image: url("/static/styles_design/chichen-itza-mexico-2009.png");
+  	background-image: url("/static/styles_design/chichen-itza-mexico-2009_dark.png");
   	height: 400px;
   	margin-top: -69px;
   	margin-bottom: -50px;
@@ -60,13 +67,15 @@
     .bgimg2 {
   	background-image: url("/static/styles_design/midbg.png");
   	/*height: 158px;*/
-  	height: 245px;
+  	/*height: 520px;*/
   	margin-top: -10px;
-  	margin-bottom: -10px;
+  	margin-bottom: -20px;
   	margin-left: -10px;
   	margin-right: -10px;
+    background-position: bottom;
   	background-repeat: repeat-x;
-  	background-color: #f8e0a7;
+  	background-color: #d3f4ff;
+    padding-bottom: 60px;
   }
 
    .bgimg3 {
@@ -112,9 +121,60 @@
   	margin-left: 70px;
   }
 
+   html, body, #map-canvas {
+    height: 100%;
+    margin: 0px;
+    margin-top: -20px;
+    padding: 0px;
+    
+  }
+
+   .lang h1 {
+  	text-shadow: 0px 0px 5px #000;
+  	color: #fefba7;
+  	font-family:awesome;
+  }
+
 
 </style>
 
+<!-- Google Map -->
+<script type="text/javascript"
+
+  src="https://maps.googleapis.com/maps/api/js?Key=AIzaSyDqgEKn9SN-A15a5emKo1kFGamx7AXYRq4" >
+
+</script>
+<script>
+  var map;
+  function initialize() {
+    var mapOptions = {
+
+      zoom: 6,
+
+      center: new google.maps.LatLng(20.6829,-88.5686)
+    };
+    map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
+
+
+    var img = '/static/styles_design/marker.png';
+
+
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(20.6829,-88.5686),
+      map: map,
+      title: 'Chichen Itza, Mexico',
+      icon : img,
+      draggable: false,
+      optimized:false
+    })
+
+  }
+
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
 
 <body>
 
@@ -139,9 +199,12 @@
 
 	<div class="jumbotron container-fluid">
 			<div class="bgPic">
-			<h1>Chichen Itza <small>Mexico</small></h1>
-			<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-			<p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+        <div class="col-md-6">
+    			<h1><font face = "Tahoma" color = "White">Chichen Itza </font><small><font face = "Tahoma" color = "White">Mexico</font></small></h1>
+    			<p><font face = "Tahoma" color = "White">This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</font></p>
+
+        </div>
+        <div class="col-md-6"></div>
 			</div>
 	</div>
 
@@ -163,50 +226,48 @@
 				<p><a class="btn btn-lg btn-warning" href="/English/" role="button">English</a></p>
 			</div><!-- /.col-lg-6 -->
 		</div><!-- /.row -->
+
+
+
+
+  		<div class="row">
+  			<div class="lang">
+  				<h1 class="text-align:center">Activities</h1>
+
+  			</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-md-3">
+  				<div class="lang">
+  					<img src="/static/styles_design/chichen1.jpg"  class="img-thumbnail" alt="Responsive image">
+  				</div>
+  			</div><!-- /.col-lg-6 -->
+  			<div class="col-md-3">
+  				<div class="lang">
+  					<img src="/static/styles_design/chichen2.jpg"  class="img-thumbnail" alt="Responsive image">
+  				</div>
+  			</div><!-- /.col-lg-6 -->
+  			<div class="col-md-3">
+  				<div class="lang">
+  					<img src="/static/styles_design/chichen3.jpg"  class="img-thumbnail" alt="Responsive image">
+  				</div>
+  			</div><!-- /.col-lg-6 -->
+  			<div class="col-md-3">
+  				<div class="lang">
+  					<img src="/static/styles_design/chichen4.jpg"  class="img-thumbnail" alt="Responsive image">
+  				</div>
+  			</div><!-- /.col-lg-6 -->
+  		</div><!-- /.row -->
 	</div>
 
-
-	<div class="bgimg3 container-fluid">
-		<div class="row">
-			<div class="lang">
-				<h1 class="text-align:center">Activities</h1>
-
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3">
-				<div class="lang">
-					<img src="/static/styles_design/chichen1.jpg"  class="img-thumbnail" alt="Responsive image">
-				</div>
-			</div><!-- /.col-lg-6 -->
-			<div class="col-md-3">
-				<div class="lang">
-					<img src="/static/styles_design/chichen2.jpg"  class="img-thumbnail" alt="Responsive image">
-				</div>
-			</div><!-- /.col-lg-6 -->
-			<div class="col-md-3">
-				<div class="lang">
-					<img src="/static/styles_design/chichen3.jpg"  class="img-thumbnail" alt="Responsive image">
-				</div>
-			</div><!-- /.col-lg-6 -->
-			<div class="col-md-3">
-				<div class="lang">
-					<img src="/static/styles_design/chichen4.jpg"  class="img-thumbnail" alt="Responsive image">
-				</div>
-			</div><!-- /.col-lg-6 -->
-		</div><!-- /.row -->
-	</div>
-
-	<div class="bar2 container-fluid"></div>
-
-	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7630308.489825898!2d-89.57822119999999!3d20.963091699999886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5670e55921ff95%3A0x8d80ca03f96180a7!2sChichen+Itza!5e0!3m2!1sen!2sus!4v1404891690225" width="1400" height="500" frameborder="0" style="border:0"></iframe>
+  <div height="500px" id="map-canvas"> <h1>hello</h1></div>
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-
+    <script type="/static/bootstrap/js/docs.min.js"></script>
 <!-- ESTO AQUI -->
 </body></html>
 
