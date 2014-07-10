@@ -1,0 +1,210 @@
+<!-- <html><head>
+<title>Chinese</title>
+</head><body>
+
+<h1>The Chinese Language</h1>
+
+<table width="100%" border="1">
+<tr>
+  <th>Cities</th>
+  <th>Activities</th>
+</tr>
+<tr>
+  <td><a href="{% url 'content_display.views.lijiang_China' %}">Li Jiang, China</a></td>
+  <td>
+    <ul>
+      <li><a href="{% url 'content_display.views.sceneries' %}">Scenery</a></li>
+      <li><a href="">Housing</a></li>
+      <li><a href="">Cultural</a></li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td>
+    <a href="">Nan Jing, China</a>
+  </td>
+  <td>
+    <ul>
+      <li><a href="">Food</a></li>
+      <li><a href="">Shopping</a></li>
+      <li><a href="{% url 'content_display.views.historical' %}">Historical</a></li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td>Singapore, Singapore</td>
+  <td>
+    <ul>
+      <li><a href="">Shopping</a></li>
+    </ul>
+  </td>
+</tr>
+</table>
+
+<h4><a href="{% url 'content_display.views.index' %}">Home</a></h4>
+
+</body></html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Flappy World : Spanish</title>
+
+  <!-- ESTO QUE ESTA AQUI -->
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="navbar.css" rel="stylesheet">
+    <!-- ESTP QUE ESTA AQUI!!!! -->
+
+<style type="text/css">
+  .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+    background-color: #e2a846;
+    color:#ffffff;
+  }
+  .bgimg {
+    background-image: url("../static/styles_design/bg.png");
+    /*height: 158px;*/
+    margin-top: -20px;
+    background-repeat: repeat-x;
+    background-color: #f8e0a7;
+    padding-bottom:20px; 
+  }
+  .logo{
+    background-image: url("../static/styles_design/logo.png");
+    height: 110px;
+    width: 305px;
+    margin-top: 50px;
+    margin-left: 50px;
+    background-repeat: no-repeat;
+  }
+  .search{
+    margin-top: 60px;
+    margin-left: 60px;
+    width: 350px;
+  }
+  .dropb{
+    width: 30%;
+  }
+
+   .bgPic {
+    background-color: #fffaf3;
+    /*height: 400px;*/
+    margin-top: -69px;
+    margin-bottom: -50px;
+    margin-left: -30px;
+    margin-right: -60px;
+    background-repeat: repeat-x;
+    padding:20px 60px; 
+
+  }
+
+    .bgimg2 {
+    background-image: url("../static/styles_design/midbg.png");
+    /*height: 158px;*/
+    height: 245px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    background-repeat: repeat-x;
+    background-color: #f8e0a7;
+  }
+
+   .bgimg3 {
+    background-image: url("../static/styles_design/flappy.png");
+    /*height: 158px;*/
+    height: 350px;
+    margin-top: -22px;
+    margin-bottom: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    background-repeat: repeat-x;
+    background-color: #f8e0a7;
+  }
+
+.bar1 {
+    background-image: url("../static/styles_design/bar.png");
+    height: 13px;
+    margin-top: -30px;
+    margin-bottom: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    background-repeat: repeat-x;
+    background-color: #f8e0a7;
+  }
+
+  .bar2 {
+    background-image: url("../static/styles_design/bar.png");
+    height: 13px;
+    margin-top: -10px;
+    margin-bottom: -15px;
+    margin-left: -10px;
+    margin-right: -10px;
+    background-repeat: repeat-x;
+    background-color: #f8e0a7;
+  }
+
+
+
+
+  .lang{
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 70px;
+  }
+
+
+</style>
+
+</head>
+
+
+<body>
+
+  <div class="bgimg container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="logo">
+
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+      <div class="col-lg-6">
+        <div class="input-group search">
+          <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
+                </form>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+  </div>
+
+  <div class="jumbotron container-fluid">
+      <div class="bgPic">
+        <h1>Spanish (Espa&ntilde;ol)</h1>
+        <p>Spanish is a part of the Ibero-Romance group of languages, which evolved from several dialects of common Latin in Iberia after the collapse of the Western Roman Empire in the fifth century. It was first documented in central-northern Iberia in the ninth century and gradually spread with the expansion of the Kingdom of Castile into central and southern Iberia. From its beginnings, Spanish vocabulary was influenced by its contact with Basque and by other related Ibero-Romance languages and later absorbed many Arabic words during the Muslim presence in the Iberian Peninsula. It also adopted many words from non-Iberian languages, particularly the Romance languages Occitan, French, Italian and Sardinian and increasingly from English in modern times, as well as adding its own new words. Spanish was taken to the colonies of the Spanish Empire in the sixteenth century, most notably to the Americas as well as territories in Africa, Oceania and the Philippines.</p>
+        <p><a class="btn btn-primary btn-lg" href="http://en.wikipedia.org/wiki/English_language" role="button" target="_blank">Learn more &raquo;</a></p>
+        <h3>Script</h3>
+        <img src="../static/styles_design/spanishscript.jpg">
+        <h3>Spoken In</h3>
+        <div class="row">
+          <div class="col-md-3">
+            <p><a class="btn btn-lg btn-warning" href="/Chichen_Itza_Mexico/" role="button">Chichen Itza, Mexico</a></p>
+          </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+      </div>
+  </div>
+  <div class="bar2 container-fluid"></div>
+
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
