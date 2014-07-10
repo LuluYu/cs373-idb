@@ -1,4 +1,4 @@
-<html><head>
+<!-- <html><head>
 <title>Chinese</title>
 </head><body>
 
@@ -43,4 +43,169 @@
 
 <h4><a href="{% url 'content_display.views.index' %}">Home</a></h4>
 
-</body></html>
+</body></html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Chinese</title>
+
+	<!-- ESTO QUE ESTA AQUI -->
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="navbar.css" rel="stylesheet">
+    <!-- ESTP QUE ESTA AQUI!!!! -->
+
+<style type="text/css">
+  .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+    background-color: #e2a846;
+    color:#ffffff;
+  }
+  .bgimg {
+  	background-image: url("../static/styles_design/bg.png");
+  	/*height: 158px;*/
+  	margin-top: -20px;
+  	background-repeat: repeat-x;
+  	background-color: #f8e0a7;
+  }
+  .logo{
+  	background-image: url("../static/styles_design/logo.png");
+  	height: 110px;
+  	width: 305px;
+  	margin-top: 50px;
+  	margin-left: 50px;
+  	background-repeat: no-repeat;
+  }
+  .search{
+  	margin-top: 60px;
+  	margin-left: 60px;
+  	width: 350px;
+  }
+  .dropb{
+  	width: 30%;
+  }
+
+   .bgPic {
+  	background-color: #fffaf3;
+  	/*height: 400px;*/
+  	margin-top: -69px;
+  	margin-bottom: -50px;
+  	margin-left: -30px;
+  	margin-right: -60px;
+  	background-repeat: repeat-x;
+
+  }
+
+    .bgimg2 {
+  	background-image: url("../static/styles_design/midbg.png");
+  	/*height: 158px;*/
+  	height: 245px;
+  	margin-top: -10px;
+  	margin-bottom: -10px;
+  	margin-left: -10px;
+  	margin-right: -10px;
+  	background-repeat: repeat-x;
+  	background-color: #f8e0a7;
+  }
+
+   .bgimg3 {
+  	background-image: url("../static/styles_design/flappy.png");
+  	/*height: 158px;*/
+  	height: 350px;
+  	margin-top: -22px;
+  	margin-bottom: -10px;
+  	margin-left: -10px;
+  	margin-right: -10px;
+  	background-repeat: repeat-x;
+  	background-color: #f8e0a7;
+  }
+
+.bar1 {
+  	background-image: url("../static/styles_design/bar.png");
+  	height: 13px;
+  	margin-top: -30px;
+  	margin-bottom: 10px;
+  	margin-left: -10px;
+  	margin-right: -10px;
+  	background-repeat: repeat-x;
+  	background-color: #f8e0a7;
+  }
+
+  .bar2 {
+  	background-image: url("../static/styles_design/bar.png");
+  	height: 13px;
+  	margin-top: -10px;
+  	margin-bottom: -15px;
+  	margin-left: -10px;
+  	margin-right: -10px;
+  	background-repeat: repeat-x;
+  	background-color: #f8e0a7;
+  }
+
+
+
+
+  .lang{
+  	margin-top: 40px;
+  	margin-bottom: 30px;
+  	margin-left: 70px;
+  }
+
+
+</style>
+
+</head>
+
+
+<body>
+
+	<div class="bgimg container-fluid">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="logo">
+
+				</div><!-- /input-group -->
+			</div><!-- /.col-lg-6 -->
+			<div class="col-lg-6">
+				<div class="input-group search">
+					<form class="navbar-form navbar-right">
+								<input type="text" class="form-control" placeholder="Search...">
+								</form>
+				</div><!-- /input-group -->
+			</div><!-- /.col-lg-6 -->
+		</div><!-- /.row -->
+	</div>
+
+	<div class="jumbotron container-fluid">
+			<div class="bgPic">
+				<h1>Chinese 中文</h1>
+				<p>After the fall of the Northern Song dynasty, and during the reign of the Jin and Yuan dynasties in northern China, a common speech developed based on the dialects of the North China Plain around the capital, a language referred to as Old Mandarin. The present Chinese language varieties developed from regional variants of Old Chinese and Middle Chinese. In the early years of the Republic of China, intellectuals of the New Culture Movement, such as Hu Shih and Chen Duxiu, successfully campaigned for the replacement of Literary Chinese as the written standard by written vernacular Chinese, which was based on northern dialects. A parallel priority was the definition of a standard national language. After much dispute between proponents of northern and southern dialects and an abortive attempt at an artificial pronunciation, the National Language Unification Commission finally settled on the Beijing dialect in 1932, which is retained till today.</p>
+				<p><a class="btn btn-primary btn-lg" href="http://en.wikipedia.org/wiki/Mandarin_Chinese" role="button">Learn more &raquo;</a></p>
+				<h3>Script</h3>
+				<img src="../static/styles_design/chinesescript.jpg">
+				<h3>Spoken In</h3>
+				<div class="row">
+					<div class="col-md-3">
+						<p><a class="btn btn-lg btn-warning" href="/Lijiang_China/" role="button">Li Jiang, China</a></p>
+					</div><!-- /.col-lg-6 -->
+					<div class="col-md-3">
+						<p><a class="btn btn-lg btn-warning" href="#" role="button">Nan Jing, China</a></p>
+					</div><!-- /.col-lg-6 -->
+				</div><!-- /.row -->
+			</div>
+	</div>
+	<div class="bar2 container-fluid"></div>
+
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
