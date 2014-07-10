@@ -71,7 +71,6 @@
     margin-top: -20px;
     background-repeat: repeat-x;
     background-color: #f8e0a7;
-    padding-bottom:20px; 
   }
   .logo{
     background-image: url("../static/styles_design/logo.png");
@@ -168,9 +167,9 @@
   <div class="bgimg container-fluid">
     <div class="row">
       <div class="col-lg-6">
-        <div class="logo">
+        <a href="/index/"><div class="logo">
 
-        </div><!-- /input-group -->
+        </div></a><!-- /input-group -->
       </div><!-- /.col-lg-6 -->
       <div class="col-lg-6">
         <div class="input-group search">
@@ -180,6 +179,40 @@
         </div><!-- /input-group -->
       </div><!-- /.col-lg-6 -->
     </div><!-- /.row -->
+  </div>
+
+
+
+  <div class="navbar navbar-custom" role="navigation">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+          <li class="dropdown ">
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><a href="{% url 'content_display.views.lijiang_China' %}">Li Jiang, China</a></li>
+                  <li><a href="{% url 'content_display.views.chichen_Itza_Mexico' %}">Chichen Itza, Mexico</a></li>
+                  <li><a href="{% url 'content_display.views.capeTown_SouthAfrica' %}">Cape Town, South Africa</a></li>
+                  <li class="divider"></li>
+              </ul>
+          </li>
+          <li class="dropdown ">
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><a href="{% url 'content_display.views.english' %}">English</a></li>
+                  <li><a href="{% url 'content_display.views.spanish' %}">Spanish</a></li>
+                  <li><a href="{% url 'content_display.views.chinese' %}">Chinese</a></li>
+              </ul>
+          </li>
+          <li class="dropdown ">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="{% url 'content_display.views.sceneries' %}">Sceneries</a></li>
+              <li><a href="{% url 'content_display.views.historical' %}">Historical</a></li>
+              <li><a href="#">Housing</a></li>
+            </ul>
+          </li>
+      </ul>
+    </div>
   </div>
 
   <div class="jumbotron container-fluid">
