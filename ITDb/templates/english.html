@@ -1,50 +1,285 @@
+
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>English Language</title>
 
-<html><head>
-<title>English</title>
-</head><body>
+  <!-- ESTO QUE ESTA AQUI -->
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="navbar.css" rel="stylesheet">
+    <!-- ESTP QUE ESTA AQUI!!!! -->
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
 
-<h1>The English Language</h1>
+    <script src="/static/bootstrap/js/ie-emulation-modes-warning.js"></script>
 
-<table width="100%" border="1">
-<tr>
-	<th>Cities</th>
-	<th>Activities</th>
-</tr>
-<tr>
-	<td><a href="{% url 'content_display.views.capeTown_SouthAfrica' %}">Cape Town, South Africa</a></td>
-	<td>
-		<ul>
-			<li><a href="{% url 'content_display.views.sceneries' %}">Scenery</a></li>
-			<li><a href="">Housing</a></li>
-			<li>Outdoor Recreation</li>
-		</ul>
-	</td>
-</tr>
-<tr>
-	<td>
-		United States
-	</td>
-	<td>
-		<ul>
-			<li><a href="">Food</a></li>
-			<li><a href="">Shopping</a></li>
-			<li><a href="{% url 'content_display.views.historical' %}">Historical</a></li>
-		</ul>
-	</td>
-</tr>
-<tr>
-	<td><a href="{% url 'content_display.views.chichen_Itza_Mexico' %}">Chichen Itza, Mexico</td>
-	<td>
-		<ul>
-			<li><a href="{% url 'content_display.views.sceneries' %}">Scenery</a></li>
-			<li><a href="{% url 'content_display.views.historical' %}">Historical</a></li>
-			<li><a href="">Food</a></li>
-		</ul>
-	</td>
-</tr>
-</table>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
 
-<h4><a href="{% url 'content_display.views.index' %}">Home</a></h4>
+</head>
 
+<style type="text/css">
+ @font-face { font-family:awesome; src:url("/static/styles_design/flappyBirdFont.TTF"); }
+  .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+    background-color: #e2a846;
+    color:#ffffff;
+  }
+  .bgimg {
+    background-image: url("/static/styles_design/bg.png");
+    /*height: 158px;*/
+    margin-top: -20px;
+    background-repeat: repeat-x;
+    background-color: #f8e0a7;
+    padding-bottom: 25px;
+  }
+  .logo{
+    background-image: url("/static/styles_design/logo.png");
+    height: 110px;
+    width: 305px;
+    margin-top: 50px;
+    margin-left: 50px;
+    background-repeat: no-repeat;
+  }
+  .search{
+    margin-top: 60px;
+    margin-left: 60px;
+    width: 350px;
+  }
+  .dropb{
+    width: 30%;
+  }
+
+   .bgPic {
+    background-image: url("/static/styles_design/chichen-itza-mexico-2009_dark.png");
+    height: 400px;
+    margin-top: -69px;
+    margin-bottom: -50px;
+    margin-left: -30px;
+    margin-right: -60px;
+    background-repeat: repeat-x;
+
+  }
+
+    .bgimg2 {
+    background-image: url("/static/styles_design/midbg.png");
+    /*height: 158px;*/
+    /*height: 520px;*/
+    display: block;
+    width: 100%;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-color: #d3f4ff;
+  }
+
+.bar1 {
+    background-image: url("/static/styles_design/bar.png");
+    height: 13px;
+    margin-top: -30px;
+    margin-bottom: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    background-repeat: repeat-x;
+    background-color: #f8e0a7;
+  }
+
+  .bar2 {
+    background-image: url("/static/styles_design/bar.png");
+    height: 13px;
+    margin-top: -10px;
+    margin-bottom: -15px;
+    margin-left: -10px;
+    margin-right: -10px;
+    background-repeat: repeat-x;
+    background-color: #f8e0a7;
+  }
+
+
+
+
+  .lang{
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 70px;
+  }
+
+   html, body, #map-canvas {
+    height: 100%;
+    margin: 0px;
+    margin-top: -20px;
+    padding: 0px;
+
+  }
+
+   .lang h1 {
+    text-shadow: 0px 0px 5px #000;
+    color: #fefba7;
+    font-family:awesome;
+  }
+
+
+</style>
+
+<!-- Google Map -->
+
+<script>
+  var map;
+  function initialize() {
+    var mapOptions = {
+
+      zoom: 6,
+
+      center: new google.maps.LatLng(20.6829,-88.5686)
+    };
+    map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
+
+
+    var img = '/static/styles_design/marker.png';
+
+
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(20.6829,-88.5686),
+      map: map,
+      title: 'English Language',
+      icon : img,
+      draggable: false,
+      optimized:false
+    })
+
+  }
+
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
+<body>
+
+  <div class="bgimg container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="logo">
+
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+      <div class="col-lg-6">
+        <div class="input-group search">
+          <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
+                </form>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+  </div>
+
+
+
+  <div class="jumbotron container-fluid">
+      <div class="bgPic">
+        <div class="col-md-6">
+          <h1><font face = "Tahoma" color = "White">English Language </font><small></small></h1>
+
+        </div>
+        <div class="col-md-6"></div>
+      </div>
+  </div>
+
+     <div class="bar1 container-fluid"></div>
+
+
+
+  <div class="bgimg2 container">
+    <div class="row">
+      <div class="lang">
+        <h1>Cities and Activities</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <p><a class="btn btn-lg btn-warning" href="/Cape_Town_South_Africa/" role="button">Cape Town, South Africa</a></p>
+      </div><!-- /.col-lg-6 -->
+      <div class="col-md-3">
+        <p><a class="btn btn-lg btn-warning" href="/Chichen_Itza_Mexico/" role="button">Chichen Itza, Mexico</a></p>
+      </div><!-- /.col-lg-6 -->
+      <div class="col-md-3">
+        <p><a class="btn btn-lg btn-warning" href="/Lijiang_China/" role="button">Li Jiang, China</a></p>
+
+      </div><!-- /.col-lg-6 -->
+
+      <div class="navbar navbar-custom" role="navigation">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+			    <li class="dropdown ">
+			    	<a href ="/index/" class="dropdown-toggle role="button">Home</a>
+			    </li>
+			    <li class="dropdown ">
+			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
+			        <ul class="dropdown-menu">
+			            <li><a href="{% url 'content_display.views.lijiang_China' %}">Li Jiang, China</a></li>
+			            <li><a href="{% url 'content_display.views.chichen_Itza_Mexico' %}">Chichen Itza, Mexico</a></li>
+			            <li><a href="{% url 'content_display.views.capeTown_SouthAfrica' %}">Cape Town, South Africa</a></li>
+			            <li class="divider"></li>
+			        </ul>
+			    </li>
+			    <li class="dropdown ">
+			    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
+			    	<ul class="dropdown-menu">
+			    		<li><a href="{% url 'content_display.views.sceneries' %}">Sceneries</a></li>
+			    		<li><a href="{% url 'content_display.views.historical' %}">Historical</a></li>
+			    		<li><a href="#">Housing</a></li>
+			    	</ul>
+			    </li>
+
+
+			</ul>
+		</div>
+	</div>
+
+    </div><!-- /.row -->
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="lang">
+            <img src="/static/styles_design/chichen1.jpg"  class="img-thumbnail" alt="Responsive image">
+          </div>
+        </div><!-- /.col-lg-6 -->
+        <div class="col-md-3">
+          <div class="lang">
+            <img src="/static/styles_design/chichen2.jpg"  class="img-thumbnail" alt="Responsive image">
+          </div>
+        </div><!-- /.col-lg-6 -->
+        <div class="col-md-3">
+          <div class="lang">
+            <img src="/static/styles_design/chichen3.jpg"  class="img-thumbnail" alt="Responsive image">
+          </div>
+        </div><!-- /.col-lg-6 -->
+        <div class="col-md-3">
+          <div class="lang">
+            <img src="/static/styles_design/chichen4.jpg"  class="img-thumbnail" alt="Responsive image">
+          </div>
+        </div><!-- /.col-lg-6 -->
+      </div><!-- /.row -->
+  </div>
+
+
+
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="/static/bootstrap/js/docs.min.js"></script>
+<!-- ESTO AQUI -->
 </body></html>
+
+<!-- border, box-shadow, media-screen -->
