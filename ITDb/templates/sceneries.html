@@ -57,7 +57,7 @@
     background-position:center center;
     background-size:cover;
     padding:20px 60px;
-    height: 410px;
+    height: 550px;
     margin-top: -69px;
     margin-bottom: -56px;
     margin-left:-5%;
@@ -72,6 +72,7 @@
   }
   #china { 
     background-image: url("../static/styles_design/lijiang_dark.jpg");
+    /*width:550px;*/
   }
   #africa { 
     background-image: url("../static/styles_design/safari2.jpg");
@@ -83,6 +84,16 @@
     }
   }
 
+  @media only screen and (max-width : 650px) {
+    
+    .bgPic {
+      height: 900px;
+    }
+    #china { 
+      height: 1400px;
+    }
+    .navbar-form { width:200px; }
+  }
     .bgimg2 {
   	background-image: url("../static/styles_design/midbg.png");
   	/*height: 158px;*/
@@ -162,13 +173,6 @@
         <a href="/index/"><div class="logo">
 
         </div></a><!-- /input-group -->
-			</div><!-- /.col-lg-6 -->
-			<div class="col-lg-6">
-				<div class="input-group search">
-					<form class="navbar-form navbar-right">
-								<input type="text" class="form-control" placeholder="Search...">
-								</form>
-				</div><!-- /input-group -->
 			</div><!-- /.col-lg-6 -->
 		</div><!-- /.row -->
 		</div>
