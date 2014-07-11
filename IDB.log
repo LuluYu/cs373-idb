@@ -1,0 +1,1222 @@
+commit 9a1a4ae4fb3d8771fc2a1efbec3312b375ef8999
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Fri Jul 11 02:07:12 2014 +0000
+
+    Updated info for activities.
+
+commit 889d4a95051a636caab5c856f998c12cadd8edbf
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Thu Jul 10 20:58:39 2014 -0500
+
+    added link, and change capetown pic
+
+commit 63823c67c284127ce10ee4a72c3194860c5e7120
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Fri Jul 11 01:58:39 2014 +0000
+
+    Added links for Housing page
+
+commit e4688dc5c56a81eb048439a184534f356a5c240f
+Merge: d595b25 8be7ff6
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Fri Jul 11 01:46:31 2014 +0000
+
+    Merge branch 'master' of https://github.com/LuluYu/cs373-idb
+
+commit d595b25f9cd1abc0fa98a96d8f0b3aac0fc4f073
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Fri Jul 11 01:46:16 2014 +0000
+
+    deleted search bar from index.
+
+commit 8be7ff6a37740d5c00c2de3c58f8a03feb578ccb
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 20:44:07 2014 -0500
+
+    removed search bar from pages (except for index)
+
+commit 8820d5483619cca637c918da9dab2c887f5385c8
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 20:38:37 2014 -0500
+
+    Fixed some stuff and search bar
+
+commit 1d3cdd2bb8606c14916f024af364be6600169498
+Merge: 743a3f6 6660be6
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 20:27:45 2014 -0500
+
+    Merge branch 'master' of https://github.com/jlc3938/cs373-idb
+
+commit 743a3f64ac2a00050fe339518255f98a1537fdac
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 20:27:36 2014 -0500
+
+    Fixed responsiveness on cities and activities
+
+commit 6660be651406182995cf4d020c3f1bf7702259aa
+Merge: 81f7967 83df13d
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Fri Jul 11 01:25:59 2014 +0000
+
+    Merge branch 'master' of https://github.com/LuluYu/cs373-idb
+
+commit 81f7967d38ac61293ccdb14f32358b41676dbec0
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Fri Jul 11 01:25:53 2014 +0000
+
+    added all models.
+
+commit 507e4a12b39507df61a0cbe4404d423a02432869
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Fri Jul 11 01:23:44 2014 +0000
+
+    changing the models.
+
+commit 83df13dd12c194c9c2f3790a92fc00b207f6ea3d
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Thu Jul 10 20:21:58 2014 -0500
+
+    try linking the birds on map to webpages.
+
+commit 69fef3bef6181390909c8a8cb6236f40d624093a
+Merge: 0a22ee8 5ae1555
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Fri Jul 11 01:21:24 2014 +0000
+
+    Merge branch 'master' of https://github.com/LuluYu/cs373-idb
+
+commit 0a22ee81b0e4da1c407ce2b44e1574c7759855be
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Fri Jul 11 01:14:39 2014 +0000
+
+    models.html added inside content_display
+
+commit 5ae15553edb3f51c45380518d6c76e6b9cee9df6
+Merge: 5f25b7e 718436a
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Thu Jul 10 19:35:55 2014 -0500
+
+    Merge branch 'master' of https://github.com/jlc3938/cs373-idb
+
+commit 5f25b7e3182dc8071541ceb3b809df22beed48fe
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Thu Jul 10 19:35:50 2014 -0500
+
+    add Report.pdf
+
+commit 718436aa7b6ed87ba299e71f9746a076f0d930ed
+Merge: 3f398e4 defe8c3
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 19:25:48 2014 -0500
+
+    Merge branch 'master' of https://github.com/jlc3938/cs373-idb
+
+commit defe8c3184b478f21c6b221b8c6bf371aac68799
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Thu Jul 10 19:25:25 2014 -0500
+
+    Added buttons
+
+commit 3e6035d3fdd230048fc05f863d8073c8f9bf64ec
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Fri Jul 11 00:25:26 2014 +0000
+
+    Historical updated with facts and links to cities and languages
+
+commit 3f398e458adffe8bb07a85bdffcf60983f0159d2
+Merge: 3b57850 3e6035d
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 19:25:18 2014 -0500
+
+    Merge branch 'master' of https://github.com/jlc3938/cs373-idb
+
+commit 3b578506250e777fb48ac92c86045c57a92cfc95
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 19:22:35 2014 -0500
+
+    Linked images on cities
+
+commit ee6d2210e64fd24fc5098818f9fec1b8c893f32d
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Fri Jul 11 00:07:57 2014 +0000
+
+    links work
+
+commit 1b08f700f5968cfc20448431bf72d05a1d8a69ae
+Merge: 7474908 5e3a79a
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Fri Jul 11 00:04:55 2014 +0000
+
+    Merge branch 'master' of https://github.com/LuluYu/cs373-idb
+
+commit 7474908e28502b1db5e42a837521e06bbc66d760
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Fri Jul 11 00:04:05 2014 +0000
+
+    historical page done
+
+commit fead8d1df482703ec7ab8c649e3f014ff2f21c5b
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Thu Jul 10 23:52:15 2014 +0000
+
+    changed permissions
+
+commit c44c4a27a2e9abaf8d8556ddd3e961c78f5a143c
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Thu Jul 10 23:49:05 2014 +0000
+
+    added historical
+
+commit 34619b0a1b85368d437631150d67e6dfe24bdc23
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Thu Jul 10 23:46:56 2014 +0000
+
+    adding changes to index
+
+commit 5e3a79a3bceeda8ab86b868d45947e69e81f2e58
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Thu Jul 10 18:44:40 2014 -0500
+
+    fixing the view, fixing page
+
+commit ab1c4fb0ddefae48c56891d160ccef5c379117bf
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Thu Jul 10 23:38:11 2014 +0000
+
+    index merge
+
+commit d030800b1637fbdd8fbf7c65e8ba29cd476b79c7
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Thu Jul 10 18:35:43 2014 -0500
+
+    added housing page, and link on every page
+
+commit ea58936e94337ac83a893cf17d89291b14096b2d
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 18:18:34 2014 -0500
+
+    added original cape4
+
+commit 7c7a8f501d387f77a582b8aedba7e32af4403efc
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 18:17:29 2014 -0500
+
+    added dark image of cape4
+
+commit bd7849c695d88937eca011778f60551103404f9d
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 18:16:18 2014 -0500
+
+    added dark image for tablebayhotel
+
+commit b05d0ee35e75bb08f4afa04c546b9624d17d75c5
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 18:15:04 2014 -0500
+
+    Added dark image of oldtownoflijiang
+
+commit 3fb45d36715e3875d7554027edb3b2ad4a0cda12
+Merge: 6ec489d fd92b43
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 18:13:45 2014 -0500
+
+    Merge branch 'master' of https://github.com/jlc3938/cs373-idb
+
+commit 6ec489dd77ab2417d2dac4948fe76d31dde7a52c
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 18:13:40 2014 -0500
+
+    added a photoshop file for languages
+
+commit fd92b43268c2ba420d6c57cbe06717212177c9f5
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Thu Jul 10 18:06:17 2014 -0500
+
+    deleted folders that are not used anymore.
+
+commit d980043155738cd78cfc3630eb657d46a001a26e
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Thu Jul 10 22:03:43 2014 +0000
+
+    finished fixing margin, padding, white spaces in the cities pages. Deleted 'Home' buttons under city descriptions.
+
+commit eee47c9a94a7af4899fddbeb24032161b036070f
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Thu Jul 10 21:40:24 2014 +0000
+
+    Fixed all padding/white space problems on lijiang page :) will start implementing the same with other pages.
+
+commit 956980657d4e3500e1457d9bb2e689b7b248e1c3
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Thu Jul 10 21:14:47 2014 +0000
+
+    aligned all text paragraphs and added description for Chichen Itza.
+
+commit 9e701935c9cdde0fd2d36512f4158e24fe8833ed
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Thu Jul 10 21:10:04 2014 +0000
+
+    Justified text paragraphs for chinese page so they are aligned both sides.
+
+commit 28b94ecd75f46b98278f4fc30225d1c3c99487a5
+Merge: cf877ce 63ba81d
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Thu Jul 10 20:58:40 2014 +0000
+
+    merge fix
+
+commit cf877ce5bfb70c48b267012058a7d6fd44670e9b
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Thu Jul 10 20:52:53 2014 +0000
+
+    trying to fix github on pythonanywhere
+
+commit 3c0e527dfc93e90dcd247f89eba88d242bfbc4b5
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Thu Jul 10 20:45:57 2014 +0000
+
+    trying to fix merging errors
+
+commit 4f1416bf7846618c5149f89a0726f39e38800018
+Merge: 3ed6179 80dd1ee
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Thu Jul 10 20:45:13 2014 +0000
+
+    sceneries twitter bootstrapped
+
+commit 63ba81db21b5613093ee1f4663f84bb91fe285f1
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Thu Jul 10 15:36:00 2014 -0500
+
+    Fixed maps in
+
+commit 400482193a494872f59a5d0dff6f86251c83082d
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Thu Jul 10 13:50:17 2014 -0500
+
+    white space bug fixed for languages. #11
+
+commit b5f46efe01c5138d1638ee63addb11fe22122097
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Thu Jul 10 13:09:17 2014 -0500
+
+    changed the description of english. Got rid of the margin/white space between bottom bar and the content.
+
+commit 6be3ab9e798cf849259ef8844cb7f04b16aa8606
+Author: Samuel Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 11:51:14 2014 -0500
+
+    Changed background repeat on city banner
+
+commit f0861c3f5dd311d9487419d821aa577b2878072b
+Author: Samuel Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 11:44:35 2014 -0500
+
+    Fixed typo that links to Cape Town on english.html
+
+commit 3ed61790fc6b62673d6410323d9e17f12acc845c
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Thu Jul 10 16:38:43 2014 +0000
+
+    Added lijiang image on pythonanywhere
+
+commit 0be585483203dc01968502f7076080b0c0c8aa1b
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Thu Jul 10 16:38:19 2014 +0000
+
+    Added changes on pythonanywhere
+
+commit 80dd1ee57658c4a282a2d36302c5cf2c466d4f34
+Author: Samuel Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 11:33:58 2014 -0500
+
+    Standardized city pages and added dark images for li jiang and cape town
+
+commit 7123439885d8da4e28adbfa853bc8d0b308b5173
+Author: Samuel Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 10:57:19 2014 -0500
+
+    Removed white line from midbg image
+
+commit fdabc717714715c917de466fa10df04f5d1e16d5
+Author: Samuel Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 10:48:53 2014 -0500
+
+    Added navbar to languages and made logo clickable on languages
+
+commit f4bf3bf431b2e66e855a2b31face59b9e3bde19d
+Author: Samuel Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 10:44:52 2014 -0500
+
+    Added link to spanish from nav bar
+
+commit 4dcb3442f6e13f74a1e61564cd506df70b136945
+Author: Samuel Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 10:42:11 2014 -0500
+
+    Added spanish page #8
+
+commit d3dcaa2b9ba84cce6da9ecd7bb44ce6d1a70270d
+Author: Samuel Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 10:41:59 2014 -0500
+
+    Added/edited languages pages and added some comments +urls #8
+
+commit 8513b8e02b3145bc0948f7e50517f9f2a96e014e
+Author: Samuel Acuna <samueleishion@gmail.com>
+Date:   Thu Jul 10 08:17:36 2014 -0500
+
+    added image for spanish language
+
+commit 8f4dfa3118eafcd9dbd3a39ec349d4b4a2fb1208
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Thu Jul 10 06:45:02 2014 +0000
+
+    separated cities, activities, languages into separate models
+
+commit 2ade8d61f22e9ef1a04724e40c1cf34214d09f9f
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Thu Jul 10 06:31:00 2014 +0000
+
+    English Language page is twitter bootstrapped
+
+commit 342eb731706505333c5b81395a4fa25e25b82200
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 20:53:12 2014 -0500
+
+    padding
+
+commit 84494d975436e557aea981b873e0d06a324c7499
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 20:51:47 2014 -0500
+
+    padding
+
+commit 26221623534688e640e2a7bc9e9565717edc4985
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 20:50:42 2014 -0500
+
+    fixing padding
+
+commit 9da8d0a6d96f2efbba53739e5bb257163d9fe4d1
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 20:47:43 2014 -0500
+
+    trying to fix resized map
+
+commit f2612c462fd4410d63463f0cf1e2ac1b94de9657
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 20:40:49 2014 -0500
+
+    messing with bigm2
+
+commit b187be508555a30c1ee587106cc3cbcda6ad6e35
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 20:39:47 2014 -0500
+
+    trying to fix block
+
+commit aaba8ddfd169849062970e8fb9dd2886d8774e5e
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 20:36:34 2014 -0500
+
+    messing with padding
+
+commit fbad4523fe63315a56fc339ef1eb0a935018c4ec
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 20:34:49 2014 -0500
+
+    Messing with padding
+
+commit a8399a4e4ced94f06da8c586ef5c5f42d20fc235
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 20:32:52 2014 -0500
+
+    Fixing padding
+
+commit ebab98f31ef517cd7565edf27a683ab07a493ea9
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 20:31:51 2014 -0500
+
+    messing with padding
+
+commit 77c32fc3a6fe34dd6c4e8c55c264d84a84531305
+Merge: 0d452b2 56aafa9
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Wed Jul 9 20:21:41 2014 -0500
+
+    Merge branch 'master' of https://github.com/jlc3938/cs373-idb
+
+commit 0d452b2e724763d8668eeff575070c0db6c622db
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Wed Jul 9 20:21:36 2014 -0500
+
+    made Chinese page with bootstrap.
+
+commit 56aafa962287b5e7eaba82a716966737ce0ea2b0
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 20:10:17 2014 -0500
+
+    trying to fix padding
+
+commit 6c1017978e5f4e1acdb0252c6fc2efc083da76aa
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 20:07:55 2014 -0500
+
+    added padding and extra style sheet
+
+commit 83236c0acad2572db1f959754e5524453a60a41e
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 20:03:10 2014 -0500
+
+    working on padding
+
+commit 5edc3f79ea6e6c5dca99b4875856fe4b9e71da3b
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 20:01:42 2014 -0500
+
+    still on map
+
+commit 0a8ad970bc84688f9403a8500433bca32ded31a2
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 20:00:03 2014 -0500
+
+    moving the map
+
+commit 7db8d2f7888f06bbd753bf4b1497970c6d3fe1b2
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 19:58:28 2014 -0500
+
+    map shows
+
+commit 3e6b64d33261ba4faf5737730295fc6e1fe05946
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 19:55:32 2014 -0500
+
+    working on map
+
+commit 675a3d7e02846a8a2a5f7fedfaf28a34ed35cf5c
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Thu Jul 10 00:48:07 2014 +0000
+
+    Font fix
+
+commit 49682f1fc592e01ed8e96b89790962c89d5ceaec
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 19:41:00 2014 -0500
+
+    Working with map
+
+commit 7846712c7078001f0570a6d3fb862b86f76dfac3
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 19:35:44 2014 -0500
+
+    wokr
+
+commit 7b4fe43c5cc107f694e6c9cfe5693aa35b7b603d
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 19:33:51 2014 -0500
+
+    attempting fix
+
+commit eca45fb4db36d564ecf19fdcda78069bc4805e21
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 19:30:06 2014 -0500
+
+    Working on map
+
+commit 282cf0b876e45099b0ddc1c676d980b60a928883
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 19:19:53 2014 -0500
+
+    attempting to connect
+
+commit 525e931f5455dbdb23a3cf26e41768e0a5957617
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 19:12:07 2014 -0500
+
+    fixing map api
+
+commit ee065c1deb450a47bcb3d6048c56343f7862aac3
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 19:10:50 2014 -0500
+
+    Changed the map to use google map API
+
+commit 9b3823ddb4a071590a037059b27b6a049b10bed3
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 18:54:50 2014 -0500
+
+    fixed the margins on the chicen itza
+
+commit 32efeef49d643528537110910cd3fc89a13d0937
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 23:47:52 2014 +0000
+
+    took the learn more button off
+
+commit 86bd3d31547f42bfdb4fc25d6ba84ce980f49615
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 23:44:43 2014 +0000
+
+    changed font face
+
+commit c0780baa1fb8530182b3d08bf85fc773da3e43b0
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 18:35:42 2014 -0500
+
+    better image
+
+commit d2da5b52622ff4ba340f6a44cff1aca62692b006
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Wed Jul 9 18:33:54 2014 -0500
+
+    added darker image for chichen itza
+
+commit c4a0669fb7348eade2ad78282ef5c0c4a560de53
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 18:29:44 2014 -0500
+
+    fixing chichen itza
+
+commit a0cc5d5736bc6f1a885511a89c97c56e9a0eea36
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 23:27:53 2014 +0000
+
+    changed font color
+
+commit 2d5d9f419367bdb5ea952aa1da687c67051ae28a
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 16:54:34 2014 -0500
+
+    moving map down
+
+commit cbe358c599eccc9e8718f6c1b37a20beca6ecb8f
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 15:45:29 2014 -0500
+
+    moving map around
+
+commit 07dda7a6a149394adc70a1e8de90b23be9a80f69
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 15:43:21 2014 -0500
+
+    centered map
+
+commit 46f6c8ae005d20e1532b46d636eb2387b9273557
+Author: Juan P. Mata <jpmata1@gmail.com>
+Date:   Wed Jul 9 15:38:27 2014 -0500
+
+    added cape town pics
+
+commit 9c8b47443f4235623334937cee113aaf99cf9fd5
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 15:37:01 2014 -0500
+
+    Not doing the bouncing thing
+
+commit e281cc9a733dc9184dded46620147fc00119e96d
+Author: Juan P. Mata <jpmata1@gmail.com>
+Date:   Wed Jul 9 15:36:16 2014 -0500
+
+    added cape town info
+
+commit ffba118dba5dda2dd71d74aa83a16c8eb4aec29f
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 15:34:43 2014 -0500
+
+    working on bounce effect
+
+commit 128a132d73cb06e523cc52528ecde41ca29a3d45
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 15:30:47 2014 -0500
+
+    Changed middle of map
+
+commit 87156bce15031671f5ef84a0dee5460dd8923453
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 15:25:47 2014 -0500
+
+    making fishies jump
+
+commit 1d37bf23a9309c24df4accf50c5d4fa81f616684
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 15:22:09 2014 -0500
+
+    marker
+
+commit ff726ff221c58722b0b0b72bb5182c3cf2cceead
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 15:20:37 2014 -0500
+
+    marker problems
+
+commit 16298f430a14bc04ba3c666f0432140778e5eaf5
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 15:18:27 2014 -0500
+
+    Adding markers
+
+commit 89d2675493efb4b9fa794144ffbb6a5505a39ad2
+Merge: 4ba9906 e3ee8c0
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 15:03:38 2014 -0500
+
+    Merge remote-tracking branch 'origin/master'
+    
+    Conflicts:
+    	ITDb/templates/index.html
+
+commit 4ba990605f7137c26497475ce555813d61a65da5
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 15:02:46 2014 -0500
+
+    messing around
+
+commit e3ee8c0b285fdc66f658e0b0617c35f5a7204288
+Merge: 3f17322 e0f06b3
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 20:01:47 2014 +0000
+
+    merge
+
+commit 3f17322c99fc6a1e5f36fe752a45ec7653824c7a
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 19:59:39 2014 +0000
+
+    index merge
+
+commit e0f06b33389fa391b24f54085b9086bf1db9addb
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 14:58:35 2014 -0500
+
+    trying to get image to work
+
+commit d2d25780bd9c4aca72e4ce9988af759ac66a3d72
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 14:44:50 2014 -0500
+
+    trying to fix the path
+
+commit 95542464fad169618cf0cd60b126fa44753c30ba
+Merge: 62483ff ff22a8d
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 19:41:20 2014 +0000
+
+    fixed merge error
+
+commit 131a5a523779a2fe4f33a00ff0af22038a564f07
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 14:39:53 2014 -0500
+
+    finished index page
+
+commit 62483ff992f81af4e14ec483bb5a09463e4f94ad
+Merge: 9eaebe1 4a692f6
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 19:31:49 2014 +0000
+
+    fixed merge
+
+commit ff22a8dbbf935e62713fe77caf509eef758364ad
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 14:30:35 2014 -0500
+
+    same as previous
+
+commit 9eaebe19fe4a38adcf15960113012427851d0956
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 19:30:01 2014 +0000
+
+    nothing here
+
+commit 4a692f6ad92774d929b8401e7679fc1287863733
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 14:28:23 2014 -0500
+
+    fixing zoom on map
+
+commit 35d56ab19f16b83f51392dca9e95f4585a4cf0c5
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 14:26:25 2014 -0500
+
+    Implemented map with markers!!1
+
+commit ca44879b295a9b9351b42affd6f05504e4e630c9
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 19:11:38 2014 +0000
+
+     nothing
+
+commit cac1e6eb7ce3d37a68276aa9c3341c6a1be2740e
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 14:05:20 2014 -0500
+
+    fixed spacing
+
+commit 8cdbe55965cce6a5e4518d887101ba2bd9823e5c
+Merge: e7a7dd9 22d697b
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 19:03:57 2014 +0000
+
+    fixed merge error
+
+commit 22d697b3f0e50e6ad7f51c894507d2073b03b662
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 14:00:36 2014 -0500
+
+    making it fit better
+
+commit e7a7dd9dced89a71c7a6c93f89b05e001cbafe58
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 18:58:24 2014 +0000
+
+    erase something trivial
+
+commit 5cdd6e1a564c8ef2c4f1caf42ecc04ce50785208
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 13:52:45 2014 -0500
+
+    something minimal
+
+commit e9e077d8eb5213d3e3a27a40eae9ba2fde736ebb
+Merge: 7042b72 311c7da
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 18:51:32 2014 +0000
+
+    fixed merging error
+
+commit 311c7daa26644cc6e5fc8fb3e88ae1091510d8fa
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 13:48:56 2014 -0500
+
+    Got the map  to work
+
+commit 1cab21109699ceafdae46c50f4cad0cddd2db282
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 13:36:04 2014 -0500
+
+    messing around with the google map api
+
+commit 7042b72ab690cc9798b8b198ec73d651e08f7dbb
+Merge: 9e5c172 fe32f82
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 18:30:30 2014 +0000
+
+    Merge branch 'master' of https://github.com/LuluYu/cs373-idb
+
+commit fe32f829a8fb9ae6d49ca0b8a6accbffa79f4728
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Wed Jul 9 13:27:16 2014 -0500
+
+    testing if different language scripts show up regularly on the page.
+
+commit 9e5c172cc42b937601c4ee712de78dde66579467
+Merge: d04403c 39806d0
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 18:27:06 2014 +0000
+
+    .git/MERGE_MSG
+    .git/COMMIT_EDITMSG
+    .git/MERGE_MSG
+    .git/MERGE_MSG
+
+commit d04403ca247bbaefd31408599baea8b1d83e8c36
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 18:16:08 2014 +0000
+
+    deleted file
+
+commit dda8e3946f85c50d3a31534c03767b48cfd2b6e7
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 18:13:27 2014 +0000
+
+    error merge here
+
+commit 39806d04ca3217cfc819b881eecf72f3a2cc946a
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 13:07:23 2014 -0500
+
+    fixed css
+
+commit 7adb1ad2a5a720b74acc81153b871e8db0bf8ea6
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 13:00:09 2014 -0500
+
+    Re added sceneries
+
+commit 59bc2dbb5693123e52822fa3f39948cc68484308
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 17:52:43 2014 +0000
+
+    Moved all images into the directory inside of the pythonanywhere folder.
+
+commit e2bd3a5d411d2b5620019b54a09bdbded81a5f27
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Wed Jul 9 12:42:00 2014 -0500
+
+    fixed lijiang page with design.
+
+commit 212ff594a8fbb693638121e7edf76022dfbd89d3
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 12:27:47 2014 -0500
+
+    Testing map API
+
+commit 38dbe80e0600d076659367235606e817a7803b47
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 14:32:29 2014 +0000
+
+    fixed layout with Jose
+
+commit b53ab970bd97813d4dfbba385a3d1c228c7900ff
+Merge: 5c263ad e383dd4
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 09:24:33 2014 -0500
+
+    fixed header
+
+commit 5c263ad668c96330224c355f731ccebe7dacf904
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Wed Jul 9 09:21:31 2014 -0500
+
+    added header
+
+commit e383dd4af0846dd9f73369cfd3c3c9abf8a62fcb
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 14:12:04 2014 +0000
+
+    fixed some links in chichen Itza
+
+commit fde112de42a2c8cd66985784cd292255a3469162
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 13:50:23 2014 +0000
+
+    fixed chichen Itza image load problem moved style_design to static
+
+commit 5a653e42eaf4ec47202a4aa9d4b24c180b9882c5
+Merge: be19343 bfa4330
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 01:28:45 2014 +0000
+
+    Merge branch 'master' of https://github.com/LuluYu/cs373-idb
+    
+    Conflicts:
+    	ITDb/templates/index.html
+
+commit bfa43300e0ebab15bff0c30d9a69ef946653257c
+Author: Juan P. Mata <jpmata1@gmail.com>
+Date:   Tue Jul 8 20:25:42 2014 -0500
+
+    Delete index.html
+
+commit be19343853c38c9c4db5d0708c91c85bdefd24dd
+Merge: 514de03 ef2df0f
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 01:10:59 2014 +0000
+
+    Merge branch 'master' of https://github.com/LuluYu/cs373-idb
+
+commit 514de03e5c27b875b4ef0da99b553c6c3b0b918d
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 01:09:20 2014 +0000
+
+    fixed bootstrap
+
+commit c67a5e83ef9a938e39646e2dd57f53dabdcd244a
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Wed Jul 9 01:05:39 2014 +0000
+
+    fixed bootstrap links
+
+commit ef2df0fa342e0e7a785bec2241be62ab0949808c
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Tue Jul 8 19:23:49 2014 -0500
+
+    added header
+
+commit 128c23c38d61b66487f82bad09994c0a9bed80af
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Tue Jul 8 19:17:32 2014 -0500
+
+    Added new views #2
+
+commit 48b97bf53704f8703a46f27c88eda5ec78e39880
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Tue Jul 8 18:56:08 2014 -0500
+
+    Added style images, fonts, and color hex #2
+
+commit 0d07efefbf64f3d270cbe4a4df61463338b1051f
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Tue Jul 8 18:45:38 2014 -0500
+
+    adding style for background image
+
+commit 5a36f99f092c9cccea5c70d89e757d5fa372b2c7
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Tue Jul 8 18:16:03 2014 -0500
+
+    Added the data collected in a new directory with city info in CityData and pictures.
+
+commit 09cc6b5af064f26077c76d227e74c82e0b91e0b7
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Tue Jul 8 22:52:11 2014 +0000
+
+    fixed error pythonanywhere
+
+commit 224b4b278cf2bddb0d93715b84879aecd1a605ff
+Merge: 7812c7e 9bd96c4
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Tue Jul 8 22:43:21 2014 +0000
+
+    ds
+
+commit 9bd96c430dbcb88cf8b480dc640c4774fde45ddf
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Tue Jul 8 17:42:23 2014 -0500
+
+    added navbar with dropdowns
+
+commit 7812c7e59fd88a12842a752341ece53f87179977
+Merge: 3f8bc5b 85044a8
+Author: Jesus Galvan <FlappyBirds@ip-10-87-6-35.ec2.internal>
+Date:   Tue Jul 8 22:41:16 2014 +0000
+
+    ds
+
+commit 3f8bc5b49c235ee1b0ed570acea4a04510938dbb
+Author: Jesus Galvan <FlappyBirds@ip-10-87-6-35.ec2.internal>
+Date:   Tue Jul 8 22:37:15 2014 +0000
+
+    messing around with index
+
+commit 85044a801a67db3e223e32c0783fa582160fcaa7
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Tue Jul 8 14:07:11 2014 -0500
+
+    Got dropdowns to work, comment where must have line
+
+commit c55f6262f3235a7c6587be90d0ac5fd8c7607b07
+Author: Juan P. Mata <jpmata1@gmail.com>
+Date:   Tue Jul 8 12:32:37 2014 -0500
+
+    took the bare essentials of apiary
+
+commit cc90168ee58ffad9035a6607186371c4508aa0c3
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Mon Jul 7 18:11:21 2014 -0500
+
+    messing around wiht index file
+
+commit 9ea576eae59bdd6f6b2024c8c9898202c1931a64
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Mon Jul 7 17:13:02 2014 -0500
+
+    added bootstrap standard template to index.html
+
+commit 1d10e67c3b7e71baff1e9e01081cbee771597657
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Mon Jul 7 16:48:57 2014 -0500
+
+    renamed bootstrap
+
+commit e894f423c2d4e12a8ec90c292d97c9fb6575eccb
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Mon Jul 7 14:18:41 2014 -0500
+
+    added Twitter Bootstrap files
+
+commit 352010f9fddc3945be7870d46210e35d0408d6d2
+Author: samueleishion <samueleshion@gmail.com>
+Date:   Mon Jul 7 08:02:47 2014 -0500
+
+    Fixed typo (missed double quotes) #5
+
+commit 06b0b0e76af1c48c82597a5d5cd2c07a9aa32dd0
+Author: samueleishion <samueleshion@gmail.com>
+Date:   Mon Jul 7 07:57:50 2014 -0500
+
+    Added api doc for cities and activities #5
+
+commit 2ed44b4d2b377133a3cad5ae3609cb41c58d3b2e
+Author: samueleishion <samueleshion@gmail.com>
+Date:   Sun Jul 6 23:31:25 2014 -0500
+
+    Added doc for retrieving language by name #5
+
+commit c12db847e7ce7f37455a08db531b46ec184e897b
+Author: Jesus Galvan <FlappyBirds@ip-10-87-6-35.ec2.internal>
+Date:   Mon Jul 7 03:52:22 2014 +0000
+
+    pythonanywhere linked
+
+commit cfb1a13f10481c3d2a3e9c86adb9c189f4dacd45
+Author: Jesus Galvan <FlappyBirds@ip-10-87-6-35.ec2.internal>
+Date:   Mon Jul 7 03:47:41 2014 +0000
+
+    not a real commit
+
+commit 8fe7ea6a935ebb0a22e958d1c711d976489ead38
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Sun Jul 6 17:55:35 2014 -0500
+
+    Updated the documentations for API for Languages.
+
+commit b0b82ecc106549a83639c4295e6a2935d67b1b86
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Sun Jul 6 17:21:46 2014 -0500
+
+    Transferring blueprint from apiary.io Change back to before testing sync. Apiary syncs both way with github!!
+
+commit f53142c7ab443c499b6858264389993b40eec47b
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Sun Jul 6 17:20:29 2014 -0500
+
+    testing if apiary syncs with github both ways.
+
+commit 0c88457f36e032c21551067d694027b2e6165c32
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Sun Jul 6 16:42:11 2014 -0500
+
+    Transferring blueprint from apiary.io
+
+commit 5188a3159f0c42d5630b42af5148e2baa3308508
+Author: Daniel Garza <dgza88@utexas.edu>
+Date:   Sun Jul 6 16:31:18 2014 -0500
+
+    Added Tables.txt file
+
+commit 0c0a0bf34ba0005b8579a2a8d349c18054cf12b3
+Author: Daniel Garza <dgza88@utexas.edu>
+Date:   Sun Jul 6 16:29:14 2014 -0500
+
+    added gitignore
+
+commit 0f9cf389b164f6607875ecbc85a049c0cd422511
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Sun Jul 6 20:17:47 2014 +0000
+
+    pythonanywhere files
+
+commit 714d6b672c500978edcf5566e92a40e48df7b4f0
+Author: Juan P. Mata <jpmata1@gmail.com>
+Date:   Sat Jul 5 18:28:51 2014 -0500
+
+    added link to english
+
+commit 02a8a66931d61618497500ecf7d478740f75dc6a
+Author: Juan P. Mata <jpmata1@gmail.com>
+Date:   Sat Jul 5 18:27:28 2014 -0500
+
+    created English.html and added links in other pages
+
+commit 6923f5b360feae0127b0167c16baddc2ae2c5a8d
+Author: Juan P. Mata <jpmata1@gmail.com>
+Date:   Sat Jul 5 18:14:07 2014 -0500
+
+    changed to shorter name for cleaner look in code
+
+commit d2a829e8eac8218756cac062d6dfc551560184f7
+Author: Juan P. Mata <jpmata1@gmail.com>
+Date:   Sat Jul 5 18:10:38 2014 -0500
+
+    changed to shorter name for cleaner look in code
+
+commit b99dcc67054f6fcc21059fe2bfd86282535b225f
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Sat Jul 5 15:20:18 2014 -0500
+
+    added link to historical for index file
+
+commit 4b12ff3c98c587dca603691384b777ad07686e2a
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Sat Jul 5 15:17:51 2014 -0500
+
+    fixed merging problem for index
+
+commit 562f9fc3c52b4995931bf4cff4fa3598f212e794
+Merge: cc0374c e4cef27
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Sat Jul 5 15:15:13 2014 -0500
+
+    fixed merging index.
+
+commit e4cef2798fb089c8d4d8810dcb0d5e436eeddc4b
+Author: Daniel Garza <dgza88@utexas.edu>
+Date:   Sat Jul 5 15:08:20 2014 -0500
+
+    Linked Chichen Itza from Index
+
+commit e691365faa5e9902d70addc7b1cbf56ce645ccfd
+Author: Daniel Garza <dgza88@utexas.edu>
+Date:   Sat Jul 5 15:05:35 2014 -0500
+
+    Chichen Itza
+
+commit cc0374c6c789cfb96704e6138c65dc2089c13afa
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Sat Jul 5 15:01:05 2014 -0500
+
+    CapeTown linked. Added home button. Changed description into paragraph.
+
+commit 39383167862ecf72c89bb8bc187d8d6f40cc0b22
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Sat Jul 5 14:55:55 2014 -0500
+
+    Added Historical Page with current info and links
+
+commit 58bb7cf9d758c8c159f4119bc442c7a274d762c1
+Author: Juan P. Mata <jpmata1@gmail.com>
+Date:   Sat Jul 5 14:53:46 2014 -0500
+
+    commented out the top part navigation suggesiton
+
+commit af8ba62ea73dfad9cd2afe32f6583d471bee79ee
+Author: Juan P. Mata <jpmata1@gmail.com>
+Date:   Sat Jul 5 14:44:05 2014 -0500
+
+    cape town city page
+
+commit 9be4cf4fab02e5d91383caa543620a91d807fa3a
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Sat Jul 5 14:29:02 2014 -0500
+
+    added back buttom
+
+commit be9b9c3a8202f13bb0a1f36c908e8be8bd180a78
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Sat Jul 5 14:28:16 2014 -0500
+
+    Added Languages to cities
+
+commit 10e40c2cb1595e520e97c2519dd5ea23b0ad3069
+Author: jlc3938 <josecoellojr@gmail.com>
+Date:   Sat Jul 5 14:16:09 2014 -0500
+
+    Added simple Scenery Page
+
+commit f5239082d2208c8101a9df508c37e740195f307a
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Sat Jul 5 14:11:18 2014 -0500
+
+    Created page for chinese language. Added home buttons.
+
+commit dfaafddcc9c43569f905a25a9e31a5aa0a5640c5
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Sat Jul 5 13:20:26 2014 -0500
+
+    Created Lijiang page. Linked LiJiang from index to the page.
+
+commit 463a6206df2e032b070d9b984cd77726b6ad1cca
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Fri Jul 4 18:47:18 2014 -0500
+
+    Added countries and fixed typo on splash page
+
+commit 437b71058f71e2071b91a9970825b70b3c2acf0d
+Author: Sam Acuna <samueleishion@gmail.com>
+Date:   Fri Jul 4 18:35:51 2014 -0500
+
+    Added a basic splash (index) page #3
