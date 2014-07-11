@@ -83,6 +83,9 @@
 	  	draggable: false,
 	  	optimized:false,
 	  })
+	  google.maps.event.addListener(marker, 'click', function () {
+  		window.location.href = 'http://www.google.com';
+	  });
 
 	  var marker = new google.maps.Marker({
 	  	position: new google.maps.LatLng(-33.944612, 18.476158),
@@ -92,6 +95,9 @@
 	  	draggable: false,
 	  	optimized:false
 	  })
+	  google.maps.event.addListener(marker, 'click', function () {
+  		window.location.href = 'http://www.google.com';
+	  });
 
 	  var marker = new google.maps.Marker({
 	  	position: new google.maps.LatLng(26.864663, 100.229130),
@@ -101,6 +107,9 @@
 	  	draggable: false,
 	  	optimized:false
 	  })
+	  google.maps.event.addListener(marker, 'click', function () {
+  		window.location.href = 'http://www.google.com';
+	  });
 	}
 
 	google.maps.event.addDomListener(window, 'load', initialize)
