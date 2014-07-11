@@ -8,17 +8,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap core CSS -->
-    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="navbar.css" rel="stylesheet">
     <!-- ESTP QUE ESTA AQUI!!!! -->
     <!-- Custom styles for this template -->
     <link href="blog.css" rel="stylesheet">
 
-    <script src="/static/bootstrap/js/ie-emulation-modes-warning.js"></script>
+    <script src="../static/bootstrap/js/ie-emulation-modes-warning.js"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
     </head>
 
 <style type="text/css">
@@ -53,7 +53,6 @@
   }
 
      .bgPic {
-    background-image: url("../static/styles_design/chichen-itza-mexico-2009_dark.png");
     background-repeat:no-repeat;
     background-position:center center;
     background-size:cover;
@@ -68,33 +67,20 @@
 
   }
 
-     .bgPic2 {
+  #mexico {
+    background-image: url("../static/styles_design/chichen-itza-mexico-2009_dark.png");
+  }
+  #china { 
     background-image: url("../static/styles_design/lijiang_dark.jpg");
-    background-repeat:no-repeat;
-    background-position:center center;
-    background-size:cover;
-    padding:20px 60px;
-    height: 418px;
-    margin-top: -69px;
-    margin-bottom: -70px;
-    margin-left:-5%;
-    margin-right:-2.5%;
-    background-repeat: repeat-x;
-
+  }
+  #africa { 
+    background-image: url("../static/styles_design/safari2.jpg");
   }
 
-      .bgPic3 {
-    background-image: url("../static/styles_design/safari2.jpg");
-    background-repeat:no-repeat;
-    background-position:center center;
-    background-size:cover;
-    padding:20px 60px;
-    height: 430px;
-    margin-top: -112px;
-    margin-bottom: -70px;
-    margin-left:-5%;
-    margin-right:-2.5%;
-    background-repeat: repeat-x;
+  @media only screen and (max-width : 1100px) {
+    .bgPic {
+      height: 720px;
+    }
   }
 
     .bgimg2 {
@@ -221,9 +207,8 @@
      </div>
 
 
-
   <div class="jumbotron container-fluid">
-      <div class="bgPic">
+      <div class="bgPic" id="mexico">
         <div class="col-md-6">
         <a href="/Chichen_Itza_Mexico/">
           <h1><font face = "Tahoma" color = "White">Chichen Itza</font><small><font face = "Tahoma" color = "White"> Mexico</small></font></h1>
@@ -231,29 +216,29 @@
           <p><font face = "Tahoma" color = "White">Chichen Itza was one of the greatest Mayan centers of the Peninsula of Yucatan. Throughout its nearly 1,000 years history, different peoples have left their mark on this city. The Maya and Toltec vision of the world and the universe is revealed in their artistic works and stone monuments.
 In the northern region of the Yucatan peninsula, on a limestone plateau lie the relics of Chichen Itza, once one of the most powerful cities of the Maya.</font></p>
         </div>
-        <div class="col-md-6">
-			<div class="row">
-			    <div class="lang">
-		 		    <h1><small><font face = "Tahoma" color = "White">Language</font></h1></small>
-		    	</div>
-		    </div>
-		    <div class="row">
-			    <div class="col-md-3">
-				    <p><a class="btn btn-lg btn-warning" href="/Spanish/" role="button">Spanish Español</a></p>
-		    	</div><!-- /.col-lg-6 -->
-				<div class="col-md-3"></div>
-			    <div class="col-md-3">
-			    	<p><a class="btn btn-lg btn-warning" href="/English/" role="button">English</a></p>
-		    	</div><!-- /.col-lg-6 -->
-		    </div><!-- /.row -->
-         </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="lang">
+            <h1><small><font face = "Tahoma" color = "White">Language</font></h1></small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <p><a class="btn btn-lg btn-warning" href="/Spanish/" role="button">Spanish Español</a></p>
+          </div><!-- /.col-lg-6 -->
+          <div class="col-md-3"></div>
+          <div class="col-md-3">
+            <p><a class="btn btn-lg btn-warning" href="/English/" role="button">English</a></p>
+          </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
       </div>
+    </div>
   </div>
 
 
 
     <div class="jumbotron container-fluid">
-      <div class="bgPic2">
+      <div class="bgPic" id="china">
         <div class="col-md-6">
         <a href="/Lijiang_China/">
           <h1><font face = "Tahoma" color = "White">Li Jiang </font><small><font face = "Tahoma" color = "White">China</small></font></h1>
@@ -261,22 +246,20 @@ In the northern region of the Yucatan peninsula, on a limestone plateau lie the 
           <p><font face = "Tahoma" color = "White">Lìjiāng(丽江) has a history going back more than 800 years and was once a confluence for trade along the old tea horse road. It is famous for its orderly system of waterways and bridges. It differs from other ancient Chinese cities in architecture, history and the culture of its traditional residents the Nakhi people</font></p>
 
         </div>
-         <div class="col-md-6">
-			<div class="row">
-			    <div class="lang">
-		 		     <h1><small><font face = "Tahoma" color = "White">Language</font></h1></small>
-		    	</div>
-		    </div>
-		    <div class="row">
-			    <div class="col-md-3">
-				   <p><a class="btn btn-lg btn-warning" href="/Chinese/" role="button">Chinese 中文</a></p>
-		    	</div><!-- /.col-lg-6 -->
-
-
-		    </div><!-- /.row -->
-         </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="lang">
+              <h1><small><font face = "Tahoma" color = "White">Language</font></h1></small>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p><a class="btn btn-lg btn-warning" href="/Chinese/" role="button">Chinese 中文</a></p>
+            </div><!-- /.col-lg-6 -->
+          </div><!-- /.row -->
+        </div>
       </div>
-  </div>
+    </div>
 
 
 
@@ -285,29 +268,27 @@ In the northern region of the Yucatan peninsula, on a limestone plateau lie the 
 
 
     <div class="jumbotron container-fluid">
-      <div class="bgPic3">
+      <div class="bgPic" id="africa">
         <div class="col-md-6">
          <a href="/Cape_Town_South_Africa/">
           <h1><font face = "Tahoma" color = "White">Cape Town </font><small><font face = "Tahoma" color = "White">South Africa</small></font></h1>
           </a>
           <p><font face = "Tahoma" color = "White">Cape Town was officially founded in 1652 when Jan van Riebeeck of the Dutch East India Company based in The Netherlands arrived to set up a halfway point for ships travelling to the East. Portuguese explorers arrived in the Cape in the 15th Century and Khoisan people inhabited the area prior to European arrival.</font></p>
         </div>
-         <div class="col-md-6">
-			<div class="row">
-			    <div class="lang">
-		 		    <h1><small><font face = "Tahoma" color = "White">Language</font></h1></small>
-		    	</div>
-		    </div>
-		    <div class="row">
-
-			    <div class="col-md-3">
-			    	<p><a class="btn btn-lg btn-warning" href="/English/" role="button">English</a></p>
-		    	</div><!-- /.col-lg-6 -->
-
-		    </div><!-- /.row -->
-         </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="lang">
+              <h1><small><font face = "Tahoma" color = "White">Language</font></h1></small>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p><a class="btn btn-lg btn-warning" href="/English/" role="button">English</a></p>
+            </div><!-- /.col-lg-6 -->
+          </div><!-- /.row -->
+        </div>
       </div>
-  </div>
+    </div>
 
 
 
@@ -317,7 +298,7 @@ In the northern region of the Yucatan peninsula, on a limestone plateau lie the 
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
- <script type="/static/bootstrap/js/docs.min.js"></script>
+ <script type="../static/bootstrap/js/docs.min.js"></script>
 
 </body>
 </html>

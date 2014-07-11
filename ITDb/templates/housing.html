@@ -8,17 +8,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap core CSS -->
-    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="navbar.css" rel="stylesheet">
     <!-- ESTP QUE ESTA AQUI!!!! -->
     <!-- Custom styles for this template -->
     <link href="blog.css" rel="stylesheet">
 
-    <script src="/static/bootstrap/js/ie-emulation-modes-warning.js"></script>
+    <script src="../static/bootstrap/js/ie-emulation-modes-warning.js"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
     </head>
 
 <style type="text/css">
@@ -53,7 +53,6 @@
   }
 
      .bgPic {
-    background-image: url("../static/styles_design/chichen-itza-mexico-2009_dark.png");
     background-repeat:no-repeat;
     background-position:center center;
     background-size:cover;
@@ -68,8 +67,31 @@
 
   }
 
-     .bgPic2 {
+  #mexico {
+    background-image: url("../static/styles_design/chichen-itza-mexico-2009_dark.png");
+  }
+  #china { 
     background-image: url("../static/styles_design/oldtownoflijiang2_dark.jpg");
+    height:600px; 
+  }
+  #africa { 
+    background-image: url("../static/styles_design/tablebayhotel_dark.jpg");
+    height:700px;
+  }
+
+  @media only screen and (max-width : 1100px) {
+    #mexico {
+      height: 700px;
+    }
+    #china {
+      height:900px; 
+    }
+    #africa {
+      height:900px; 
+    }
+  }
+
+     .bgPic2 {
     background-repeat:no-repeat;
     background-position:center center;
     background-size:cover;
@@ -84,7 +106,6 @@
   }
 
       .bgPic3 {
-    background-image: url("../static/styles_design/tablebayhotel_dark.jpg");
     background-repeat:no-repeat;
     background-position:center center;
     background-size:cover;
@@ -223,7 +244,7 @@
 
 
   <div class="jumbotron container-fluid">
-      <div class="bgPic">
+      <div class="bgPic" id="mexico">
         <div class="col-md-6">
           <h1><font face = "Tahoma" color = "White">Chichen Itza </font><small><font face = "Tahoma" color = "White">Mexico</font></small></h1>
           <p><font face = "Tahoma" color = "White">The Maya temple in Chichen Itza is one of the best scenic attractions in Chichen Itza.
@@ -255,7 +276,7 @@
 
 
     <div class="jumbotron container-fluid">
-      <div class="bgPic2">
+      <div class="bgPic" id="china">
         <div class="col-md-6">
           <h1><font face = "Tahoma" color = "White">Li Jiang </font><small><font face = "Tahoma" color = "White">China</small></font></h1>
           <p><font face = "Tahoma" color = "White">The Old Town of Li Jiang and its residential architecture have a history of more than 800 years and was once a confluence for trade along the old tea horse road. It is famous for its orderly system of waterways, bridges, and architecture of its traditional residents, the Nakhi people. The town has retained a historic townscape of high quality and authenticity. Its architecture is noteworthy for the blending of elements from several cultures that have come together over the centuries. Special attention is paid to the decoration of the houses, especially in the arches over gateways, the screen walls, the external corridors, the doors and windows, the courtyards and the roof beams. Wooden elements are elaborately carved with domestic and cultural elements - pottery, musical instruments, flowers, birds, etc. - and gate arches take several elegant forms.</font></p>
@@ -280,7 +301,7 @@
 
 
     <div class="jumbotron container-fluid">
-      <div class="bgPic3">
+      <div class="bgPic" id="africa">
         <div class="col-md-6">
           <h1><font face = "Tahoma" color = "White">Cape Town </font><small><font face = "Tahoma" color = "White">South Africa</small></font></h1>
           <p><font face = "Tahoma" color = "White">Sitting on the buzzing Victoria & Alfred Waterfront, the Table Bay Hotel has one of the best locations in Cape Town, with views of Table Mountain, the harbor and notorious Robben Island. It was, in fact, the prison’s most famous former inmate who opened the hotel in 1997: then-President Nelson Mandela. The neo-Victorian architecture exudes old-world elegance, as does the attentive service, which extends to helicopter transfers, personal shopping and the therapies at the Camelot Spa. Dining and cocktail options include The Atlantic, Camissa Brasserie, two bars and a lounge for afternoon tea. Don't miss the bronze statue honoring Oscar, a seal that often visited the waters by the hotel as it was being built and so charmed the staff that he became their mascot.</font></p>
@@ -308,7 +329,7 @@
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
- <script type="/static/bootstrap/js/docs.min.js"></script>
+ <script type="../static/bootstrap/js/docs.min.js"></script>
 
 </body>
 </html>
