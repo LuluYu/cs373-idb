@@ -218,7 +218,7 @@
             <ul class="dropdown-menu">
               <li><a href="{% url 'content_display.views.sceneries' %}">Sceneries</a></li>
               <li><a href="{% url 'content_display.views.historical' %}">Historical</a></li>
-              <li><a href="#">Housing</a></li>
+              <li><a href="/housing/">Housing</a></li>
             </ul>
           </li>
       </ul>
@@ -267,24 +267,24 @@
   		<div class="row">
   			<div class="col-md-3">
   				<div class="lang">
-  					<img src="../static/styles_design/chichen1.jpg"  class="img-thumbnail" alt="Responsive image">
+  					<a href="{% url 'content_display.views.historical' %}"><img src="../static/styles_design/chichen1.jpg"  class="img-thumbnail" alt="Responsive image"></a>
   				</div>
   			</div><!-- /.col-lg-6 -->
   			<div class="col-md-3">
   				<div class="lang">
-  					<img src="../static/styles_design/chichen2.jpg"  class="img-thumbnail" alt="Responsive image">
+  					<a href="{% url 'content_display.views.sceneries' %}"><img src="../static/styles_design/chichen2.jpg"  class="img-thumbnail" alt="Responsive image"></a>
   				</div>
   			</div><!-- /.col-lg-6 -->
   			<div class="col-md-3">
   				<div class="lang">
-  					<img src="../static/styles_design/chichen3.jpg"  class="img-thumbnail" alt="Responsive image">
-  				</div>
+  					<a href="{% url 'content_display.views.sceneries' %}"><img src="../static/styles_design/chichen3.jpg"  class="img-thumbnail" alt="Responsive image">
+  				</div></a>
   			</div><!-- /.col-lg-6 -->
   		</div><!-- /.row -->
       <div class="row">
         <div class="col-md-3">
           <div class="lang">
-            <img src="../static/styles_design/chichen4.jpg"  class="img-thumbnail" alt="Responsive image">
+            <a href="{% url 'content_display.views.sceneries' %}"><img src="../static/styles_design/chichen4.jpg"  class="img-thumbnail" alt="Responsive image"></a>
           </div>
         </div><!-- /.col-lg-6 -->
       </div>

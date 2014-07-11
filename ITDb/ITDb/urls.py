@@ -22,6 +22,7 @@ urlpatterns = patterns('',
     # activities 
     url(r'^sceneries/$', 'content_display.views.sceneries'),
     url(r'^historical/$', 'content_display.views.historical'),
+    url(r'^housing/$', 'content_display.views.housing'),
 
     # languages 
     url(r'^Chinese/$', 'content_display.views.chinese'),

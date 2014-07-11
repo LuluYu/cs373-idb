@@ -10,6 +10,7 @@ done
 files
 	".git/MERGE_MSG\n"
 	".git/COMMIT_EDITMSG\n"
+	".git/MERGE_MSG\n"
 done
 find
 done
@@ -29,6 +30,6 @@ yank
 	":"
 done
 file_pos
-	0 ".git/MERGE_MSG"
 	0 ".git/COMMIT_EDITMSG"
+	0 ".git/MERGE_MSG"
 done
