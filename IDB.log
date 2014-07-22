@@ -1,3 +1,22 @@
+commit c54642d41a0cd06325a9c883114c18f455b500dc
+Merge: e562304 0a96ad8
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Fri Jul 11 02:36:25 2014 +0000
+
+    Merge branch 'master' of https://github.com/LuluYu/cs373-idb
+
+commit e5623048369c47b6d77fe618a593dec397b26f38
+Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
+Date:   Fri Jul 11 02:36:22 2014 +0000
+
+    Fixed alignments and overlapping.
+
+commit 0a96ad8b1f0f515221f0089acb13ef5e34930e6c
+Author: Yu Lu <yu.lulu@utexas.edu>
+Date:   Thu Jul 10 21:14:32 2014 -0500
+
+    log updated.
+
 commit 2d864f0acf101f978dbb0f3c8cc3c40da6eaf965
 Merge: 9328914 f966600
 Author: Jesus Galvan <Jesusgalvan9292@yahoo.com>
