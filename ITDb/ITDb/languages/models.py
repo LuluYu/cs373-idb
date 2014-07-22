@@ -5,6 +5,6 @@ from cities.models import Cities
 class Languages(models.Model):
     name = models.CharField(max_length=30)
     description = models.TextField()
-    pictures = models.CharField(max_length=150)
+    pictures = models.FilePathField(max_length=200)
     script = models.CharField(max_length=30)
-    spoken_in = models.IntegerField()
+    spoken_in = models.ForeignKey('Cities')
