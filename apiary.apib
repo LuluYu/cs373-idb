@@ -76,6 +76,10 @@ Examples related to the cities of the **Flappy World API**
             "id": 2, "name": "Chichen Itza", "description": "some text", ...
         }] 
 
++ Response 400 (application/json)
+    
+        {"error": "Data does not exist. Bad Request."}
+
 ## City [/api/cities/id/{id}] 
 A single City object with all its details 
 
@@ -92,6 +96,10 @@ A single City object with all its details
     + Body 
         
             { "id": 2, "name": "Chichen Itza", "description": "some text", ... } 
+
++ Response 400 (application/json)
+
+        {"id": 351, "error": "City with id 351 does not exist in the database."}
 
 ## City [/api/cities/name/{name}] 
 A single City object with all its details 
@@ -110,9 +118,26 @@ A single City object with all its details
         
             { "id": 2, "name": "Chichen Itza", "description": "some text", ... } 
 
++ Response 400 (application/json)
+
+        { "name": Austin, "error": "City with name Austin does not exist in the database."}
 
 # Group Acitvities 
 Examples related to the activities of the **Flappy World API** 
+
+## Activity Types Collection [/api/activities]
+### List all types of Activities[GET]
++ Response 200 (application/json)
+
+        [{
+          "name": "Scenery", "activities": [{id1}, {id2},... ], ...
+        }, {
+          "name": "Housing", "activities": [{id1}, {id2},... ], ...
+        }]
+
++ Response 400 (application/json)
+    
+        {"error": "Data does not exist. Bad Request."}
 
 ## Activities Collection [/api/activities/type/{type}] 
 ### List all Activities of a given type[GET] 
