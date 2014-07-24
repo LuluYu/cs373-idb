@@ -58,38 +58,39 @@ def spanish (request):
 # --------------
 def api_cities(request,city_id=None):
 	all_cities = False
+    city = []
 
 	# get city by city_id type
 	if(city_id!=None):
 		if city_id.isdigit():
 			# city_id is an int, thus an id
-			city = Cities.objects.get(id=city_id)
+			city.append(Cities.objects.get(id=city_id))
 		else:
 			# city_id is a string, thus a name
-			city = Cities.objects.get(name=city_id)
+			city.append(Cities.objects.get(name=city_id))
 	else:
 		# city_id is empty, so they want all cities
 		all_cities = True
-		city = Cities.objects.all()
+		city = [Cities.objects.all()]
 
 	# generate json string
-	if all_cities:
-	    json_city = '['
-	    for c in city:
-	        json_city += jsonify_city(c)+','
-	    json_city = json_city[0:-1]+']'
-	else:
-		json_city = jsonify_city(city)
+	# if all_cities:
+	#     json_city = '['
+	#     for c in city:
+	#         json_city += jsonify_city(c)+','
+	#     json_city = json_city[0:-1]+']'
+	# else:
+	# 	json_city = jsonify_city(city)
 
 	# send to view
 	template = loader.get_template('api.html')
 	context = Context({
-		'json_str':json_city,
+		'json_list':city,
 	})
 	return HttpResponse(template.render(context))
 
-def jsonify_city(city):
-    return '{"id":'+str(city.id)+',"name":"'+city.name+'","description":"'+city.description+'"}'
+# def jsonify_city(city):
+#     return '{"id":'+str(city.id)+',"name":"'+city.name+'","description":"'+city.description+'"}'
 
 # --------------
 #	languages
