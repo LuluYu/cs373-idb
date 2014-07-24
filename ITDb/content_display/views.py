@@ -117,4 +117,9 @@ def view_cities(request, city_id=None ) :
     else :
         city = Cities.objects.get(name=city_id)
 
+    template = loader.get_template('city_template.html')
+    context = Context({
+        'json_list':city
+    })
+
     return HttpResponse(template.render(context))
