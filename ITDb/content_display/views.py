@@ -109,3 +109,12 @@ def api_activities(request,acts_id=-1):
 		'acts_id':acts_id,
 	})
 	return HttpResponse(template.render(context))
+
+
+def view_cities(request, city_id=None ) :
+    if(city_id.isdigit()) :
+        city = Cities.objects.get(id=city_id)
+    else :
+        city = Cities.objects.get(name=city_id)
+
+    return HttpResponse(template.render(context))
