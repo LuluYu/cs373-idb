@@ -57,8 +57,7 @@ def spanish (request):
 #	cities
 # --------------
 def api_cities(request,city_id=None):
-	all_cities = False
-    city = []
+	city = []
 
 	# get city by city_id type
 	if(city_id!=None):
@@ -70,17 +69,8 @@ def api_cities(request,city_id=None):
 			city.append(Cities.objects.get(name=city_id))
 	else:
 		# city_id is empty, so they want all cities
-		all_cities = True
-		city = [Cities.objects.all()]
+		city = Cities.objects.all()
 
-	# generate json string
-	# if all_cities:
-	#     json_city = '['
-	#     for c in city:
-	#         json_city += jsonify_city(c)+','
-	#     json_city = json_city[0:-1]+']'
-	# else:
-	# 	json_city = jsonify_city(city)
 
 	# send to view
 	template = loader.get_template('api.html')
@@ -89,40 +79,25 @@ def api_cities(request,city_id=None):
 	})
 	return HttpResponse(template.render(context))
 
-# def jsonify_city(city):
-#     return '{"id":'+str(city.id)+',"name":"'+city.name+'","description":"'+city.description+'"}'
-
 # --------------
 #	languages
 # --------------
 def api_languages(request,lang_id=None):
-    all_languages = False
+    language = []
 
     if(lang_id!=None):
         if (lang_id.isdigit()):
-            language = Languages.objects.get(id=lang_id)
+            language.append(Languages.objects.get(id=lang_id))
         else:
-            language = Languages.objects.get(name=lang_id)
+            language.append(Languages.objects.get(name=lang_id))
     else:
-        all_languages = True
         language = Languages.objects.all()
-
-    if all_languages:
-        json_lang = '['
-        for l in language:
-            json_lang += jsonify_language(l)+','
-        json_lang = json_lang[0:-1] + ']'
-    else:
-        json_lang = jsonify_language(language)
 
     template = loader.get_template('api.html')
     context = Context({
-        'json_str': json_lang,
+        'json_list':language,
     })
     return HttpResponse(template.render(context))
-
-def jsonify_language(language):
-    return '{"id":'+str(language.id)+',"name":'+language.name+'","description":"'+language.description+'"}'
 
 # --------------
 #	activities
