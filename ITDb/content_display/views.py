@@ -94,14 +94,40 @@ def jsonify_city(city):
 # --------------
 #	languages
 # --------------
-def api_languages(request,lang_id=-1):
+def api_languages(request,lang_id=None):
+    all_languages = False
+
+    # get language by language_id type
+    if (language_id!=None):
+        if lang_id.isdigit():
+            # lang_id is an int, thus an id
+            language = Languages.objects.get(id=lang_id)
+        else:
+            # lang_id is a string, thus a name
+            language = Languages.objects.get(name=lang_id)
+    else:
+        # lang_id is empty, so they want all languages
+        all_languages = True
+        language = Languages.objects.all()
+
+    # generate json string
+    if all_languages:
+        json_language = '['
+        for l in language:
+            json_language += jsonify_language(l)+','
+        json_language = json_language[0:-1]+']'
+    else:
+        json_language = jsonify_language(language)
+
+    # send to view
 	template = loader.get_template('api.html')
 	context = Context({
-		'type':'languages',
-		'lang_id':lang_id,
+		'json_str':json_language,
 	})
 	return HttpResponse(template.render(context))
 
+def jsonify_language(language):
+    return '{"id":'+str(language.id)+',"name":'+language.name+'","description":'+language.description+'"}'
 
 # --------------
 #	activities
