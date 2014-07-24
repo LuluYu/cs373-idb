@@ -4,7 +4,9 @@ from django.template.loader import get_template
 from django.shortcuts import render_to_response
 from django.template import Context
 #from django.views.generic.base import TemplateView #with helloTemplate Class
-
+from django.http import HttpResponse, Http404
+from django.template import Context,loader
+from content_display.models import Cities, Languages, Activities
 
 def hello_template (request):
     name = "Jesus"
@@ -16,7 +18,7 @@ def index (request):
     return render_to_response('index.html')
 
 
-# cities 
+# cities
 
 def lijiang_China (request):
     return render_to_response('lijiang_China.html')
@@ -27,7 +29,7 @@ def capeTown_SouthAfrica (request):
 def chichen_Itza_Mexico (request):
     return render_to_response('chichen_Itza_Mexico.html')
 
-# activities 
+# activities
 
 def sceneries (request):
     return render_to_response('sceneries.html')
@@ -38,7 +40,7 @@ def historical (request):
 def housing (request):
     return render_to_response('housing.html')
 
-# languages 
+# languages
 
 def chinese (request):
     return render_to_response('chinese.html')
@@ -48,3 +50,66 @@ def english (request):
 
 def spanish (request):
     return render_to_response('spanish.html')
+
+# api
+
+# --------------
+#	cities
+# --------------
+def api_cities(request,city_id=None):
+	all_cities = False
+
+	# get city by city_id type
+	if(city_id!=None):
+		if city_id.isdigit():
+			# city_id is an int, thus an id
+			city = Cities.objects.get(id=city_id)
+		else:
+			# city_id is a string, thus a name
+			city = Cities.objects.get(name=city_id)
+	else:
+		# city_id is empty, so they want all cities
+		all_cities = True
+		city = Cities.objects.all()
+
+	# generate json string
+	if all_cities:
+	    json_city = '['
+	    for c in city:
+	        json_city += jsonify_city(c)+','
+	    json_city = json_city[0:-1]+']'
+	else:
+		json_city = jsonify_city(city)
+
+	# send to view
+	template = loader.get_template('api.html')
+	context = Context({
+		'json_str':json_city,
+	})
+	return HttpResponse(template.render(context))
+
+def jsonify_city(city):
+    return '{"id":'+str(city.id)+',"name":"'+city.name+'","description":"'+city.description+'"}'
+
+# --------------
+#	languages
+# --------------
+def api_languages(request,lang_id=-1):
+	template = loader.get_template('api.html')
+	context = Context({
+		'type':'languages',
+		'lang_id':lang_id,
+	})
+	return HttpResponse(template.render(context))
+
+
+# --------------
+#	activities
+# --------------
+def api_activities(request,acts_id=-1):
+	template = loader.get_template('api.html')
+	context = Context({
+		'type':'activities',
+		'acts_id':acts_id,
+	})
+	return HttpResponse(template.render(context))

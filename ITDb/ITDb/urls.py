@@ -29,5 +29,16 @@ urlpatterns = patterns('',
     url(r'^English/$', 'content_display.views.english'),
     url(r'^Spanish/$', 'content_display.views.spanish'),
 
+    # api
+    # list of all objects
+    url(r'^api/cities/$', 'content_display.views.api_cities', name="api"),
+    url(r'^api/languages/$', 'content_display.views.api_languages', name="api"),
+    url(r'^api/activities/$', 'content_display.views.api_activities', name="api"),
+
+    # particular objects
+    url(r'^api/cities/(?P<city_id>[a-zA-Z0-9-\s]+)/$', 'content_display.views.api_cities', name="api"),
+    url(r'^api/languages/(?P<lang_id>[a-zA-Z0-9-\s]+)/$', 'content_display.views.api_languages', name="api"),
+    url(r'^api/activities/(?P<acts_id>[a-zA-Z0-9-\s]+)/$', 'content_display.views.api_activities', name="api"),
+
 
 )

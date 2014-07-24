@@ -17,7 +17,15 @@ class Cities(models.Model):
     climate = models.CharField(max_length= 20)
     population = models.CharField(max_length=20)
     time_zone = models.CharField(max_length= 20)
-    languages = models.TextField()
+    lang = models.CharField(max_length = 60)
+    act = models.TextField()
+
+    def __str__(self):
+        return '%s %s %s %s %s %s %s %s %s %s %s %s' % (self.name, self.description, self.pictures, self.videos, self.coords,
+                        self.size, self.altitude, self.climate, self.population,
+                        self.time_zone, self.lang, self.act)
+
+
 
 class Activities(models.Model):
     '''
@@ -27,11 +35,16 @@ class Activities(models.Model):
     '''
     name = models.CharField(max_length=30)
     description = models.TextField()
-    pictures = models.CharField(max_length=150)
-    videos = models.CharField(max_length=200)
-    coords = models.CharField(max_length=20)
+    pictures = models.TextField()
+    videos = models.URLField(max_length=250)
+    coords = models.CharField(max_length=60)
     type_activity = models.CharField(max_length=50)
-    city_id = models.IntegerField()
+    cit_name = models.TextField()
+    city = models.ManyToManyField('Cities')
+
+    def __str__(self):
+        return '%s %s %s %s %s %s %s' % (self.name, self.description, self.pictures,
+                self.videos, self.coords, self.type_activity, self.cit_name)
 
 
 class Languages(models.Model):
@@ -42,6 +55,11 @@ class Languages(models.Model):
     '''
     name = models.CharField(max_length=30)
     description = models.TextField()
-    pictures = models.CharField(max_length=150)
+    pictures = models.TextField()
     script = models.CharField(max_length=30)
-    spoken_in = models.IntegerField()
+    cit_spoken = models.TextField()
+    spoken_in = models.ManyToManyField('Cities')
+
+    def __str__(self):
+        return '%s %s %s %s %s' % (self.name, self.description,
+                self.pictures, self.script, self.cit_spoken)

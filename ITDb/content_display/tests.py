@@ -75,8 +75,8 @@ class ActivityTest(TestCase) :
 
 class LanguagesTest(TestCase) :
     def setUp(self) :
-        Languages.objects.create(name = 'English', spoken_in = 3, description = 'desc')
-        Languages.objects.create(name = 'Chinese', spoken_in = 1, description = 'desc')
+        Languages.objects.create(name = 'English',  description = 'desc', cit_spoken = 'us')
+        Languages.objects.create(name = 'Chinese',  description = 'desc', cit_spoken = 'lijiang')
 
     def test_l1(self) :
         e = Languages.objects.get(id = 1)
@@ -94,8 +94,8 @@ class LanguagesTest(TestCase) :
     def test_l3(self) :
         e = Languages.objects.get(id = 1)
         c = Languages.objects.get(id = 2)
-        self.assertEqual(e.spoken_in, 3)
+        self.assertEqual(e.cit_spoken, 'us')
         self.assertEqual(c.script, u'')
-        self.assertEqual(c.spoken_in, 1)
+        self.assertEqual(c.cit_spoken, 'lijiang')
 
 
