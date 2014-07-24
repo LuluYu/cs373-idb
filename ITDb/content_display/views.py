@@ -119,7 +119,22 @@ def view_city(request, city_id=None ) :
 
     template = loader.get_template('city_template.html')
     context = Context({
-        'json_list':city
+        'city':city
     })
 
     return HttpResponse(template.render(context))
+
+def view_lang(request, lang_id=None):
+    if(lang_id.isdigit()):
+        lang = Languages.object.get(id=lang_id)
+    else:
+        lang = Languages.object.get(name=lang_id)
+
+    template = loader.get_template('lang_template.html')
+    context = Context({
+        'lang' : lang
+    })
+    return HttpResponse(template.render(context))
+
+
+

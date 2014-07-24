@@ -18,9 +18,9 @@ urlpatterns = patterns('',
     url(r'^Lijiang_China/$', 'content_display.views.lijiang_China'),
     url(r'^Chichen_Itza_Mexico/$', 'content_display.views.chichen_Itza_Mexico'),
     url(r'^Cape_Town_South_Africa/$', 'content_display.views.capeTown_SouthAfrica'),
-    
+
     #Template for cities
-    url(r'^cities/(?P<city_id>[a-zA-Z0-9-\s]+)/$', 'content_display.view_city')
+    url(r'^cities/(?P<city_id>[a-zA-Z0-9-\s]+)/$', 'content_display.views.view_city'),
 
     # activities
     url(r'^sceneries/$', 'content_display.views.sceneries'),
@@ -31,6 +31,9 @@ urlpatterns = patterns('',
     url(r'^Chinese/$', 'content_display.views.chinese'),
     url(r'^English/$', 'content_display.views.english'),
     url(r'^Spanish/$', 'content_display.views.spanish'),
+
+    #Template for language
+    url(r'^languages/(?P<city_id>[a-zA-Z0-9-\s]+)/$', 'content_display.views.view_lang'),
 
     # api
     # list of all objects
