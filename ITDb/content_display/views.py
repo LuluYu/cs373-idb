@@ -98,7 +98,7 @@ def api_languages(request,lang_id=None):
     all_languages = False
 
     # get language by language_id type
-    if (language_id!=None):
+    if (lang_id!=None):
         if lang_id.isdigit():
             # lang_id is an int, thus an id
             language = Languages.objects.get(id=lang_id)
