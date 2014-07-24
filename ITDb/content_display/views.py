@@ -127,7 +127,7 @@ def api_languages(request,lang_id=None):
 	return HttpResponse(template.render(context))
 
 def jsonify_language(language):
-    return '{"id":'+str(language.id)+',"name":'+language.name+'","description":'+language.description+'"}'
+    return '{"id":'+str(language.id)+',"name":'+language.name+'","description":"'+language.description+'"}'
 
 # --------------
 #	activities
