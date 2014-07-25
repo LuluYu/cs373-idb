@@ -1,0 +1,38 @@
+{% if error %}
+error: {{ etype }}
+{% else %}
+{% load dictionary_extras %}
+<!DOCTYPE html>
+<html><head>
+    <title>Flappy Birds : Activities</title>
+
+    <style>
+    .block { display:block;
+        border:1px solid red;
+        padding:20px;
+        margin:10px; }
+    .imgs { display:block;
+        padding:5px;
+        margin:5px;
+        border:1px solid blue;
+        overflow-x:scroll;
+        overflow-y:hidden; }
+    .imgs img { display:inline-block;
+        max-width:300px;
+        max-height:100px; }
+    </style>
+
+</head><body>
+    {% for a in acts %}
+        <div class="block">
+            <a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{ a.name }}</a>
+            <div class="imgs">
+                {% for i in pictures|access:a.name %}
+                    <img src="{{ i }}">
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+
+</body></html>
+{% endif %}

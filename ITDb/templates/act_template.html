@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Flappy World : {{ lang.name }}</title>
+  <title>Flappy World : {{ acts.name }}</title>
 
   <!-- ESTO QUE ESTA AQUI -->
   <meta charset="utf-8">
@@ -55,7 +55,7 @@
   }
 
     .bgimg2 {
-    background-image: url("../static/styles_design/midbg.png");
+    background-image: url("/static/styles_design/midbg.png");
     /*height: 158px;*/
     height: 245px;
     margin-top: -10px;
@@ -67,7 +67,7 @@
   }
 
    .bgimg3 {
-    background-image: url("../static/styles_design/flappy.png");
+    background-image: url("/static/styles_design/flappy.png");
     /*height: 158px;*/
     height: 350px;
     margin-top: -22px;
@@ -79,7 +79,7 @@
   }
 
 .bar1 {
-    background-image: url("../static/styles_design/bar.png");
+    background-image: url("/static/styles_design/bar.png");
     height: 13px;
     margin-top: -30px;
     margin-bottom: 10px;
@@ -90,7 +90,7 @@
   }
 
   .bar2 {
-    background-image: url("../static/styles_design/bar.png");
+    background-image: url("/static/styles_design/bar.png");
     height: 13px;
     margin-top: -10px;
     margin-bottom: -15px;
@@ -163,16 +163,15 @@
 
   <div class="jumbotron container-fluid nomargin">
       <div class="bgPic">
-        <h1>{{ lang.name }}</h1>
-        <p align="justify">{{ lang.description }}</p>
+        <h1>{{ acts.name }}</h1>
+        <p align="justify">{{ acts.description }} </p>
         <!--<p><a class="btn btn-primary btn-lg" href="http://en.wikipedia.org/wiki/English_language" role="button" target="_blank">Learn more &raquo;</a></p>-->
         <h3>Script</h3>
-        <img src="{{ lang.pictures }}">
+        {% for pic in pictures %}
+            <img src="{{ pic }}">
+        {% endfor %}
         <h3>Spoken In</h3>
         <div class="row">
-          <div class="col-md-3">
-            <p><a class="btn btn-lg btn-warning" href="/Cape_Town_South_Africa/" role="button">Cape Town, South Africa</a></p>
-          </div><!-- /.col-lg-6 -->
           <div class="col-md-3">
             <p><a class="btn btn-lg btn-warning" href="/Chichen_Itza_Mexico/" role="button">Chichen Itza, Mexico</a></p>
           </div><!-- /.col-lg-6 -->

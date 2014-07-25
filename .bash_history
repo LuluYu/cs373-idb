@@ -180,3 +180,85 @@ git status
 git commit -m "Fixed alignments and overlapping."
 git pull
 git push
+ls
+cd ITDb
+ls
+python3 manage.py syncdb
+exit
+ls
+cd ITDb
+ls
+./manage.py test content_display
+python manage.py syncdb
+ls
+python3 manage.py syncdb
+./manage.py test content_display
+python3 manage.py syncdb
+./manage.py test content_display
+python3 manage.py syncdb
+./manage.py test content_display
+python3 manage.py syncdb
+./manage.py test content_display
+python3 manage.py syncdb
+./manage.py test content_display
+exit
+ls
+cd ITDb
+ls
+python3 manage.py syncdb
+exit
+ls
+cd ITDb
+ls
+python3 manage.py syncdb
+exit
+cd ITDb
+ls
+python3 manage.py syncdb
+exit
+cd ITDb
+python3 manage.py syncdb
+exit
+ls
+cd ITDb
+ls
+python3 manage.py syncdb
+exit
+cd ITDb
+python3 manage.py syncdb
+exit
+cd ITDb
+python3 manage.py syncdb
+exit
+git status
+add ITDb/content_display/views.py 
+git add ITDb/content_display/views.py 
+git add ITDb/content_display/tests.py
+git add ITDb/content_display/models.py
+git add ITDb/templates/api.html
+git add ITDb/ITDb/urls.py
+git status
+git commit -m "implement api, views and urls testing with django."
+git pull
+git push
+git status
+git pul
+git pull
+git status
+git add ITDb/content_display/views.py
+git add flappysql.sql
+git add query_script.py
+git commit -m "added SQL files, fixed languages requesting."
+git pull
+git push
+git status 
+git diff ITDb/content_display/admin.py
+git diff ITDb/ITDb/settings.py
+git add ITDb/ITDb/settings.py
+git commit -m "added settings.py."
+git pull
+git status 
+git add ITDb/content_display/views.py
+git commit -m "prettier api output."
+git pull
+git push

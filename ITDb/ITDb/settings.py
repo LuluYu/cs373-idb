@@ -52,7 +52,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'ITDb.urls'
 
-WSGI_APPLICATION = 'ITDb.wsgi.application'
+WSGI_APPLICATION = 'ITDb.ITDb.wsgi.application'
 
 TEMPLATE_DIRS = ('/home/FlappyBirds/ITDb/templates/')
 

@@ -20,6 +20,7 @@ urlpatterns = patterns('',
     url(r'^Cape_Town_South_Africa/$', 'content_display.views.capeTown_SouthAfrica'),
 
     #Template for cities
+    url(r'^cities/$', 'content_display.views.all_cities'),
     url(r'^cities/(?P<city_id>[a-zA-Z0-9-\s]+)/$', 'content_display.views.view_city'),
 
     # activities
@@ -27,13 +28,18 @@ urlpatterns = patterns('',
     url(r'^historical/$', 'content_display.views.historical'),
     url(r'^housing/$', 'content_display.views.housing'),
 
+    #Template for activities
+    url(r'^activities/$', 'content_display.views.all_activities'),
+    url(r'^activities/(?P<acts_id>[a-zA-Z0-9-\s]+)/$', 'content_display.views.view_activities'),
+
     # languages
     url(r'^Chinese/$', 'content_display.views.chinese'),
     url(r'^English/$', 'content_display.views.english'),
     url(r'^Spanish/$', 'content_display.views.spanish'),
 
     #Template for language
-    url(r'^languages/(?P<city_id>[a-zA-Z0-9-\s]+)/$', 'content_display.views.view_lang'),
+    url(r'^languages/$', 'content_display.views.all_langs'),
+    url(r'^languages/(?P<lang_id>[a-zA-Z0-9-\s]+)/$', 'content_display.views.view_lang'),
 
     # api
     # list of all objects

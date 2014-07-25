@@ -9,7 +9,9 @@ macros
 done
 files
 	".git/MERGE_MSG\n"
-	".git/COMMIT_EDITMSG\n"
+	".git/MERGE_MSG\n"
+	".git/MERGE_MSG\n"
+	".git/MERGE_MSG\n"
 	".git/MERGE_MSG\n"
 	".git/MERGE_MSG\n"
 	".git/MERGE_MSG\n"

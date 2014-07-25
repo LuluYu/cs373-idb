@@ -4,7 +4,7 @@ conn = MySQLdb.connect("mysql.server", "FlappyBirds", "Admin2", "FlappyBirds$Fla
 
 c = conn.cursor()
 
-with open("flappysql.sql") as f:
+with open("actUpdate.sql") as f:
     for q in f:
 	    c.execute(q)
 	    conn.commit()

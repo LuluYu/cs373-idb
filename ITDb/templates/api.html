@@ -1,11 +1,1 @@
-{% if json_list %}
-	<ul>
-	{% for i in json_list %}
-		<li>
-			{"id": {{i.id}}, "name": {{i.name}}, "description": {{i.description}}}
-		</li>
-	{% endfor %}
-	</ul>
-{% else %}
-	<p>No Data Exists.</p>
-{% endif %}
+{{ json_list }}
