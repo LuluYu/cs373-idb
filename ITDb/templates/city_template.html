@@ -90,6 +90,17 @@
     background-color: #d3f4ff;
   }
 
+    .imgs { display:block;
+        padding:5px;
+        margin:5px;
+        border:1px solid blue;
+        overflow-x:scroll;
+        overflow-y:hidden; }
+
+    .imgs img { display:inline-block;
+    max-width:300px;
+    max-height:100px; }
+
 .bar1 {
     background-image: url("/static/styles_design/bar.png");
     height: 13px;
@@ -195,41 +206,43 @@
 
 
   <div class="navbar navbar-custom" role="navigation">
-    <div class="container-fluid">
-      <ul class="nav navbar-nav">
-          <li class="dropdown ">
-              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                  <li><a href="{% url 'content_display.views.lijiang_China' %}">Li Jiang, China</a></li>
-                  <li><a href="{% url 'content_display.views.chichen_Itza_Mexico' %}">Chichen Itza, Mexico</a></li>
-                  <li><a href="{% url 'content_display.views.capeTown_SouthAfrica' %}">Cape Town, South Africa</a></li>
-                  <li class="divider"></li>
-              </ul>
-          </li>
-          <li class="dropdown ">
-              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                  <li><a href="{% url 'content_display.views.english' %}">English</a></li>
-                  <li><a href="{% url 'content_display.views.spanish' %}">Spanish</a></li>
-                  <li><a href="{% url 'content_display.views.chinese' %}">Chinese</a></li>
-              </ul>
-          </li>
-          <li class="dropdown ">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="{% url 'content_display.views.sceneries' %}">Sceneries</a></li>
-              <li><a href="{% url 'content_display.views.historical' %}">Historical</a></li>
-              <li><a href="/housing/">Housing</a></li>
-            </ul>
-          </li>
-      </ul>
-    </div>
-  </div>
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+			    <li class="dropdown ">
+			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
+			        <ul class="dropdown-menu">
+			            {% for c in cities %}
+			            <li><a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{c.name}},{{c.country}}</a></li>
+			            {% endfor %}
+			            <li class="divider"></li>
+			        </ul>
+			    </li>
+			    <li class="dropdown ">
+			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
+			        <ul class="dropdown-menu">
+			             {% for l in languages %}
+			            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
+			            {% endfor %}
+			            <li class="divider"></li>
+			        </ul>
+			    </li>
+			    <li class="dropdown ">
+			    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
+			    	<ul class="dropdown-menu">
+			    		 {% for a in activities %}
+			            <li><a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{a.name}}</a></li>
+			            {% endfor %}
+			            <li class="divider"></li>
+			    	</ul>
+			    </li>
+			</ul>
+		</div>
+	</div>
 
   <div class="jumbotron container-fluid nomargin">
       <div class="bgPic">
         <div class="col-md-6">
-          <h1><font face = "Tahoma" color = "White">{{city.name}} </font><small><font face = "Tahoma" color = "White">China</small></font></h1>
+          <h1><font face = "Tahoma" color = "White">{{city.name}} </font><small><font face = "Tahoma" color = "White">{{city.country}}</small></font></h1>
           <p align="justify"><font face = "Tahoma" color = "White">{{city.description}}</font></p>
           <!--<p><a class="btn btn-primary btn-lg" role="button">Home</a></p>-->
         </div>
@@ -265,29 +278,11 @@
         </div>
       </div>
       <div class="row">
+         {% for a in act %}
         <div class="col-md-3">
-          <div class="lang">
-            <a href="{% url 'content_display.views.sceneries' %}"><img src="/static/styles_design/lugulake1.jpg"  class="img-thumbnail" alt="Responsive image"></a>
-          </div>
-        </div><!-- /.col-lg-6 -->
-        <div class="col-md-3">
-          <div class="lang">
-            <a href="{% url 'content_display.views.sceneries' %}"><img src="/static/styles_design/pudacuonationalpark2.jpg"  class="img-thumbnail" alt="Responsive image"></a>
-          </div>
-        </div><!-- /.col-lg-6 -->
-        <div class="col-md-3">
-          <div class="lang">
-            <a href="{% url 'content_display.views.historical' %}"><img src="/static/styles_design/oldtownoflijiang.jpg"  class="img-thumbnail" alt="Responsive image"></a>
-          </div>
-        </div><!-- /.col-lg-6 -->
-      </div><!-- /.row -->
-      <div class="row">
-        <div class="col-md-3">
-          <div class="lang">
-            <a href="{% url 'content_display.views.sceneries' %}"><img src="/static/styles_design/jadedragonsnowmountain1.jpg"  class="img-thumbnail" alt="Responsive image"></a>
-          </div>
-        </div><!-- /.col-lg-6 -->
-      </div>
+            <a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{ a.name }}</a><img src="" class= "img-thumnail" alt="Responsive image"></a>
+        </div>
+    {% endfor %}
   </div>
 
   <!--<div class="bar2 container-fluid"></div>-->

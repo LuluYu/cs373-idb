@@ -5,6 +5,7 @@ from django.shortcuts import render_to_response
 from django.template import Context
 #from django.views.generic.base import TemplateView #with helloTemplate Class
 from django.http import HttpResponse, Http404
+from django.core.exceptions import ObjectDoesNotExist
 from django.template import Context,loader
 from content_display.models import Cities, Languages, Activities
 
@@ -16,6 +17,8 @@ def hello_template (request):
 
 def index (request):
     cities = []
+    activities = []
+    languages = []
     error = False
     etype = ""
 
@@ -23,6 +26,8 @@ def index (request):
     try:
         # list all cities
         temp = Cities.objects.all()
+        activities = Activities.objects.all()
+        languages = Languages.objects.all()
 
         for c in temp:
             coords = c.coords.split(",")
@@ -36,7 +41,9 @@ def index (request):
 	# send to view
     template = loader.get_template('index.html')
     context = Context({
-		'cities':cities
+		'cities':cities,
+		'activities':activities,
+		'languages':languages
 	})
     return HttpResponse(template.render(context))
 
@@ -83,19 +90,20 @@ def api_cities(request,city_id=None):
     city = []
 
     #get city by city_id type
-
-    if(city_id!=None):
-        if city_id.isdigit():
-            #city id  is an int,
-            city.append(Cities.objects.get(id=city_id))
+    try:
+        if(city_id!=None):
+            if city_id.isdigit():
+                #city id  is an int,
+                tempc = Cities.objects.get(id=city_id)
+                city.append(tempc)
+            else:
+                #city id is a string, thus a name
+                city.append(Cities.objects.get(name=city_id))
         else:
-            #city id is a string, thus a name
-            city.append(Cities.objects.get(name=city_id))
-    else:
-        #list all cities
-        city = Cities.objects.all()
-
-
+            #list all cities
+            city = Cities.objects.all()
+    except ObjectDoesNotExist:
+        pass
 
     json_city = "["
     if(len(city) != 0):
@@ -103,7 +111,7 @@ def api_cities(request,city_id=None):
             json_city += '{"id": '+str(c.id)+', "name": "'+c.name+'", "description": "'+c.description+'"},'
         json_city = json_city[0:-1] +"]"
     else:
-        json_city = '{Error 400: " No such city exist in the in the database."}'
+        json_city = '{"Error 400": " No such city exist in the in the database."}'
 
     #send to view
     template = loader.get_template('api.html')
@@ -117,16 +125,16 @@ def api_cities(request,city_id=None):
 def api_languages(request,lang_id=None):
     language = []
 
-
-    if(lang_id!=None):
-        if (lang_id.isdigit()):
-            language.append(Languages.objects.get(id=lang_id))
+    try:
+        if(lang_id!=None):
+            if (lang_id.isdigit()):
+                language.append(Languages.objects.get(id=lang_id))
+            else:
+                language.append(Languages.objects.get(name=lang_id))
         else:
-            language.append(Languages.objects.get(name=lang_id))
-    else:
-        language = Languages.objects.all()
-
-
+            language = Languages.objects.all()
+    except ObjectDoesNotExist:
+        pass
 
     json_lang = "["
     if(len(language) != 0):
@@ -134,7 +142,7 @@ def api_languages(request,lang_id=None):
             json_lang  += '{"id": '+str(l.id)+', "name": "'+l.name+'", "description": "'+l.description+'"},'
         json_lang = json_lang[0:-1]+"]"
     else:
-        json_lang = '{Error 400: "No such language exists in the database."}'
+        json_lang = '{"Error 400": "No such language exists in the database."}'
 
     template = loader.get_template('api.html')
     context = Context({
@@ -148,23 +156,24 @@ def api_languages(request,lang_id=None):
 def api_activities(request,acts_id=None):
     act = []
 
-
-    if(acts_id!=None):
-        if(acts_id.isdigit()):
-            act.append(Activities.objects.get(id=acts_id))
+    try:
+        if(acts_id!=None):
+            if(acts_id.isdigit()):
+                act.append(Activities.objects.get(id=acts_id))
+            else:
+                act.append(Activities.objects.filter(name=acts_id))
         else:
-            act.append(Activities.objects.filter(name=acts_id))
-    else:
-        act = Activities.objects.all()
-
+            act = Activities.objects.all()
+    except ObjectDoesNotExist:
+        pass
 
     json_act = "["
-    if(len(act)):
+    if(len(act) != 0):
         for a in act:
             json_act  += '{"id": '+str(a.id)+', "name": "'+a.name+'", "description": "'+a.description+'"},'
         json_act = json_act[0:-1]+"]"
     else:
-        json_act = '{Error 400: "No such activity exists in the database."}'
+        json_act = '{"Error 400": "No such activity exists in the database."}'
 
 
     template = loader.get_template('api.html')
@@ -175,7 +184,12 @@ def api_activities(request,acts_id=None):
 
 def view_city(request, city_id=None) :
     city = None
+    cities = []
+    languages = []
+    activities = []
     haserror = False
+    act=[]
+    pictures = {}
 
     try:
         if(city_id.isdigit()) :
@@ -186,12 +200,25 @@ def view_city(request, city_id=None) :
     except Exception:
         haserror = True
 
+    act = Activities.objects.filter(city = city.id)
+
+    for a in act :
+        pictures[a.name] = a.pictures.split(",")
+
+    cities = Cities.objects.all()
+    languages = Languages.objects.all()
+    activities = Activities.objects.all()
     template = loader.get_template('city_template.html')
     context = Context({
         'city':city,
         'cx':coords[0],
         'cy':coords[1],
-        'error':haserror
+        'error':haserror,
+        'languages':languages,
+        'activities':activities,
+        'cities':cities,
+        'act': act,
+        'pictures': pictures
     })
 
     return HttpResponse(template.render(context))
@@ -200,21 +227,30 @@ def view_lang(request, lang_id=None):
     lang = None
     haserror = False
     error_type = ""
+    cities = []
+    languages = []
+    activities = []
 
     try:
         if(lang_id.isdigit()):
             lang = Languages.objects.get(id=lang_id)
         else:
-            lang = Languages.objects.get(name=lang_name)
+            lang = Languages.objects.get(name=lang_id)
     except Exception as e:
         error_type = e.__class__.__name__
         haserror = True
 
+    cities = Cities.objects.all()
+    languages = Languages.objects.all()
+    activities = Activities.objects.all()
     template = loader.get_template('lang_template.html')
     context = Context({
         'lang' : lang,
         'error': haserror,
         'etype':error_type,
+        'cities':cities,
+        'activities':activities,
+        'languages':languages
     })
     return HttpResponse(template.render(context))
 
@@ -222,6 +258,9 @@ def view_activities(request, acts_id=None):
     acts = None
     haserror = False
     error_type = ""
+    cities = []
+    languages = []
+    activities = []
 
     try:
         if(acts_id.isdigit()):
@@ -233,12 +272,18 @@ def view_activities(request, acts_id=None):
         haserror = True
         error_type = e.__class__.__name__
 
+    cities = Cities.objects.all()
+    languages = Languages.objects.all()
+    activities = Activities.objects.all()
     template = loader.get_template('act_template.html')
     context = Context({
         'acts':acts,
         'pictures':acts.pictures.split(","),
         'error':haserror,
         'etype': error_type,
+        'cities':cities,
+        'languages':languages,
+        'activities':activities
     })
     return HttpResponse(template.render(context))
 
@@ -247,6 +292,8 @@ def all_cities(request):
     pictures = {}
     haserror = False
     error_type = ""
+    languages =[]
+    activities = []
 
     try:
         cities = Cities.objects.all()
@@ -258,57 +305,77 @@ def all_cities(request):
         haserror = True
         error_type = e.__class__.__name__
 
+    languages = Languages.objects.all()
+    activities = Activities.objects.all()
     template = loader.get_template('city_all.html')
     context = Context({
         'cities':cities,
         'pictures':pictures,
         'error':haserror,
         'etype':error_type,
+        'languages':languages,
+        'activities':activities
     })
     return HttpResponse(template.render(context))
 
 
 def all_activities(request):
-    acts = []
+    activities = []
     pictures = {}
     haserror = False
     error_type = ""
+    cities = []
+    languages = []
 
     try:
-        acts = Activities.objects.all()
+        activities = Activities.objects.all()
+        cities = Cities.objects.all()
+        languages = Languages.objects.all()
 
-        for a in acts:
+        for a in activities:
             pictures[a.name] = a.pictures.split(",")
 
     except Exception as e:
         haserror = True
         error_type = e.__class__.__name__
 
+
+    cities = Cities.objects.all()
+    languages = Languages.objects.all()
     template = loader.get_template('act_all.html')
     context = Context({
-        'acts':acts,
+        'activities':activities,
         'pictures':pictures,
         'error':haserror,
         'etype':error_type,
+        'languages': languages,
+        'cities': cities
     })
     return HttpResponse(template.render(context))
 
 
 def all_langs(request):
-    langs = []
+    languages = []
     haserror = False
     error_type = ""
+    cities= []
+    activities = []
 
     try:
-        langs = Languages.objects.all()
+        languages = Languages.objects.all()
+        cities = Cities.objects.all()
+        activities = Activities.objects.all()
     except Exception as e:
         haserror = True
         error_type = e.__class__.__name__
 
+
     template = loader.get_template('lang_all.html')
     context = Context({
-        'langs':langs,
+        'languages':languages,
         'error':haserror,
         'etype':error_type,
+        'cities':cities,
+        'activities':activities
     })
     return HttpResponse(template.render(context))

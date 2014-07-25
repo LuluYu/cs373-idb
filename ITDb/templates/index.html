@@ -152,26 +152,28 @@
 			    <li class="dropdown ">
 			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
 			        <ul class="dropdown-menu">
-			            <li><a href="{% url 'content_display.views.lijiang_China' %}">Li Jiang, China</a></li>
-			            <li><a href="{% url 'content_display.views.chichen_Itza_Mexico' %}">Chichen Itza, Mexico</a></li>
-			            <li><a href="{% url 'content_display.views.capeTown_SouthAfrica' %}">Cape Town, South Africa</a></li>
+			            {% for c in cities %}
+			            <li><a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{c.name}},{{c.country}}</a></li>
+			            {% endfor %}
 			            <li class="divider"></li>
 			        </ul>
 			    </li>
 			    <li class="dropdown ">
 			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
 			        <ul class="dropdown-menu">
-			            <li><a href="{% url 'content_display.views.english' %}">English</a></li>
-			            <li><a href="{% url 'content_display.views.spanish' %}">Spanish</a></li>
-			            <li><a href="{% url 'content_display.views.chinese' %}">Chinese</a></li>
+			             {% for l in languages %}
+			            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
+			            {% endfor %}
+			            <li class="divider"></li>
 			        </ul>
 			    </li>
 			    <li class="dropdown ">
 			    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
 			    	<ul class="dropdown-menu">
-			    		<li><a href="{% url 'content_display.views.sceneries' %}">Sceneries</a></li>
-			    		<li><a href="{% url 'content_display.views.historical' %}">Historical</a></li>
-			    		<li><a href="/housing/">Housing</a></li>
+			    		 {% for a in activities %}
+			            <li><a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{a.name}}</a></li>
+			            {% endfor %}
+			            <li class="divider"></li>
 			    	</ul>
 			    </li>
 			</ul>

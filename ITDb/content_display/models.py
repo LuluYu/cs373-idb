@@ -21,7 +21,7 @@ class Cities(models.Model):
 
 
     def __str__(self):
-        return '%s %s %s %s %s %s %s %s %s %s' % (self.name, self.description, self.pictures, self.videos, self.coords,
+        return '%s %s %s %s %s %s %s %s %s %s %s' % (self.name, self.country, self.description, self.pictures, self.videos, self.coords,
                         self.size, self.altitude, self.climate, self.population,
                         self.time_zone)
 
@@ -42,8 +42,8 @@ class Activities(models.Model):
     city = models.ForeignKey('Cities')
 
     def __str__(self):
-        return '%s %s %s %s %s %s' % (self.name, self.description, self.pictures,
-                self.videos, self.coords, self.type_activity)
+        return '%s %s %s %s %s %s %s' % (self.name, self.description, self.pictures,
+                self.videos, self.coords, self.type_activity, self.city)
 
 
 class Languages(models.Model):
@@ -56,8 +56,8 @@ class Languages(models.Model):
     description = models.TextField()
     pictures = models.TextField()
     script = models.TextField()
-    spoken_in = models.ManyToManyField('Cities')
+    # spoken_in = models.ManyToManyField('Cities')
 
     def __str__(self):
-        return '%s %s %s %s' % (self.name, self.description,
+        return '%s %s %s %s %s' % (self.name, self.description, self.pictures, self.script, self.spoken_in,
                 self.pictures, self.script)

@@ -10,92 +10,174 @@ from django.test import TestCase
 from content_display.models import Cities, Activities, Languages
 
 # Testing City Model with dummy data
-
+'''
+name = models.CharField(max_length=30)
+    country = models.CharField(max_length = 30)
+    description = models.TextField()
+    pictures = models.TextField()
+    videos = models.TextField()
+    coords = models.CharField(max_length=30)
+    size = models.CharField(max_length=30)
+    altitude = models.CharField(max_length= 30)
+    climate = models.CharField(max_length= 30)
+    population = models.CharField(max_length=20)
+    time_zone = models.CharField(max_length= 20)
+'''
 class CityTest(TestCase) :
     def setUp(self) :
-        Cities.objects.create(name = 'Li Jiang', size = '8,193 sq mi', population = '1,244,769')
-        Cities.objects.create(name = 'Chichen Itza', size = '123 sq mi', coords = '1.0, 2.0')
+        Cities.objects.create(name = 'Li Jiang', country = 'China', description = 'awesome', pictures = 'test.jpg', videos='test.jpg', coords = '0.0, 0.0', size = '8,193 sq mi', population = '1,244,769',time_zone = 'central')
+        Cities.objects.create( name = 'Chichen Itza', country = 'Mexico', description = 'awesome', pictures = 'test.jpg', videos='test.jpg', coords = '0.0, 0.0', size = '8,193 sq mi', population = '1,244,769',time_zone = 'central')
+        Cities.objects.create( name = 'Cape Town', country = 'Africa', description = 'awesome', pictures = 'test.jpg', videos='test.jpg', coords = '0.0, 0.0', size = '8,193 sq mi', population = '1,244,769',time_zone = 'central')
+        Cities.objects.create()
 
     def test_c1(self) :
-        lj = Cities.objects.get(name= 'Li Jiang')
         ci = Cities.objects.get(name= 'Chichen Itza')
-        self.assertEqual(lj.name, 'Li Jiang')
         self.assertEqual(ci.name, 'Chichen Itza')
-        self.assertEqual(Cities.objects.get(id = 1).name, 'Li Jiang')
-        self.assertEqual(Cities.objects.get(id = 2).name, 'Chichen Itza')
+        self.assertEqual(ci.country, 'Mexico')
+        self.assertEqual(ci.description, 'awesome')
+        self.assertEqual(ci.pictures, 'test.jpg')
+        self.assertEqual(ci.videos, 'test.jpg')
+        self.assertEqual(ci.coords, '0.0, 0.0')
+        self.assertEqual(ci.size, '8,193 sq mi')
+        self.assertEqual(ci.population,'1,244,769')
+        self.assertEqual(ci.time_zone, 'central')
 
     def test_c2(self) :
-        lj = Cities.objects.get(name= 'Li Jiang')
-        ci = Cities.objects.get(name= 'Chichen Itza')
-        self.assertEqual(lj.altitude, u'')
-        self.assertEqual(lj.time_zone, u'')
-        self.assertEqual(ci.description, u'')
+        ct = Cities.objects.get(name= 'Cape Town')
+        self.assertEqual(ct.name, 'Cape Town')
+        self.assertEqual(ct.country, 'Africa')
+        self.assertEqual(ct.description, 'awesome')
+        self.assertEqual(ct.pictures, 'test.jpg')
+        self.assertEqual(ct.videos, 'test.jpg')
+        self.assertEqual(ct.coords, '0.0, 0.0')
+        self.assertEqual(ct.size, '8,193 sq mi')
+        self.assertEqual(ct.population,'1,244,769')
+        self.assertEqual(ct.time_zone, 'central')
 
-    def test_c3(self) :
+    def test_c3(self):
         lj = Cities.objects.get(name= 'Li Jiang')
-        ci = Cities.objects.get(name= 'Chichen Itza')
-        self.assertEqual(lj.population, '1,244,769')
-        self.assertEqual(lj.time_zone, u'')
-        self.assertEqual(ci.size, '123 sq mi')
-        self.assertEqual(ci.coords, '1.0, 2.0')
+        self.assertEqual(lj.name, 'Li Jiang')
+        self.assertEqual(lj.country, 'China')
+        self.assertEqual(lj.description, 'awesome')
+        self.assertEqual(lj.pictures, 'test.jpg')
+        self.assertEqual(lj.videos, 'test.jpg')
+        self.assertEqual(lj.coords, '0.0, 0.0')
+        self.assertEqual(lj.size, '8,193 sq mi')
+        self.assertEqual(lj.population,'1,244,769')
+        self.assertEqual(lj.time_zone, 'central')
+
+    def test_c4(self):
+        b = Cities.objects.get(name= u'')
+        self.assertEqual(b.name, u'')
+        self.assertEqual(b.country, u'')
+        self.assertEqual(b.description, u'')
+        self.assertEqual(b.pictures, u'')
+        self.assertEqual(b.videos, u'')
+        self.assertEqual(b.coords, u'')
+        self.assertEqual(b.size, u'')
+        self.assertEqual(b.population,u'')
+        self.assertEqual(b.time_zone, u'')
 
 
 # Testing Activities Model with dummy values
-
+'''
+    name = models.CharField(max_length=30)
+    description = models.TextField()
+    pictures = models.CharField(max_length=150)
+    videos = models.CharField(max_length=200)
+    coords = models.CharField(max_length=20)
+    type_activity = models.CharField(max_length=50)
+    city_id = models.IntegerField()
+'''
 class ActivityTest(TestCase) :
     def setUp(self) :
-        Activities.objects.create(name = 'Shark Diving', type_activity = 'Outdoor Recreation', pictures = '1')
-        Activities.objects.create(name = 'Safari', type_activity = 'Scenery', pictures = '2')
+        Activities.objects.create(city_id = 1,name = 'Shark Diving', description = 'awesome', pictures='test.jpg', videos='test.jpg', coords='0.0, 0.0', type_activity = 'Outdoor Recreation')
+        Activities.objects.create(city_id = 2, name = 'Safari', type_activity = 'Scenery')
+        Activities.objects.create(city_id = 3,name = 'North Rim', description = 'awesome', pictures='test.jpg', videos='test.jpg', coords='0.0, 0.0', type_activity = 'Outdoor Recreation')
+        Activities.objects.create(city_id = 4)
 
     def test_a1(self) :
         sh = Activities.objects.get(name= 'Shark Diving')
-        sa = Activities.objects.get(name= 'Safari')
-        self.assertEqual(sh.name, 'Shark Diving')
-        self.assertEqual(sa.name, 'Safari')
         self.assertEqual(Activities.objects.get(id = 1).name, 'Shark Diving')
-        self.assertEqual(Activities.objects.get(id = 2).name, 'Safari')
+        self.assertEqual(sh.name, 'Shark Diving')
+        self.assertEqual(sh.description, 'awesome')
+        self.assertEqual(sh.pictures, 'test.jpg')
+        self.assertEqual(sh.videos, 'test.jpg')
+        self.assertEqual(sh.coords, '0.0, 0.0')
+        self.assertEqual(sh.type_activity, 'Outdoor Recreation')
+
 
     def test_a2(self) :
-        sh = Activities.objects.get(name= 'Shark Diving')
-        sa = Activities.objects.get(name= 'Safari')
-        self.assertEqual(sh.coords, u'')
-        self.assertEqual(sh.description, u'')
-        self.assertEqual(sa.coords, u'')
-        self.assertEqual(sa.description, u'')
+        sa = Activities.objects.get(name= 'North Rim')
+        self.assertEqual(Activities.objects.get(id=3).name, 'North Rim')
+        self.assertEqual(sa.name, 'North Rim')
+        self.assertEqual(sa.description, 'awesome')
+        self.assertEqual(sa.pictures, 'test.jpg')
+        self.assertEqual(sa.videos, 'test.jpg')
+        self.assertEqual(sa.coords, '0.0, 0.0')
+        self.assertEqual(sa.type_activity, 'Outdoor Recreation')
 
     def test_a3(self) :
         sh = Activities.objects.get(name= 'Shark Diving')
-        sa = Activities.objects.get(name= 'Safari')
+        self.assertEqual(Activities.objects.get(id = 1).name, 'Shark Diving')
+        self.assertEqual(sh.name, 'Shark Diving')
+        self.assertEqual(sh.description, 'awesome')
+        self.assertEqual(sh.pictures, 'test.jpg')
+        self.assertEqual(sh.videos, 'test.jpg')
+        self.assertEqual(sh.coords, '0.0, 0.0')
         self.assertEqual(sh.type_activity, 'Outdoor Recreation')
-        self.assertEqual(sa.type_activity, 'Scenery')
-        self.assertEqual(sh.pictures, '1')
 
+    def test_a4(self):
+        b = Activities.objects.get(name= u'')
+        self.assertEqual(Activities.objects.get(id = 4).name, u'')
+        self.assertEqual(b.name, u'')
+        self.assertEqual(b.description, u'')
+        self.assertEqual(b.pictures, u'')
+        self.assertEqual(b.videos, u'')
+        self.assertEqual(b.coords, u'')
+        self.assertEqual(b.type_activity, u'')
 
 # Testing Languages Model with dummy data
-
+'''
+    name = models.CharField(max_length=30)
+    description = models.TextField()
+    pictures = models.TextField()
+    script = models.TextField()
+'''
 class LanguagesTest(TestCase) :
     def setUp(self) :
-        Languages.objects.create(name = 'English',  description = 'desc', cit_spoken = 'us')
-        Languages.objects.create(name = 'Chinese',  description = 'desc', cit_spoken = 'lijiang')
+        Languages.objects.create(name = 'English',  description = 'awesome', pictures='test.jpg', script='script.jpg')
+        Languages.objects.create(name = 'Chinese',  description = 'desc')
+        Languages.objects.create(name = 'Spanish')
+        Languages.objects.create()
 
     def test_l1(self) :
         e = Languages.objects.get(id = 1)
-        c = Languages.objects.get(id = 2)
         self.assertEqual(e.name, 'English')
-        self.assertEqual(c.name, 'Chinese')
+        self.assertEqual(e.description, 'awesome')
+        self.assertEqual(e.pictures, 'test.jpg')
+        self.assertEqual(e.script, 'script.jpg')
+
 
     def test_l2(self) :
-        e = Languages.objects.get(id = 1)
         c = Languages.objects.get(id = 2)
-        self.assertEqual(e.script, u'')
+        self.assertEqual(c.name, 'Chinese')
+        self.assertEqual(c.description, 'desc')
+        self.assertEqual(c.pictures, u'')
         self.assertEqual(c.script, u'')
-        self.assertEqual(e.pictures, u'')
 
     def test_l3(self) :
-        e = Languages.objects.get(id = 1)
-        c = Languages.objects.get(id = 2)
-        self.assertEqual(e.cit_spoken, 'us')
-        self.assertEqual(c.script, u'')
-        self.assertEqual(c.cit_spoken, 'lijiang')
+        s = Languages.objects.get(id = 3)
+        self.assertEqual(s.name, 'Spanish')
+        self.assertEqual(s.description, u'')
+        self.assertEqual(s.pictures, u'')
+        self.assertEqual(s.script, u'')
+
+    def test_l4(self):
+        s = Languages.objects.get(id = 4)
+        self.assertEqual(s.name, u'')
+        self.assertEqual(s.description, u'')
+        self.assertEqual(s.pictures, u'')
+        self.assertEqual(s.script, u'')
 
 
