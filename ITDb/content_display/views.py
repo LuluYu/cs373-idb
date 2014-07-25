@@ -82,65 +82,58 @@ def spanish (request):
 def api_cities(request,city_id=None):
     city = []
 
-    # get city by city_id type
-    try:
-        if(city_id!=None):
-            if city_id.isdigit():
-                # city_id is an int, thus an id
-                city.append(Cities.objects.get(id=city_id))
-            else:
-                # city_id is a string, thus a name
-                city.append(Cities.objects.get(name=city_id))
-        else:
-            # list all cities
-            city = Cities.objects.all()
-    except Exception:
-        city = False
+    #get city by city_id type
 
-    try:
-        json_city = "["
-        if(city):
-            for c in city:
-                json_city += '{"id": '+c.id+', "name": "'+c.name+'", "description": "'+c.description+'"},'
-            json_city = json_city[0:-1]+"]"
+    if(city_id!=None):
+        if city_id.isdigit():
+            #city id  is an int,
+            city.append(Cities.objects.get(id=city_id))
         else:
-            json_city = '{Error 400: "No such city exists in the database."}'
-    except Exception:
-        json_city = '{Error 400: "No such city exists in the database."}'
+            #city id is a string, thus a name
+            city.append(Cities.objects.get(name=city_id))
+    else:
+        #list all cities
+        city = Cities.objects.all()
 
-	# send to view
+
+
+    json_city = "["
+    if(len(city) != 0):
+        for c in city:
+            json_city += '{"id": '+str(c.id)+', "name": "'+c.name+'", "description": "'+c.description+'"},'
+        json_city = json_city[0:-1] +"]"
+    else:
+        json_city = '{Error 400: " No such city exist in the in the database."}'
+
+    #send to view
     template = loader.get_template('api.html')
     context = Context({
-		'json_list':json_city,
-	})
+        'json_list':json_city,
+    })
     return HttpResponse(template.render(context))
-
 # --------------
 #	languages
 # --------------
 def api_languages(request,lang_id=None):
     language = []
 
-    try:
-        if(lang_id!=None):
-            if (lang_id.isdigit()):
-                language.append(Languages.objects.get(id=lang_id))
-            else:
-                language.append(Languages.objects.get(name=lang_id))
-        else:
-            language = Languages.objects.all()
-    except Exception:
-        language = False
 
-    try:
-        json_lang = "["
-        if(language):
-            for l in language:
-                json_lang  += '{"id": '+l.id+', "name": "'+l.name+'", "description": "'+l.description+'"},'
-            json_lang = json_lang[0:-1]+"]"
+    if(lang_id!=None):
+        if (lang_id.isdigit()):
+            language.append(Languages.objects.get(id=lang_id))
         else:
-            json_lang = '{Error 400: "No such language exists in the database."}'
-    except Exception:
+            language.append(Languages.objects.get(name=lang_id))
+    else:
+        language = Languages.objects.all()
+
+
+
+    json_lang = "["
+    if(len(language) != 0):
+        for l in language:
+            json_lang  += '{"id": '+str(l.id)+', "name": "'+l.name+'", "description": "'+l.description+'"},'
+        json_lang = json_lang[0:-1]+"]"
+    else:
         json_lang = '{Error 400: "No such language exists in the database."}'
 
     template = loader.get_template('api.html')
@@ -155,27 +148,24 @@ def api_languages(request,lang_id=None):
 def api_activities(request,acts_id=None):
     act = []
 
-    try:
-        if(acts_id!=None):
-            if(acts_id.isdigit()):
-                act.append(Activities.objects.get(id=acts_id))
-            else:
-                act.append(Activities.objects.filter(type_activity=acts_id))
-        else:
-            act = Activities.objects.raw("SELECT type_activity FROM content_display_activities group by type_activity")
-    except Exception:
-        act = False
 
-    try:
-        json_act = "["
-        if(act):
-            for a in act:
-                json_act  += '{"id": '+a.id+', "name": "'+a.name+'", "description": "'+a.description+'"},'
-            json_act = json_act[0:-1]+"]"
+    if(acts_id!=None):
+        if(acts_id.isdigit()):
+            act.append(Activities.objects.get(id=acts_id))
         else:
-            json_act = '{Error 400: "No such activity exists in the database."}'
-    except Exception:
+            act.append(Activities.objects.filter(name=acts_id))
+    else:
+        act = Activities.objects.all()
+
+
+    json_act = "["
+    if(len(act)):
+        for a in act:
+            json_act  += '{"id": '+str(a.id)+', "name": "'+a.name+'", "description": "'+a.description+'"},'
+        json_act = json_act[0:-1]+"]"
+    else:
         json_act = '{Error 400: "No such activity exists in the database."}'
+
 
     template = loader.get_template('api.html')
     context = Context({
