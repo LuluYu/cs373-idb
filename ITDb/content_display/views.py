@@ -6,8 +6,9 @@ from django.template import Context
 #from django.views.generic.base import TemplateView #with helloTemplate Class
 from django.http import HttpResponse, Http404
 from django.core.exceptions import ObjectDoesNotExist
+from django.db import connection
 from django.template import Context,loader
-from content_display.models import Cities, Languages, Activities
+from content_display.models import Cities, Languages, Activities, languages_spoken_in
 
 def hello_template (request):
     name = "Jesus"
@@ -182,6 +183,9 @@ def api_activities(request,acts_id=None):
     })
     return HttpResponse(template.render(context))
 
+
+
+
 def view_city(request, city_id=None) :
     city = None
     cities = []
@@ -190,6 +194,12 @@ def view_city(request, city_id=None) :
     haserror = False
     act=[]
     pictures = {}
+    k = None
+
+    lang_spoken =[]
+    videos= {}
+
+
 
     try:
         if(city_id.isdigit()) :
@@ -197,13 +207,20 @@ def view_city(request, city_id=None) :
             coords = city.coords.split(",")
         else :
             city = Cities.objects.get(name=city_id)
+
+        act = Activities.objects.filter(city = city.id)
+        k = Cities.objects.raw("SELECT languages_id FROM languages_spoken_in")
+        for i in k:
+            lang_spoken.append(Languages.objects.get(id = i))
+
     except Exception:
         haserror = True
 
-    act = Activities.objects.filter(city = city.id)
+
+    videos[city.name] = city.videos.split(",")[0]
 
     for a in act :
-        pictures[a.name] = a.pictures.split(",")
+        pictures[a.name] = a.pictures.split(",")[0]
 
     cities = Cities.objects.all()
     languages = Languages.objects.all()
@@ -218,7 +235,9 @@ def view_city(request, city_id=None) :
         'activities':activities,
         'cities':cities,
         'act': act,
-        'pictures': pictures
+        'pictures': pictures,
+        'lang_spoken': lang_spoken,
+        'videos':videos
     })
 
     return HttpResponse(template.render(context))

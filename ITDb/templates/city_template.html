@@ -1,3 +1,5 @@
+{% load dictionary_extras %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +30,7 @@
     background-color: #e2a846;
     color:#ffffff;
   }
+  img { max-width:400px; max-height:400px; }
   .bgimg {
     background-image: url("/static/styles_design/bg.png");
     /*height: 158px;*/
@@ -137,7 +140,7 @@
    html, body, #map-canvas {
     height: 100%;
     margin: 0px;
-    /*margin-top: -20px;*/
+    margin-top: -20px;
     padding: 0px;
 
   }
@@ -193,16 +196,14 @@
 
 <body>
 
-  <div class="bgimg container-fluid">
-    <div class="row">
-      <div class="col-lg-6">
-        <a href="/index/"><div class="logo">
-
-        </div></a><!-- /input-group -->
-      </div><!-- /.col-lg-6 -->
-      </div><!-- /.col-lg-6 -->
+    <div class="bgimg container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <a href="/index/"><div class="logo"></div></a>
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.col-lg-6 -->
     </div><!-- /.row -->
-  </div>
+
 
 
   <div class="navbar navbar-custom" role="navigation">
@@ -253,41 +254,42 @@
 
 
 
-  <div class="bgimg2 container-fluid">
-    <div class="row">
-      <div class="lang">
-        <h1>Language</h1>
-      </div>
+    <div class="bgimg2 container-fluid">
+        <!--<div class="row">-->
+        <!--    <div class="lang">-->
+        <!--        <h1>Language</h1>-->
+        <!--    </div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+        <!--    {{lang_spoken}}-->
+        <!--    {% for a in lang_spoken%}-->
+        <!--    <div class="col-md-3">-->
+        <!--        <p><a class="btn btn-lg btn-warning" href="http://flappybirds.pythonanywhere.com/languages/{{ a.id }}" role="button">{{a.name}} hello</a></p>-->
+        <!--    </div>-->
+        <!--    {% endfor %}-->
+
+        </div><!-- /.row -->
+
+        <div class="row">
+            <div class="lang">
+                <h1 class="text-align:center">Activities</h1>
+
+            </div>
+        </div>
+        <div class="row">
+            {% for a in act %}
+            <div class="col-md-3">
+                <a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{ a.name }}<img src="{{pictures|access:a.name}}" class= "img-thumnail" alt="Responsive image"></a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class = "row">
+                <div class="mapmar " id="map-canvas"> <h1>hello</h1></div>
+        </div>
     </div>
-    <div class="row">
-      <div class="col-md-3">
-        <p><a class="btn btn-lg btn-warning" href="/Chinese/" role="button">Chinese 中文</a></p>
-      </div><!-- /.col-lg-6 -->
-      <div class="col-md-3">
-        <!--<p><a class="btn btn-lg btn-warning" href="#" role="button">Tibetan བོད་སྐད།</a></p>-->
-      </div><!-- /.col-lg-6 -->
-    </div><!-- /.row -->
-
-
-
-
-      <div class="row">
-        <div class="lang">
-          <h1 class="text-align:center">Activities</h1>
-
-        </div>
-      </div>
-      <div class="row">
-         {% for a in act %}
-        <div class="col-md-3">
-            <a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{ a.name }}</a><img src="" class= "img-thumnail" alt="Responsive image"></a>
-        </div>
-    {% endfor %}
-  </div>
-
   <!--<div class="bar2 container-fluid"></div>-->
 
-  <div class="mapmar" id="map-canvas"> <h1>hello</h1></div>
 
 
   <!-- Bootstrap core JavaScript
