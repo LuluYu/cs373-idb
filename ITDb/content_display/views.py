@@ -194,7 +194,7 @@ def view_city(request, city_id=None) :
     haserror = False
     act=[]
     pictures = {}
-    k = []
+
 
     lang_spoken =[]
     videos= {}
@@ -210,10 +210,7 @@ def view_city(request, city_id=None) :
 
         act = Activities.objects.filter(city = city.id)
 
-        lang_spoken = languages_spoken_in.objects.filter(cities = city_id)
-        # for i in k :
-        #     lang_spoken.append(Languages.objects.get(id = i.languages))
-        # lang_spoken = k
+        lang_spoken = languages_spoken_in.objects.filter(cities = city.id)
 
     except Exception:
         haserror = True
@@ -251,12 +248,15 @@ def view_lang(request, lang_id=None):
     cities = []
     languages = []
     activities = []
+    cities_in = []
 
     try:
         if(lang_id.isdigit()):
             lang = Languages.objects.get(id=lang_id)
         else:
             lang = Languages.objects.get(name=lang_id)
+
+        cities_in = languages_spoken_in.objects.filter(languages = lang.id)
     except Exception as e:
         error_type = e.__class__.__name__
         haserror = True
@@ -271,7 +271,8 @@ def view_lang(request, lang_id=None):
         'etype':error_type,
         'cities':cities,
         'activities':activities,
-        'languages':languages
+        'languages':languages,
+        'cities_in':cities_in
     })
     return HttpResponse(template.render(context))
 

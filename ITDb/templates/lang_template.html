@@ -172,12 +172,11 @@
         <img src="{{ lang.pictures }}">
         <h3>Spoken In</h3>
         <div class="row">
-          <div class="col-md-3">
-            <p><a class="btn btn-lg btn-warning" href="/Cape_Town_South_Africa/" role="button">Cape Town, South Africa</a></p>
-          </div><!-- /.col-lg-6 -->
-          <div class="col-md-3">
-            <p><a class="btn btn-lg btn-warning" href="/Chichen_Itza_Mexico/" role="button">Chichen Itza, Mexico</a></p>
-          </div><!-- /.col-lg-6 -->
+            {% for i in cities_in%}
+            <div class="col-md-3">
+                <p><a class="btn btn-lg btn-warning" href="http://flappybirds.pythonanywhere.com/cities/{{i.cities.id}}" role="button">{{i.cities.name}}</a></p>
+            </div>
+            {% endfor %}
         </div><!-- /.row -->
       </div>
   </div>
