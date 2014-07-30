@@ -54,7 +54,7 @@ urlpatterns = patterns('',
 
     # search
     url(r'^search/$','content_display.views.search'),
-    url(r'^search/(?P,query>[a-zA-Z0-9-\s]+)/$','content_display.views.search'),
+    url(r'^search/(?P<query>[a-zA-Z0-9-\s]+)/$','content_display.views.search'),
 
 
 )
