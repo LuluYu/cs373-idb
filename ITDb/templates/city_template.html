@@ -255,18 +255,17 @@
 
 
     <div class="bgimg2 container-fluid">
-        <!--<div class="row">-->
-        <!--    <div class="lang">-->
-        <!--        <h1>Language</h1>-->
-        <!--    </div>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-        <!--    {{lang_spoken}}-->
-        <!--    {% for a in lang_spoken%}-->
-        <!--    <div class="col-md-3">-->
-        <!--        <p><a class="btn btn-lg btn-warning" href="http://flappybirds.pythonanywhere.com/languages/{{ a.id }}" role="button">{{a.name}} hello</a></p>-->
-        <!--    </div>-->
-        <!--    {% endfor %}-->
+        <div class="row">
+            <div class="lang">
+                <h1>Language</h1>
+            </div>
+        </div>
+        <div class="row">
+            {% for a in lang_spoken%}
+            <div class="col-md-3">
+                <p><a class="btn btn-lg btn-warning" href="http://flappybirds.pythonanywhere.com/languages/{{ a.languages.id }}" role="button">{{a.languages.name}}</a></p>
+            </div>
+            {% endfor %}
 
         </div><!-- /.row -->
 

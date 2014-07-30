@@ -26,8 +26,8 @@ class Cities(models.Model):
                         self.time_zone)
 
 class languages_spoken_in(models.Model):
-    cities_id = models.ForeignKey('Cities')
-    languages_id = models.ForeignKey('Languages')
+    cities = models.ForeignKey('Cities')
+    languages = models.ForeignKey('Languages')
 
     def __str__(self):
         return '%s %s' % (self.cities_id, self.languages_id)
