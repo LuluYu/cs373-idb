@@ -194,7 +194,7 @@ def view_city(request, city_id=None) :
     haserror = False
     act=[]
     pictures = {}
-    k = None
+
 
     lang_spoken =[]
     videos= {}
@@ -209,9 +209,8 @@ def view_city(request, city_id=None) :
             city = Cities.objects.get(name=city_id)
 
         act = Activities.objects.filter(city = city.id)
-        k = Cities.objects.raw("SELECT languages_id FROM languages_spoken_in")
-        for i in k:
-            lang_spoken.append(Languages.objects.get(id = i))
+
+        lang_spoken = languages_spoken_in.objects.filter(cities = city.id)
 
     except Exception:
         haserror = True
@@ -249,12 +248,15 @@ def view_lang(request, lang_id=None):
     cities = []
     languages = []
     activities = []
+    cities_in = []
 
     try:
         if(lang_id.isdigit()):
             lang = Languages.objects.get(id=lang_id)
         else:
             lang = Languages.objects.get(name=lang_id)
+
+        cities_in = languages_spoken_in.objects.filter(languages = lang.id)
     except Exception as e:
         error_type = e.__class__.__name__
         haserror = True
@@ -269,7 +271,8 @@ def view_lang(request, lang_id=None):
         'etype':error_type,
         'cities':cities,
         'activities':activities,
-        'languages':languages
+        'languages':languages,
+        'cities_in':cities_in
     })
     return HttpResponse(template.render(context))
 
@@ -397,4 +400,41 @@ def all_langs(request):
         'cities':cities,
         'activities':activities
     })
+    return HttpResponse(template.render(context))
+
+
+#------------
+# Search
+#------------
+
+def search(request, query=""):
+    #send to view
+    template = loader.get_template('search.html')
+
+    sql = "SELECT DISTINCT * FROM content_display_cities WHERE name LIKE '%"+query+"%' OR description LIKE '%"+query+"%'"
+    c = Cities.objects.raw(sql)
+    sql = "SELECT DISTINCT * FROM content_display_activities WHERE name LIKE '%"+query+"%' OR description LIKE '%"+query+"%' OR type_activity LIKE '%"+query+"%'"
+    a = Activities.objects.raw(sql)
+    sql = "SELECT DISTINCT * FROM content_display_languages WHERE name LIKE '%"+query+"%' OR description LIKE '%"+query+"%'"
+    l = Languages.objects.raw(sql)
+
+    if(query==""):
+        context = Context({
+            'blank':True,
+        })
+    else:
+        context = Context({
+            'blank':False,
+            'query':query,
+            'cities':c,
+            'ccount':len(list(c)),
+            'cbool':len(list(c))>0,
+            'activities':a,
+            'acount':len(list(a)),
+            'abool':len(list(a))>0,
+            'languages':l,
+            'lcount':len(list(l)),
+            'lbool':len(list(l))>0,
+        })
+
     return HttpResponse(template.render(context))

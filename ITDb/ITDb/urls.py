@@ -52,5 +52,9 @@ urlpatterns = patterns('',
     url(r'^api/languages/(?P<lang_id>[a-zA-Z0-9-\s]+)/$', 'content_display.views.api_languages', name="api"),
     url(r'^api/activities/(?P<acts_id>[a-zA-Z0-9-\s]+)/$', 'content_display.views.api_activities', name="api"),
 
+    # search
+    url(r'^search/$','content_display.views.search'),
+    url(r'^search/(?P<query>[a-zA-Z0-9-\s]+)/$','content_display.views.search'),
+
 
 )
