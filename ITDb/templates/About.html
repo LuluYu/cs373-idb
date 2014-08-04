@@ -1,0 +1,328 @@
+{% load dictionary_extras %}
+<!DOCTYPE html>
+<html lang="en" bgcolor="#fffaf3">
+<head>
+	<title>Tourist destinations</title>
+
+	<!-- ESTO QUE ESTA AQUI -->
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link rel="stylesheet" type="text/css" href="/home/FlappyBirds/ITDb../static/bootstrap/css/bootstrap.min.css"/>
+
+    <!-- ESTP QUE ESTA AQUI!!!! -->
+
+
+</head>
+
+<style type="text/css">
+  .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+    background-color:  #fffaf3;
+    color:#ffffff;
+  }
+  .bgimg {
+  	background-image: url("../static/styles_design/bg.png");
+  	/*height: 158px;*/
+  	margin-top: -20px;
+  	background-repeat: repeat-x;
+    /*background-color: #fffaf3;*/
+  }
+  .logo{
+  	background-image: url("../static/styles_design/logo.png");
+  	height: 110px;
+  	width: 305px;
+  	margin-top: 50px;
+  	margin-left: 50px;
+  	background-repeat: no-repeat;
+  }
+  .search{
+  	margin-top: 60px;
+  	margin-left: 60px;
+  	width: 350px;
+  }
+  .dropb{
+  	width: 30%;
+  }
+
+  .infobox{/*
+    padding: 20px;
+    height: 250px;
+    margin-top: -20px;*/
+    background-color: #fffaf3;
+  }
+
+  #cf {
+    position:relative;
+    padding: 10px;
+    /*height:281px;*/
+    /*width:450px;*/
+    margin:0 auto;
+  }
+
+  #cf img {
+    position:absolute;
+    left:0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+  }
+
+  #cf img.top:hover {
+    opacity: 0;
+  }
+
+  .circular {
+	width: 300px;
+	height: 300px;
+	border-radius: 170px;
+	-webkit-border-radius: 170px;
+	-moz-border-radius: 170px;
+	background: url(http://link-to-your/image.jpg) no-repeat;
+  }
+
+  html, body, #map-canvas {
+    height: 100%;
+    margin: 0px;
+    margin-top: -20px;
+    padding: 0px
+  }
+
+
+</style>
+
+<!-- Google API and Key-->
+<script type="text/javascript"
+
+	src="https://maps.googleapis.com/maps/api/js?Key=AIzaSyDqgEKn9SN-A15a5emKo1kFGamx7AXYRq4" >
+
+</script>
+<script>
+	var map;
+	function initialize() {
+	  var mapOptions = {
+
+	    zoom: 2,
+
+	    center: new google.maps.LatLng(-2.605433, 17.703638)
+	  };
+	  map = new google.maps.Map(document.getElementById('map-canvas'),
+	      mapOptions);
+
+
+	  var img = '../static/styles_design/marker.png';
+
+	  {% for c in cities %}
+	    var marker = new google.maps.Marker({
+	        position: new google.maps.LatLng({{ c.x }},{{ c.y }}),
+    	  	map: map,
+    	  	title: '{{ c.name }}',
+    	  	icon : img,
+    	  	draggable: false,
+    	  	optimized:false,
+	    })
+    	  google.maps.event.addListener(marker, 'click', function () {
+      		window.location.href = 'http://flappybirds.pythonanywhere.com/cities/{{ c.id }}';
+    	  });
+	  {% endfor %}
+
+	}
+
+	google.maps.event.addDomListener(window, 'load', initialize)
+
+</script>
+
+
+<body bgcolor="#fffaf3">
+	<div class="bgimg container-fluid">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="logo">
+
+				</div><!-- /input-group -->
+			</div><!-- /.col-lg-6 -->
+
+		</div><!-- /.row -->
+	</div>
+
+
+
+	<div class="navbar navbar-custom" role="navigation">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+			    <li class="dropdown ">
+			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
+			        <ul class="dropdown-menu">
+			            {% for c in cities %}
+			            <li><a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{c.name}},{{c.country}}</a></li>
+			            {% endfor %}
+			            <li class="divider"></li>
+			        </ul>
+			    </li>
+			    <li class="dropdown ">
+			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
+			        <ul class="dropdown-menu">
+			             {% for l in languages %}
+			            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
+			            {% endfor %}
+			            <li class="divider"></li>
+			        </ul>
+			    </li>
+			    <li class="dropdown ">
+			    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
+			    	<ul class="dropdown-menu">
+			    		 {% for a in activities %}
+			            <li><a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{a.name}}</a></li>
+			            {% endfor %}
+			            <li class="divider"></li>
+			    	</ul>
+			    </li>
+			    <li>
+			    	<a href="http://flappybirds.pythonanywhere.com/about">Flappy Birds</a>
+			    </li>
+			</ul>
+		</div>
+	</div>
+
+
+
+	<div class="row infobox" align="center">
+  		<div class="col-md-2 col-md-offset-3">
+  			<div id="cf">
+	  			<img class="bottom" src="../static/styles_design/samuel2.jpg" width="170" height="225"/>
+          <img class="top" src="../static/styles_design/samuel1.jpg" width="170" height="225"/>
+	  			<!-- <div align="center" width="225" height="350"><p><br>Samuel<br>Acuna</p></div> -->
+  			</div>
+  		</div>
+      <div class="col-md-4">
+        <!-- <div id="cf"> -->
+          <!-- <img class="bottom" src="../static/styles_design/samuel2.jpg" width="170" height="225"/> -->
+          <!-- <img class="top" src="../static/styles_design/samuel1.jpg" width="170" height="225"/> -->
+          <div align="justify" width="225" height="350"><p>
+            <br><font size="5">Samuel Acuna  </font> Phase I Team Leader
+            <br> CS and Philosophy major, Linguistics minor. Graduating in December 2014. Interested in data analysis and visualization. 
+            <br><em>Phase I:</em> I worked on the api design with <b>Apiary</b> and front end for some sections using <b>Twitter Bootstrap</b> and <b>CSS</b> and I was the group leader. I also helped collect data.
+            <br><em>Phase II:</em> I worked on the dynamic content loading and the api implementation using <b>Django</b> and <b>mySQL</b>.
+            <br><em>Phase III:</em> I worked on the search functionality with <b>mySQL</b>. </p>
+          </div>
+        <!-- </div> -->
+      </div>
+  </div>
+  
+  <div class="row infobox" align="center">
+  		<div class="col-md-4 col-md-offset-3">
+  			<!-- <div id="cf"> -->
+          <!-- <img class="bottom" src="../static/styles_design/samuel2.jpg" width="170" height="225"/> -->
+          <!-- <img class="top" src="../static/styles_design/samuel1.jpg" width="170" height="225"/> -->
+          <div align="justify" width="225" height="350"><p>
+            <br><font size="5">Jose Coello  </font> Phase II Team Leader
+            <br> Computer science major. I love to play video games and expect to graduate in this coming fall. Interested in application development and databases. 
+            <br><em>Phase I:</em> I helped create the 3 static pages using <b>Twitter Bootstrap</b>, mostly focused on making the index page, by adding the navigation bar, and using the <b>Google Map</b> api.
+            <br><em>Phase II:</em> I was the group leader. I organized the team into two groups, one focused on inputting data into the database. I was in the other group creating the api and fixing the views using <b>Django</b>.
+            <br><em>Phase III:</em> to be filled. </p></div>
+        <!-- </div> -->
+  		</div>
+      <div class="col-md-2">
+        <div id="cf">
+          <img class="bottom" src="../static/styles_design/jose2.jpg" width="170" height="225"/>
+          <img class="top" src="../static/styles_design/jose1.jpg" width="170" height="225"/>
+          <!-- <div align="center" width="225" height="350"><p><br>Jose<br>Coello</p></div> -->
+        </div>
+      </div>
+  </div>
+
+  <div class="row infobox" align="center">
+  		<div class="col-md-2 col-md-offset-3">
+  			<div id="cf">
+	  			<img class="bottom" src="../static/styles_design/lulu2.jpg" width="170" height="225"/>
+	  			<img class="top" src="../static/styles_design/lulu1.jpg" width="170" height="225"/>
+	  			<!-- <div align="center" width="225" height="350"><p><br>Yu<br>Lu</p></div> -->
+  			</div>
+  		</div>
+      <div class="col-md-4">
+        <!-- <div id="cf"> -->
+          <!-- <img class="bottom" src="../static/styles_design/samuel2.jpg" width="170" height="225"/> -->
+          <!-- <img class="top" src="../static/styles_design/samuel1.jpg" width="170" height="225"/> -->
+          <div align="justify" width="225" height="350"><p>
+            <br><font size="5">Yu Lu  </font> Phase III Team Leader
+            <br> CS and Math major. Graduating in Spring 2016. Interested in application development and learning new technology. 
+            <br><em>Phase I:</em> I worked on the api design using <b>Apiary</b> and collected data for the static pages. I also helped with the page design using <b>Twitter Bootstrap</b> and <b>CSS</b>.
+            <br><em>Phase II:</em> I worked on the error handling for the pages and api requests with <b>Apiary</b> and <b>Django</b>.
+            <br><em>Phase III:</em> I worked on this Flappy Birds page using <b>Twitter Bootstrap</b> and <b>CSS</b>. </p></div>
+        <!-- </div> -->
+      </div>
+  </div>
+
+  <div class="row infobox" align="center">
+  		<div class="col-md-4 col-md-offset-3">
+  			<!-- <div id="cf"> -->
+          <!-- <img class="bottom" src="../static/styles_design/samuel2.jpg" width="170" height="225"/> -->
+          <!-- <img class="top" src="../static/styles_design/samuel1.jpg" width="170" height="225"/> -->
+          <div align="right" width="225" height="350"><p><br>Samuel Acuna <br>Short Personal Description :) <br>Phase I Team Leader <br>Responsibilities:<br>Phase I: to be filled <br>Phase II: to be filled <br>Phase III: to be filled <br>THE END.</p></div>
+        <!-- </div> -->
+  		</div>
+      <div class="col-md-2">
+        <div id="cf">
+          <img class="bottom" src="../static/styles_design/juan2.jpg" width="170" height="225"/>
+          <img class="top" src="../static/styles_design/juan1.jpg" width="170" height="225"/>
+          <!-- <div align="center" width="225" height="350"><p><br>Juan<br>Mata</p></div> -->
+        </div>
+      </div>
+  </div>
+
+  <div class="row infobox" align="center">
+  		<div class="col-md-2 col-md-offset-3">
+  			<div id="cf">
+          <img class="bottom" src="../static/styles_design/jesus2.jpg" width="170" height="225"/>
+          <img class="top" src="../static/styles_design/jesus1.jpg" width="170" height="225"/>
+	  			<!-- <div align="center" width="225" height="350"><p><br>Jesus<br>Galvan</p></div> -->
+  			</div>
+  		</div>
+      <div class="col-md-4">
+        <!-- <div id="cf"> -->
+          <!-- <img class="bottom" src="../static/styles_design/samuel2.jpg" width="170" height="225"/> -->
+          <!-- <img class="top" src="../static/styles_design/samuel1.jpg" width="170" height="225"/> -->
+          <div align="left" width="225" height="350"><p><br>Samuel Acuna <br>Short Personal Description :) <br>Phase I Team Leader <br>Responsibilities:<br>Phase I: to be filled <br>Phase II: to be filled <br>Phase III: to be filled <br>THE END.</p></div>
+        <!-- </div> -->
+      </div>
+  </div>
+
+  <div class="row infobox" align="center">
+  		<div class="col-md-4 col-md-offset-3">
+  			<!-- <div id="cf"> -->
+          <!-- <img class="bottom" src="../static/styles_design/samuel2.jpg" width="170" height="225"/> -->
+          <!-- <img class="top" src="../static/styles_design/samuel1.jpg" width="170" height="225"/> -->
+          <div align="right" width="225" height="350"><p><br>Samuel Acuna <br>Short Personal Description :) <br>Phase I Team Leader <br>Responsibilities:<br>Phase I: to be filled <br>Phase II: to be filled <br>Phase III: to be filled <br>THE END.</p></div>
+        <!-- </div> -->
+  		</div>
+      <div class="col-md-2">
+        <div id="cf">
+          <img class="bottom" src="../static/styles_design/daniel2.jpg" width="170" height="225"/>
+          <img class="top" src="../static/styles_design/daniel1.jpg" width="170" height="225"/>
+          <!-- <div align="center" width="225" height="350"><p><br>Daniel<br>Garza</p></div> -->
+        </div>
+      </div>
+  </div>
+	<!-- <div id="cf">
+  		<img class="bottom" src="https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xaf1/v/t1.0-9/383934_10151103429145442_357265718_n.jpg?oh=87e1c1f0aa18beeae55c22d4ab872f8d&oe=5451DE43&__gda__=1414384272_42bc8796a9a951069b46f01aa7a08cfe" width="270" height="420"/>
+  		<img class="top" src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfa1/t1.0-9/185289_10170749584355442_4306571_n.jpg"  width="270" height="420"/>
+	</div> -->
+
+
+    <div class="mapmar" id="map-canvas"> </div>
+
+
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- ESTO AQUI -->
+</body></html>
+
+<!-- border, box-shadow, media-screen -->
