@@ -75,6 +75,7 @@
 
 
 	  var img = '/static/styles_design/marker.png';
+	  var img2 = '/static/styles_design/longhorn_marker.png'
 
 	  {% for c in cities %}
 	    var marker = new google.maps.Marker({
@@ -89,6 +90,18 @@
       		window.location.href = 'http://flappybirds.pythonanywhere.com/cities/{{ c.id }}';
     	  });
 	  {% endfor %}
+
+	    var marker = new google.maps.Marker({
+	        position: new google.maps.LatLng(30.284844, -97.734084),
+	        map:map,
+	        title:'University of Texas at Austin',
+	        icon : img2,
+	        draggable: false,
+	        optimized: false,
+	    })
+	     google.maps.event.addListener(marker, 'click', function () {
+      		window.location.href = 'http://flappybirds.pythonanywhere.com/ut_api/';
+    	  });
 
 	  /*var marker = new google.maps.Marker({
 	  	position: new google.maps.LatLng(20.6829,-88.5686),
