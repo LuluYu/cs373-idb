@@ -56,5 +56,8 @@ urlpatterns = patterns('',
     url(r'^search/$','content_display.views.search'),
     url(r'^search/(?P<query>[a-zA-Z0-9-\s]+)/$','content_display.views.search'),
 
+    #Git-A-Grep API
+    url(r'^ut_api/$', 'content_display.views.ut_api'),
+
 
 )

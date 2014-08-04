@@ -9,6 +9,10 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.db import connection
 from django.template import Context,loader
 from content_display.models import Cities, Languages, Activities, languages_spoken_in
+from django.shortcuts import render
+#import urllib2
+import urllib
+import json
 
 def hello_template (request):
     name = "Jesus"
@@ -194,12 +198,8 @@ def view_city(request, city_id=None) :
     haserror = False
     act=[]
     pictures = {}
-
-
     lang_spoken =[]
     videos= {}
-
-
 
     try:
         if(city_id.isdigit()) :
@@ -408,33 +408,97 @@ def all_langs(request):
 #------------
 
 def search(request, query=""):
+    navlanguages = []
+    navcities= []
+    navactivities = []
+    haserror = False
+    error_type = ""
+
+    query1 = query.upper()
+    try:
+        navlanguages = Languages.objects.all()
+        navcities = Cities.objects.all()
+        navactivities = Activities.objects.all()
+    except Exception as e:
+        haserror = True
+        error_type = e.__class__.__name__
+
     #send to view
     template = loader.get_template('search.html')
 
-    sql = "SELECT DISTINCT * FROM content_display_cities WHERE name LIKE '%"+query+"%' OR description LIKE '%"+query+"%'"
+    sql = "SELECT DISTINCT * FROM content_display_cities WHERE name collate utf8_general_ci LIKE '%"+query1+"%' OR description LIKE '%"+query1+"%'"
     c = Cities.objects.raw(sql)
-    sql = "SELECT DISTINCT * FROM content_display_activities WHERE name LIKE '%"+query+"%' OR description LIKE '%"+query+"%' OR type_activity LIKE '%"+query+"%'"
-    a = Activities.objects.raw(sql)
-    sql = "SELECT DISTINCT * FROM content_display_languages WHERE name LIKE '%"+query+"%' OR description LIKE '%"+query+"%'"
-    l = Languages.objects.raw(sql)
+    sql2 = "SELECT DISTINCT * FROM content_display_activities WHERE name collate utf8_general_ci LIKE '%"+query1+"%' OR description LIKE '%"+query1+"%' OR type_activity LIKE '%"+query1+"%'"
+    a = Activities.objects.raw(sql2)
+    sql3 = "SELECT DISTINCT * FROM content_display_languages WHERE name collate utf8_general_ci LIKE '%"+query1+"%' OR description LIKE '%"+query1+"%'"
+    l = Languages.objects.raw(sql3)
 
-    if(query==""):
+    ccount = 0
+    acount = 0
+    lcount = 0
+
+    try:
+        ccount = len(list(c)) if (list(c) is not None) else 0
+        # if(list(c) is None):
+        #     ccount = 0
+        # else:
+        #     ccount = len(list(c))
+    except AttributeError:
+        ccount = 0
+
+    try:
+        if(list(a) is None):
+            acount = 0
+        else:
+            acount = len(list(a))
+    except AttributeError:
+        acount = 0
+
+    try:
+        if(list(l) is None):
+            lcount = 0
+        else:
+            lcount = len(list(l))
+    except AttributeError:
+        lcount = 0
+
+    if(query == ""):
         context = Context({
             'blank':True,
         })
     else:
         context = Context({
+            'navcities':navcities,
+            'navlanguages':navlanguages,
+            'navactivities':navactivities,
             'blank':False,
             'query':query,
             'cities':c,
-            'ccount':len(list(c)),
-            'cbool':len(list(c))>0,
+            'ccount':ccount,
+            'cbool':ccount>0,
             'activities':a,
-            'acount':len(list(a)),
-            'abool':len(list(a))>0,
+            'acount':acount,
+            'abool':acount>0,
             'languages':l,
-            'lcount':len(list(l)),
-            'lbool':len(list(l))>0,
+            'lcount':lcount,
+            'lbool':lcount>0,
         })
 
     return HttpResponse(template.render(context))
+
+def ut_api(request) :
+
+    template = loader.get_template('ut_api.html')
+    #response = urllib2.urlopen('https://gitagrep.pythonanywhere.com/rest/colleges/')
+    #html = response.read()
+    #content = json.loads(html)
+    response = urllib.request.urlopen('https://gitagrep.pythonanywhere.com/rest/colleges/')
+    html = response.read().decode("utf-8")
+    content = json.loads(html)
+
+    context = Context({
+        'content':content
+    })
+
+    return HttpResponse(template.render(context))
+
