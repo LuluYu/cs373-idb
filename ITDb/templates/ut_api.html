@@ -24,17 +24,99 @@
 
 </head>
 
-<body>
+<style type="text/css">
+
+    img {
+    max-width:400px;
+    max-height:400px; }
+
+    .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+        background-color: #e2a846;
+        color:#ffffff;
+    }
+
+    .bgimg {
+        background-image: url("/static/styles_design/bg.png");
+        /*height: 158px;*/
+        margin-top: -20px;
+        background-repeat: repeat-x;
+        background-color: #f8e0a7;
+    }
+
+    .logo{
+        background-image: url("/static/styles_design/logo.png");
+        height: 110px;
+        width: 305px;
+        margin-top: 50px;
+        margin-left: 50px;
+        background-repeat: no-repeat;
+    }
+
+    .row:nth-child(2n) .description{
+        float:right;
+    }
+
+</style>
+
+  <body>
+
+    <!-- add  nav bar here-->
+   <div class="bgimg container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <a href="/">
+                    <div class="logo">
+                    </div></a><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+    </div>
+
+
+    <div class="navbar navbar-custom" role="navigation">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+			    <li class="dropdown ">
+			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
+			        <ul class="dropdown-menu">
+			            {% for c in cities %}
+			            <li><a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{c.name}},{{c.country}}</a></li>
+			            {% endfor %}
+			            <li class="divider"></li>
+			        </ul>
+			    </li>
+			    <li class="dropdown ">
+			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
+			        <ul class="dropdown-menu">
+			             {% for l in languages %}
+			            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
+			            {% endfor %}
+			            <li class="divider"></li>
+			        </ul>
+			    </li>
+			    <li class="dropdown ">
+			    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
+			    	<ul class="dropdown-menu">
+			    		 {% for a in activities %}
+			            <li><a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{a.name}}</a></li>
+			            {% endfor %}
+			            <li class="divider"></li>
+			    	</ul>
+			    </li>
+			</ul>
+		</div>
+	</div>
+
+
     <!-- add nave bar here -->
 
     <div class = 'container-fluid'>
         {% for a in content %}
             <div class = "row">
-                <div class = "jumbotron col-md-6">
+                <div class = "jumbotron col-md-6 description">
                     <h1><a href= "{{a.homepage}}">{{a.name}}</a></h1>
                     <p>{{a.description}}</p>
                 </div>
-                <div class= "col-md-6">
+                <div class= "col-md-6 majors">
                     <ul class = "list-group">
                         {% for k in a.majors %}
                             <li class = "list-group-item"><a href ="https://gitagrep.pythonanywhere.com/Majors/{{k.id}}/">{{k.name}}</a></li>

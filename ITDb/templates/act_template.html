@@ -172,13 +172,37 @@
         <p align="justify">{{ acts.description }} </p>
         <!--<p><a class="btn btn-primary btn-lg" href="http://en.wikipedia.org/wiki/English_language" role="button" target="_blank">Learn more &raquo;</a></p>-->
         <h3>Look at that view!</h3>
-        {% for pic in pictures %}
-            <img src="{{ pic }}">
-        {% endfor %}
-        <h3>Spoken In</h3>
+
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                {% for pic in pictures %}
+                <div class="item">
+                    <img src="{{ pic }}" alt="">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+
+        <h3>Other Activities</h3>
         <div class="row">
           <div class="col-md-3">
-            <p><a class="btn btn-lg btn-warning" href="/Chichen_Itza_Mexico/" role="button">Chichen Itza, Mexico</a></p>
+            <!--<p><a class="btn btn-lg btn-warning" href="/Chichen_Itza_Mexico/" role="button">Chichen Itza, Mexico</a></p>-->
+            {% for a in city_acts %}
+                {% if a.id != acts.id %}
+                    <p><a class="btn btn-lg btn-warning"  href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}" role="button">{{a.name}}</a></p>
+                {% endif %}
+            {% endfor %}
           </div><!-- /.col-lg-6 -->
         </div><!-- /.row -->
       </div>
@@ -186,11 +210,12 @@
   <div class="bar2 container-fluid"></div>
 
 
-
-
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
+ <script>
+    $($('.carousel-inner .item')[0]).addClass('active');
+ </script>
 
 </body>
 </html>

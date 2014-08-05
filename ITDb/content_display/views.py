@@ -283,6 +283,7 @@ def view_activities(request, acts_id=None):
     cities = []
     languages = []
     activities = []
+    city_acts = []
 
     try:
         if(acts_id.isdigit()):
@@ -297,6 +298,7 @@ def view_activities(request, acts_id=None):
     cities = Cities.objects.all()
     languages = Languages.objects.all()
     activities = Activities.objects.all()
+    city_acts = Activities.objects.filter(city_id = acts.city_id)
     template = loader.get_template('act_template.html')
     context = Context({
         'acts':acts,
@@ -305,7 +307,8 @@ def view_activities(request, acts_id=None):
         'etype': error_type,
         'cities':cities,
         'languages':languages,
-        'activities':activities
+        'activities':activities,
+        'city_acts' :city_acts
     })
     return HttpResponse(template.render(context))
 
@@ -495,9 +498,15 @@ def ut_api(request) :
     response = urllib.request.urlopen('https://gitagrep.pythonanywhere.com/rest/colleges/')
     html = response.read().decode("utf-8")
     content = json.loads(html)
+    c = Cities.objects.all()
+    a = Activities.objects.all()
+    l = Languages.objects.all()
 
     context = Context({
-        'content':content
+        'content':content,
+        'cities':c,
+        'activities':a,
+        'languages':l
     })
 
     return HttpResponse(template.render(context))
