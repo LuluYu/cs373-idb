@@ -17,7 +17,7 @@
   .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
     background-color: #e2a846;
     color:#ffffff;
-  }
+    }
   .bgimg {
     background-image: url("/static/styles_design/bg.png");
     /*height: 158px;*/
@@ -109,7 +109,6 @@
     margin-left: 70px;
   }
 
-
 </style>
 
 </head>
@@ -159,6 +158,9 @@
 			            <li class="divider"></li>
 			    	</ul>
 			    </li>
+			    <li>
+			    	<a href="http://flappybirds.pythonanywhere.com/about">Flappy Birds</a>
+			    </li>
 			</ul>
 		</div>
 	</div>
@@ -170,36 +172,73 @@
     <input type="text" placeholder="search" name="search" id="search" value="{{ query|safe }}"><br>
     results for: {{ query }}
     <div class="results container-fluid">
+        <div class="andbtn btn btn-lg btn-warning" role="button">AND</div>
+        <div class="orbtn btn btn-lg btn-warning" role="button">OR</div>
 
-    <!--{% if cbool %}-->
-    	<h3>cities ({{ ccount }})</h3>
-    	{% for c in cities %}
-    		<div>
-    			<a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{ c.name|safe }}</a>
-    			<p>{{ c.description|safe }}</p>
-    		</div>
-    	{% endfor %}
-    <!--{% endif %}-->
+        <div class="andresult">
+            {% if cbool %}
+            	<h3>cities ({{ ccount }})</h3>
+            	{% for c in cities %}
+            		<div>
+            			<a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{ c.name|safe }}</a>
+            			<p>{{ c.description|safe }}</p>
+            		</div>
+            	{% endfor %}
+            {% endif %}
 
-    	{% if abool %}
-    		<h3>activities ({{ acount }})</h3>
-    		{% for a in activities %}
-    			<div>
-    				<a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{ a.name|safe }}</a>
-    				<p>{{ a.description|safe }}</p>
-    			</div>
-    		{% endfor %}
-    	{% endif %}
+        	{% if abool %}
+        		<h3>activities ({{ acount }})</h3>
+        		{% for a in activities %}
+        			<div>
+        				<a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{ a.name|safe }}</a>
+        				<p>{{ a.description|safe }}</p>
+        			</div>
+        		{% endfor %}
+        	{% endif %}
 
-    	{% if lbool %}
-    		<h3>languages ({{ lcount }})</h3>
-    		{% for l in languages %}
-    			<div>
-    				<a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{ l.name|safe }}</a>
-    				<p>{{ l.description|safe }}</p>
-    			</div>
-    		{% endfor %}
-    	{% endif %}
+        	{% if lbool %}
+        		<h3>languages ({{ lcount }})</h3>
+        		{% for l in languages %}
+        			<div>
+        				<a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{ l.name|safe }}</a>
+        				<p>{{ l.description|safe }}</p>
+        			</div>
+        		{% endfor %}
+        	{% endif %}
+        </div>
+
+        <div class="orresult">
+            {% if cobool %}
+            	<h3>cities ({{ cocount }})</h3>
+            	{% for c in co %}
+            		<div>
+            			<a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{ c.name|safe }}</a>
+            			<p>{{ c.description|safe }}</p>
+            		</div>
+            	{% endfor %}
+            {% endif %}
+
+        	{% if aobool %}
+        		<h3>activities ({{ aocount }})</h3>
+        		{% for a in ao %}
+        			<div>
+        				<a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{ a.name|safe }}</a>
+        				<p>{{ a.description|safe }}</p>
+        			</div>
+        		{% endfor %}
+        	{% endif %}
+
+        	{% if lobool %}
+        		<h3>languages ({{ locount }})</h3>
+        		{% for l in lo %}
+        			<div>
+        				<a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{ l.name|safe }}</a>
+        				<p>{{ l.description|safe }}</p>
+        			</div>
+        		{% endfor %}
+        	{% endif %}
+        </div>
+
     </div>
     {% endif %}
 </div>
@@ -224,5 +263,21 @@ h3 { border-top:1px solid #777; }
 </style>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+ <script>
+    $(document).ready(function(){
+        $('.orresult').hide();
+    });
+    $('.andbtn').on('click', function(){
+        $('.orresult').hide();
+        $('.andresult').fadeIn();
+     });
+
+     $('.orbtn').on('click', function(){
+        $('.andresult').hide();
+        $('.orresult').fadeIn();
+     });
+ </script>
+
 
 </body></html>

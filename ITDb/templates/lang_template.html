@@ -9,35 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap core CSS -->
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/particularelements.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template -->
     <link href="navbar.css" rel="stylesheet">
     <!-- ESTP QUE ESTA AQUI!!!! -->
 
 <style type="text/css">
-  .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
-    background-color: #e2a846;
-    color:#ffffff;
-  }
-  .bgimg {
-    background-image: url("/static/styles_design/bg.png");
-    /*height: 158px;*/
-    margin-top: -20px;
-    background-repeat: repeat-x;
-    background-color: #f8e0a7;
-  }
-  .logo{
-    background-image: url("/static/styles_design/logo.png");
-    height: 110px;
-    width: 305px;
-    margin-top: 50px;
-    margin-left: 50px;
-    background-repeat: no-repeat;
-  }
-  .search{
-    margin-top: 60px;
-    margin-left: 60px;
-    width: 350px;
-  }
+
   .dropb{
     width: 30%;
   }
@@ -117,59 +96,60 @@
 
 <body>
 
-  <div class="bgimg container-fluid">
-    <div class="row">
-      <div class="col-lg-6">
-        <a href="/"><div class="logo">
-
-        </div></a><!-- /input-group -->
-      </div><!-- /.col-lg-6 -->
+<div class="bgimg container-fluid">
+    <div class="container">
+        <div class="col-lg-4">
+            <a href="/"><div class="logo"></div></a><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+            <div class="col-lg-8">
+                <input type="text" placeholder="Search" name="search" id="search">
+            </div>
     </div><!-- /.row -->
-  </div>
+</div>
 
-
-
- <div class="navbar navbar-custom" role="navigation">
-		<div class="container-fluid">
-			<ul class="nav navbar-nav">
-			    <li class="dropdown ">
-			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
-			        <ul class="dropdown-menu">
-			            {% for c in cities %}
-			            <li><a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{c.name}},{{c.country}}</a></li>
-			            {% endfor %}
-			            <li class="divider"></li>
-			        </ul>
-			    </li>
-			    <li class="dropdown ">
-			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
-			        <ul class="dropdown-menu">
-			             {% for l in languages %}
-			            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
-			            {% endfor %}
-			            <li class="divider"></li>
-			        </ul>
-			    </li>
-			    <li class="dropdown ">
-			    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
-			    	<ul class="dropdown-menu">
-			    		 {% for a in activities %}
-			            <li><a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{a.name}}</a></li>
-			            {% endfor %}
-			            <li class="divider"></li>
-			    	</ul>
-			    </li>
-			</ul>
-		</div>
+<div class="navbar navbar-custom" role="navigation">
+	<div class="container">
+		<ul class="nav navbar-nav">
+		    <li class="dropdown">
+		        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		            {% for c in cities %}
+		            <li><a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{c.name}},{{c.country}}</a></li>
+		            {% endfor %}
+		        </ul>
+		    </li>
+		    <li class="dropdown ">
+		        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		             {% for l in languages %}
+		            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
+		            {% endfor %}
+		        </ul>
+		    </li>
+		    <li class="dropdown ">
+		    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
+		    	<ul class="dropdown-menu">
+		    		 {% for a in activities %}
+		            <li><a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{a.name}}</a></li>
+		            {% endfor %}
+		    	</ul>
+		    </li>
+		    <li>
+		    	<a href="http://flappybirds.pythonanywhere.com/about">Flappy Birds</a>
+		    </li>
+		</ul>
 	</div>
+</div>
 
-  <div class="jumbotron container-fluid nomargin">
-      <div class="bgPic">
+<div class="container" id="language">
+    <div class="col-md-8">
         <h1>{{ lang.name }}</h1>
         <p align="justify">{{ lang.description }}</p>
         <!--<p><a class="btn btn-primary btn-lg" href="http://en.wikipedia.org/wiki/English_language" role="button" target="_blank">Learn more &raquo;</a></p>-->
         <h3>Script</h3>
         <img src="{{ lang.pictures }}">
+    </div>
+    <div class="col-md-4">
         <h3>Spoken In</h3>
         <div class="row">
             {% for i in cities_in%}
@@ -178,15 +158,40 @@
             </div>
             {% endfor %}
         </div><!-- /.row -->
-      </div>
-  </div>
-  <div class="bar2 container-fluid"></div>
+    </div>
+</div>
 
+<div class="divider container-fluid"></div>
+<div class="footer">
+    <div class="container">
+        <div class="col-lg-3">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cities">Cities</a></li>
+                <li><a href="/activities">Activities</a></li>
+                <li><a href="/languages">Languages</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-3">
+            <ul>
+                <li><a href="/search">Search</a></li>
+                <li><a href="/about">Meet the team</a></li>
+                <li><a href="https://www.cs.utexas.edu/users/downing/cs373/drupal/" target="_new">Project for UT CS373</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
-
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
- <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script>
+$('#search').on("keyup",function(e) {
+	if(e.which==13) {
+		window.location ="http://flappybirds.pythonanywhere.com/search/"+$('#search').val();
+	}
+});
+</script>
 
 
 </body>

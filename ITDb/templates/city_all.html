@@ -5,34 +5,103 @@ error: {{ etype }}
 <!DOCTYPE html>
 <html><head>
     <title>Flappy Birds : Cities</title>
-
-    <style>
-    .block { display:block;
-        border:1px solid red;
-        padding:20px;
-        margin:10px; }
-    .imgs { display:block;
-        padding:5px;
-        margin:5px;
-        border:1px solid blue;
-        overflow-x:scroll;
-        overflow-y:hidden; }
-    .imgs img { display:inline-block;
-        max-width:300px;
-        max-height:100px; }
-    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/allelements.css" rel="stylesheet" type="text/css">
 
 </head><body>
-    {% for c in cities %}
-        <div class="block">
-            <a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{ c.name }}</a>
-            <div class="imgs">
-                {% for i in pictures|access:c.name %}
-                    <img src="{{ i }}">
-                {% endfor %}
+
+<div class="bgimg container-fluid">
+    <div class="container">
+        <div class="col-lg-4">
+            <a href="/"><div class="logo"></div></a><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+            <div class="col-lg-8">
+                <input type="text" placeholder="Search" name="search" id="search">
             </div>
+    </div><!-- /.row -->
+</div>
+
+<div class="navbar navbar-custom" role="navigation">
+	<div class="container">
+		<ul class="nav navbar-nav">
+		    <li class="dropdown">
+		        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		            {% for c in cities %}
+		            <li><a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{c.name}},{{c.country}}</a></li>
+		            {% endfor %}
+		        </ul>
+		    </li>
+		    <li class="dropdown ">
+		        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		             {% for l in languages %}
+		            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
+		            {% endfor %}
+		        </ul>
+		    </li>
+		    <li class="dropdown ">
+		    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
+		    	<ul class="dropdown-menu">
+		    		 {% for a in activities %}
+		            <li><a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{a.name}}</a></li>
+		            {% endfor %}
+		    	</ul>
+		    </li>
+		    <li>
+		    	<a href="http://flappybirds.pythonanywhere.com/about">Flappy Birds</a>
+		    </li>
+		</ul>
+	</div>
+</div>
+
+<div class="container">
+    <h1>All Cities</h1>
+    {% for c in cities %}
+        <div class="block col-lg-3">
+            <a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}"  style="background-image:url('{{ pictures|access:c.name }}')">{{ c.name }}</a>
         </div>
     {% endfor %}
+</div>
 
+<div class="divider container-fluid"></div>
+<div class="footer">
+    <div class="container">
+        <div class="col-lg-3">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cities">Cities</a></li>
+                <li><a href="/activities">Activities</a></li>
+                <li><a href="/languages">Languages</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-3">
+            <ul>
+                <li><a href="/search">Search</a></li>
+                <li><a href="/about">Meet the team</a></li>
+                <li><a href="https://www.cs.utexas.edu/users/downing/cs373/drupal/" target="_new">Project for UT CS373</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script>
+$('#search').on("keyup",function(e) {
+	if(e.which==13) {
+		window.location ="http://flappybirds.pythonanywhere.com/search/"+$('#search').val();
+	}
+});
+</script>
 </body></html>
 {% endif %}

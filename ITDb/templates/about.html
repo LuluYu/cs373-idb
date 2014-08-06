@@ -1,0 +1,311 @@
+{% load dictionary_extras %}
+<!DOCTYPE html>
+<html lang="en" bgcolor="#fffaf3">
+<head>
+	<title>About Our Team</title>
+
+	<!-- ESTO QUE ESTA AQUI -->
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link rel="stylesheet" type="text/css" href="/home/FlappyBirds/ITDb../static/bootstrap/css/bootstrap.min.css"/>
+
+    <!-- ESTP QUE ESTA AQUI!!!! -->
+
+
+</head>
+
+<style type="text/css">
+    /*@font-face { font-family:fantasy; src:url("../static/styles_design/flappyBirdFont.TTF");*/
+    /*@font-face { font-family:webdings; src:url("../static/styles_design/flappyBirdFont.TTF");*/
+  .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+    background-color:  #e2a846;
+    color:#ffffff;
+  }
+  .bgimg {
+  	background-image: url("../static/styles_design/bg.png");
+  	/*height: 158px;*/
+  	margin-top: -20px;
+  	background-repeat: repeat-x;
+    /*background-color: #fffaf3;*/
+  }
+  .logo{
+  	background-image: url("../static/styles_design/logo.png");
+  	height: 110px;
+  	width: 305px;
+  	margin-top: 50px;
+  	margin-left: 50px;
+  	background-repeat: no-repeat;
+  }
+  #search{
+  	margin-top: 60px;
+  	margin-left: 60px;
+  	width: 350px;
+  }
+  .dropb{
+  	width: 30%;
+  }
+  .nomargin{
+      margin-bottom: 0px;
+  }
+
+  .infobox{
+    /*height: 250px;
+    margin-top: -20px;*/
+    background-color: #fffaf3;
+  }
+  .description{
+      padding-bottom: 20px;
+      background-color: #fff5e2;
+  }
+
+  .nopadding{
+      padding:0px;
+  }
+
+  .pplpic{
+      padding-top: 25px;
+      width: 188x;
+      height: 250px;
+  }
+
+  #cf {
+    position:relative;
+    height:250px;
+    width:188px;
+    margin:0;
+  }
+
+  #cf img {
+    position:absolute;
+    left:0;
+    -webkit-transition: opacity 0.7s ease-in-out;
+    -moz-transition: opacity 0.7s ease-in-out;
+    -o-transition: opacity 0.7s ease-in-out;
+    transition: opacity 0.7s ease-in-out;
+  }
+
+  #cf img.top:hover {
+    opacity: 0;
+  }
+
+
+  html, body, #map-canvas {
+    height: 100%;
+    margin: 0px;
+    margin-top: -20px;
+    padding: 0px
+  }
+
+
+</style>
+
+<!-- Google API and Key-->
+<script type="text/javascript"
+
+	src="https://maps.googleapis.com/maps/api/js?Key=AIzaSyDqgEKn9SN-A15a5emKo1kFGamx7AXYRq4" >
+
+</script>
+
+<body bgcolor="#fffaf3">
+
+    <div class="bgimg container-fluid">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="logo">
+
+				</div>
+			</div><!-- /.col-lg-6 -->
+            <div class="col-lg-6">
+                <input type="text" placeholder=" search" name="search" id="search">
+            </div>
+		</div>
+	</div>
+
+  <div class="navbar navbar-custom nomargin" role="navigation">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+			    <li class="dropdown ">
+			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
+			        <ul class="dropdown-menu">
+			            {% for c in cities %}
+			            <li><a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{c.name}},{{c.country}}</a></li>
+			            {% endfor %}
+			            <li class="divider"></li>
+			        </ul>
+			    </li>
+			    <li class="dropdown ">
+			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
+			        <ul class="dropdown-menu">
+			             {% for l in languages %}
+			            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
+			            {% endfor %}
+			            <li class="divider"></li>
+			        </ul>
+			    </li>
+			    <li class="dropdown ">
+			    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
+			    	<ul class="dropdown-menu">
+			    		 {% for a in activities %}
+			            <li><a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{a.name}}</a></li>
+			            {% endfor %}
+			            <li class="divider"></li>
+			    	</ul>
+			    </li>
+			    <li>
+			    	<a href="http://flappybirds.pythonanywhere.com/about">Flappy Birds</a>
+			    </li>
+			</ul>
+		</div>
+	</div>
+
+    <div class="row description">
+        <div class="col-md-6 col-md-offset-3">
+          <div align="justify">
+            <p><font size="5" color="#ab8157" face="optima">
+            <br>Flappy World aims to make tourism destination searching a fun process by giving the users options to explore different cities by their locations, attractions and even the local languages. We hope to provide sufficient information for the users to find their perfect destination for vacation.
+            </font></p>
+          </div>
+        </div>
+    </div>
+
+	<div class="row infobox">
+  		<div class="col-md-2 col-md-offset-3 nopadding">
+  		    <div class="pplpic">
+              	<div id="cf">
+              		<img class="bottom" src="../static/styles_design/samuel2.jpg" width="188" height="250"/>
+                    <img class="top" src="../static/styles_design/samuel1.jpg" width="188" height="250"/>
+              	</div>
+  			</div>
+  		</div>
+      <div class="col-md-4 nopadding">
+          <div align="justify"><p>
+            <br><font size="6" face="optima"><b>Samuel Acuna</b> </font> <font size="4" face="optima"><em> Phase I Team Leader</em></font>
+            <font size="4" face="optima">
+            <br> CS and Philosophy major, with a miner in Linguistics. Graduating in December 2014. Interested in data analysis and visualization.
+            <br><em>Phase I:</em> I worked on the api design with <b>Apiary</b> and front end for some sections using <b>Twitter Bootstrap</b> and <b>CSS</b> and I was the group leader. I also helped collect data.
+            <br><em>Phase II:</em> I worked on the dynamic content loading and the api implementation using <b>Django</b> and <b>mySQL</b>.
+            <br><em>Phase III:</em> I worked on the search functionality with <b>mySQL</b>.
+            </font></p>
+          </div>
+      </div>
+  </div>
+
+  <div class="row infobox">
+  		<div class="col-md-4 col-md-offset-3 nopadding">
+          <div align="justify"><p>
+            <br><font size="6" face="optima"><b>Jose Coello</b> </font> <font size="4" face="optima"><em> Phase II Team Leader</em></font>
+            <font size="4" face="optima">
+            <br> Computer science major graduating December 2014. I love to play video games and am interested in application development and databases.
+            <br><em>Phase I:</em> I helped create the 3 static pages using <b>Twitter Bootstrap</b> by adding the navigation bar and implementing the <b>Google Map</b> api.
+            <br><em>Phase II:</em> While being the group leader, I worked on creating the api and the views using <b>Django</b>.
+            <br><em>Phase III:</em> to be filled.
+            </font></p></div>
+  		</div>
+      <div align="right" class="col-md-2 nopadding">
+        <div id="cf">
+  		    <div class="pplpic">
+              <img class="bottom" src="../static/styles_design/jose2.jpg" width="188" height="250"/>
+              <img class="top" src="../static/styles_design/jose1.jpg" width="188" height="250"/>
+            </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row infobox">
+  		<div class="col-md-2 col-md-offset-3 nopadding">
+  			<div id="cf">
+      		    <div class="pplpic">
+    	  			<img class="bottom" src="../static/styles_design/lulu2.jpg" width="188" height="250"/>
+    	  			<img class="top" src="../static/styles_design/lulu1.jpg" width="188" height="250"/>
+    	  		</div>
+  			</div>
+  		</div>
+      <div class="col-md-4 nopadding">
+          <div align="justify"><p>
+            <br><font size="6" face="optima"><b>Yu Lu</b> </font> <font size="4" face="optima"><em> Phase III Team Leader</em></font>
+            <font size="4" face="optima">
+            <br> CS and Math major. Graduating in Spring 2016. Interested in application development and learning new technology.
+            <br><em>Phase I:</em> I worked on the api design using <b>Apiary</b> and collected data for the static pages. I also helped with the page design using <b>Twitter Bootstrap</b> and <b>CSS</b>.
+            <br><em>Phase II:</em> I worked on the error handling for the pages and api requests with <b>Apiary</b> and <b>Django</b> models.
+            <br><em>Phase III:</em> I worked on this Flappy Birds page using <b>Twitter Bootstrap</b> and <b>CSS</b>. I was also the group leader.
+            </font></p></div>
+      </div>
+  </div>
+
+  <div class="row infobox">
+  		<div class="col-md-4 col-md-offset-3 nopadding">
+          <div align="justify"><p>
+            <br><font size="6" face="optima"><b>Juan Mata</b> </font>
+            <font size="4" face="optima">
+            <br> Computer Science major graduating in May 2015. I'm interested in mobile and web developement, databases, and new technology.
+            <br><em>Phase I:</em> I worked on the backend creating <b>Django</b> models and tests for the models. I also collected data and helped set up the <b>PythonAnywhere</b> account.
+            <br><em>Phase II:</em> I worked on implementing the <b>Django</b> models and creating a <b>MySQL</b> database with the data we collected.
+            <br><em>Phase III:</em> I helped with the search implementation using <b>MySQL</b>. I also worked on the activities page rendering content from the database.
+            </font></p></div>
+  		</div>
+      <div align="right" class="col-md-2 nopadding">
+        <div id="cf">
+            <div class="pplpic">
+                <img class="bottom" src="../static/styles_design/juan2.jpg" width="188" height="250"/>
+                <img class="top" src="../static/styles_design/juan1.jpg" width="188" height="250"/>
+            </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row infobox">
+  		<div class="col-md-2 col-md-offset-3 nopadding">
+  			<div id="cf">
+      		    <div class="pplpic">
+                  <img class="bottom" src="../static/styles_design/jesus2.jpg" width="188" height="250"/>
+                  <img class="top" src="../static/styles_design/jesus1.jpg" width="188" height="250"/>
+      			</div>
+  			</div>
+  		</div>
+      <div class="col-md-4 nopadding">
+          <div align="justify"><p>
+            <br><font size="6" face="optima"><b>Jesus Galvan</b> </font>
+            <font size="4" face="optima">
+            <br> Computer Science major graduating Spring 2015. I am interested in web and mobile development but am open to trying out other areas of Computer Science.
+            <br><em>Phase I:</em> I worked on setting up <b>PythonAnywhere</b> and <b>Django</b>, created the urls, views, models, and the tests for the models.
+            <br><em>Phase II:</em> I helped create the Database with <b>MySQL</b>. I also updated the <b>Django</b> models and tests.
+            <br><em>Phase III:</em> I worked on testing another group's API, creating a page and styling it with <b>Twitter Bootsrap</b>.
+            </font></p></div>
+      </div>
+  </div>
+
+  <div class="row infobox">
+  		<div class="col-md-4 col-md-offset-3 nopadding">
+          <div align="justify"><p>
+            <br><font size="6" face="optima"><b>Daniel Garza</b> </font>
+            <font size="4" face="optima">
+            <br> Computer Science major graduating in December 2015. I'm interested in networks, security,  databases, mobile and web development, A.I. and graphics.
+            <br><em>Phase I:</em> I worked on the frontend with <b>Twitter Bootstrap</b>. I also collected data for our project.
+            <br><em>Phase II:</em> I implemented and tested the <b>Django</b> models with our data and helped create the database with <b>MySQL</b>.
+            <br><em>Phase III:</em> I contributed to the design of the website rendered by our classmates’ api using <b>Twitter Bootstrap</b>.
+            </font></p></div>
+  		</div>
+      <div align="right" class="col-md-2 nopadding">
+        <div id="cf">
+            <div class="pplpic">
+                <img class="bottom" src="../static/styles_design/daniel2.jpg" width="188" height="250"/>
+                <img class="top" src="../static/styles_design/daniel1.jpg" width="188" height="250"/>
+            </div>
+        </div>
+      </div>
+  </div>
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- ESTO AQUI -->
+</body></html>
+
+<!-- border, box-shadow, media-screen -->
