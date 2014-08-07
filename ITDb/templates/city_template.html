@@ -13,167 +13,76 @@
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/global.css" rel="stylesheet" type="text/css">
     <link href="/static/css/carousel.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/particularelements.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template -->
-    <link href="/navbar.css" rel="stylesheet">
+    <!--<link href="/navbar.css" rel="stylesheet">-->
     <!-- ESTP QUE ESTA AQUI!!!! -->
     <!-- Custom styles for this template -->
-    <link href="blog.css" rel="stylesheet">
+    <!--<link href="blog.css" rel="stylesheet">-->
 
-    <script src="/static/bootstrap/js/ie-emulation-modes-warning.js"></script>
+    <!--<script src="/static/bootstrap/js/ie-emulation-modes-warning.js"></script>-->
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
-
-</head>
-
-<style type="text/css">
-
-  /*.dropb{*/
-  /*  width: 30%;*/
-  /*}*/
-
-    .jumbotron { padding:0px; margin:0px;
-        background-repeat:no-repeat;
-        background-position:center center;
-        background-size:cover;
-    padding:20px 60px;
-    height: 500px;}
-
-
-   .bgPic {
-    /*background-image: url("/static/styles_design/lijiang_dark.jpg");*/
-    /*background-repeat:no-repeat;*/
-    /*background-position:center center;*/
-    /*background-size:cover;*/
-    /*padding:20px 60px;*/
-    /*height: 500px;*/
-    /*margin-top: -69px;*/
-    /*margin-bottom: -50px;*/
-    /*margin-left: -30px;*/
-    /*margin-right: -30px;*/
-
-  }
-
-  /*@media only screen and (max-width : 650px) {*/
-  /* .bgPic {*/
-  /*    height:840px;*/
-  /*  }*/
-  /*  .navbar-form { width:200px; }*/
-  /*}*/
-
-/*    .bgimg2 {*/
-/*    background-image: url("/static/styles_design/midbg.png");*/
-    /*height: 158px;*/
-    /*height: 520px;*/
-/*    padding:20px 60px;*/
-/*    margin-top: -10px;*/
-    /*margin-bottom: 15px;*/
-/*    margin-left: -10px;*/
-/*    background-position: bottom;*/
-/*    background-repeat: repeat-x;*/
-/*    background-color: #d3f4ff;*/
-/*  }*/
-
-/*    .imgs { display:block;*/
-/*        padding:5px;*/
-/*        margin:5px;*/
-/*        border:1px solid blue;*/
-/*        overflow-x:scroll;*/
-/*        overflow-y:hidden; }*/
-
-/*    .imgs img { display:inline-block;*/
-/*    max-width:300px;*/
-/*    max-height:100px; }*/
-
-/*.bar1 {*/
-/*    background-image: url("/static/styles_design/bar.png");*/
-/*    height: 13px;*/
-/*    margin-top: -45x;*/
-/*    margin-bottom: 10px;*/
-/*    margin-left: -10px;*/
-/*    background-repeat: repeat-x;*/
-/*    background-color: #f8e0a7;*/
-/*  }*/
-
-/*  .bar2 {*/
-/*    background-image: url("/static/styles_design/bar.png");*/
-/*    height: 13px;*/
-/*    margin-top: -10px;*/
-/*    margin-bottom: -15px;*/
-/*    margin-left: -10px;*/
-/*    margin-right: -10px;*/
-/*    background-repeat: repeat-x;*/
-/*    background-color: #f8e0a7;*/
-/*  }*/
-
-/*  .nomargin {*/
-      /*margin-bottom: 0px;*/
-/*      padding-bottom: 0px;*/
-/*  }*/
-
-
-/*  .lang{*/
-/*    margin-top: 40px;*/
-/*    margin-bottom: 30px;*/
-/*    margin-left: 70px;*/
-/*  }*/
-
-  /* html, body, #map-canvas {*/
-  /*  height: 100%;*/
-  /*  margin: 0px;*/
-  /*  margin-top: -20px;*/
-  /*  padding: 0px;*/
-
-  /*}*/
-
-  /* .lang h1 {*/
-  /*  text-shadow: 0px 0px 5px #000;*/
-  /*  color: #fefba7;*/
-  /*  font-family:awesome;*/
-  /*}*/
-
-
-</style>
+    <!--<script src="/static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>-->
 
 <!-- Google Map -->
 <script type="text/javascript"
 
-  src="https://maps.googleapis.com/maps/api/js?Key=AIzaSyDqgEKn9SN-A15a5emKo1kFGamx7AXYRq4" >
+	src="https://maps.googleapis.com/maps/api/js?Key=AIzaSyDqgEKn9SN-A15a5emKo1kFGamx7AXYRq4" >
 
 </script>
 <script>
-  var map;
-  function initialize() {
-    var mapOptions = {
+	var map;
+	function initialize() {
+        var mapOptions = {
+            zoom: 6,
+            scrollwheel: false,
+            scaleControl: false,
+            center: new google.maps.LatLng({{ cx }}, {{ cy }})
+        };
+        map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+        map.set('styles', [{
+            featureType:'all',
+            elementType:'all',
+            stylers: [
+                { visibility: 'simplified' },
+                { hue: '#d5bc96' },
+                { gamma: 2 },
+                { saturation: 32 },
+                { lightness: 20 }
+            ]
+            }, {
+            featureType:'water',
+            elementType:'geometry',
+            stylers: [
+                { color: '#a6d5e3' }, //9ec2fd' },
+                { weight: 1.6 }
+            ]
+            }, {
+            featureType:'landscape.natural',
+            elementType:'all',
+            stylers: [
+                { color:'#fff4e1' } //e8e3da' }
+            ]
+        }]);
 
-      zoom: 6,
+        var img = '/static/styles_design/marker.png';
+	    var marker = new google.maps.Marker({
+	        position: new google.maps.LatLng({{ cx }},{{ cy }}),
+    	  	map: map,
+    	  	title: '{{ city.name }}',
+    	  	icon : img,
+    	  	draggable: false,
+    	  	optimized:false,
+	    })
+	}
 
-      center: new google.maps.LatLng({{ cx }}, {{ cy }}),
-      scrollwheel: false,
-      scaleControl: false,
-    };
-    map = new google.maps.Map(document.getElementById('map-canvas'),
-        mapOptions);
+	google.maps.event.addDomListener(window, 'load', initialize)
 
+</script>
 
-    var img = '/static/styles_design/marker.png';
-
-
-    var marker = new google.maps.Marker({
-      center: new google.maps.LatLng({{ cx }}, {{ cy }}),
-      map: map,
-      title: "{{ city.name }}",
-      icon : img,
-      draggable: false,
-      optimized:false
-    })
-
-  }
-
-
-  google.maps.event.addDomListener(window, 'load', initialize);
-
-</script><body>
+</head><body>
 
 <div class="bgimg container-fluid">
     <div class="container">
@@ -220,26 +129,25 @@
 	</div>
 </div>
 
-<div class="jumbotron container-fluid nomargin" style="background-image:url('{{ cover }}');">
+<div class="jumbotron container-fluid nomargin city" style="background-image:url('{{ cover }}');">
   <div class="bgPic">
     <div class="container">
         <div class="col-md-8">
-          <h1><font face = "Tahoma" color = "White">{{city.name}} </font><small><font face = "Tahoma" color = "White">{{city.country}}</small></font></h1>
-          <p align="justify"><font face = "Tahoma" color = "White">{{city.description}}</font></p>
+          <h1>{{city.name}} <small>{{city.country}}</small></h1>
+          <p align="justify">{{city.description}}</p>
           <!--<p><a class="btn btn-primary btn-lg" role="button">Home</a></p>-->
         </div>
       </div>
     </div>
 </div>
-
-
-
 <div class="divider container-fluid"></div>
-<div class="container">
+
+<div class="mapmar" id="map-canvas" style="margin-top:0px;"> </div>
+<div class="divider container-fluid"></div>
+
+<div class="container penul">
     <div class="col-lg-8">
-        <div class="lang">
-            <h1 class="text-align:center">Activities</h1>
-        </div>
+        <h1 class="text-align:center">Activities</h1>
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
@@ -254,19 +162,17 @@
                     </div>
                 {% endfor %}
             </div>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
         </div>
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
     </div>
     <div class="col-lg-4">
-        <div class="lang">
-            <h1>Language</h1>
-        </div>
+        <h1>Language</h1>
         {% for a in lang_spoken%}
         <div class="col-md-3">
             <p><a class="btn btn-lg btn-warning" href="http://flappybirds.pythonanywhere.com/languages/{{ a.languages.id }}" role="button">{{a.languages.name}}</a></p>
@@ -275,13 +181,8 @@
 
     </div><!-- /.row -->
 </div>
-  <!--<div class="bar2 container-fluid"></div>-->
 
-<div class="container">
-    <div class = "row">
-            <div class="mapmar " id="map-canvas"> <h1>hello</h1></div>
-    </div>
-</div>
+  <!--<div class="bar2 container-fluid"></div>-->
 
 <div class="divider container-fluid"></div>
 <div class="footer">
@@ -309,18 +210,26 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script type="../static/bootstrap/js/docs.min.js"></script>
 
  <style>
-    .carousel { background-color:rgba(0,0,0,0.5);
-        /*width:800px; */}
-    .carousel-inner { margin:auto;
-        /*width:800px; */}
-    .carousel-inner a { color:#fff; }
+    /*.carousel { background-color:rgba(0,0,0,0.5);*/
+        /*width:800px; }*/
+    /*.carousel-inner { margin:auto;*/
+        /*width:800px; }*/
+    /*.carousel-inner a { color:#fff; }*/
  </style>
 
 <script>
 $($('.carousel-inner .item')[0]).addClass('active');
+$('#search').on("keyup",function(e) {
+	if(e.which==13) {
+		window.location ="http://flappybirds.pythonanywhere.com/search/"+$('#search').val();
+	}
+});
+
+$('#map-canvas').css({
+    'height':'400px',
+});
 </script>
 <!-- ESTO AQUI -->
 </body></html>

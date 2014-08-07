@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Flappy World : {{ lang.name }}</title>
+  <title>Flappy World : Search : {{ query }}</title>
 
   <!-- ESTO QUE ESTA AQUI -->
   <meta charset="utf-8">
@@ -9,173 +9,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap core CSS -->
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="navbar.css" rel="stylesheet">
-    <!-- ESTP QUE ESTA AQUI!!!! -->
-
-<style type="text/css">
-  .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
-    background-color: #e2a846;
-    color:#ffffff;
-    }
-  .bgimg {
-    background-image: url("/static/styles_design/bg.png");
-    /*height: 158px;*/
-    margin-top: -20px;
-    background-repeat: repeat-x;
-    background-color: #f8e0a7;
-  }
-  .logo{
-    background-image: url("/static/styles_design/logo.png");
-    height: 110px;
-    width: 305px;
-    margin-top: 50px;
-    margin-left: 50px;
-    background-repeat: no-repeat;
-  }
-  .search{
-    margin-top: 60px;
-    margin-left: 60px;
-    width: 350px;
-  }
-  .dropb{
-    width: 30%;
-  }
-
-   .bgPic {
-    background-color: #fffaf3;
-    /*height: 400px;*/
-    margin-top: -69px;
-    margin-bottom: -50px;
-    margin-left: -30px;
-    margin-right: -30px;
-    background-repeat: repeat-x;
-    padding:20px 60px;
-
-  }
-
-    .bgimg2 {
-    background-image: url("../static/styles_design/midbg.png");
-    /*height: 158px;*/
-    height: 245px;
-    margin-top: -10px;
-    margin-bottom: -10px;
-    margin-left: -10px;
-    margin-right: -10px;
-    background-repeat: repeat-x;
-    background-color: #f8e0a7;
-  }
-
-   .bgimg3 {
-    background-image: url("../static/styles_design/flappy.png");
-    /*height: 158px;*/
-    height: 350px;
-    margin-top: -22px;
-    margin-bottom: -10px;
-    margin-left: -10px;
-    margin-right: -10px;
-    background-repeat: repeat-x;
-    background-color: #f8e0a7;
-  }
-
-.bar1 {
-    background-image: url("../static/styles_design/bar.png");
-    height: 13px;
-    margin-top: -30px;
-    margin-bottom: 10px;
-    margin-left: -10px;
-    margin-right: -10px;
-    background-repeat: repeat-x;
-    background-color: #f8e0a7;
-  }
-
-  .bar2 {
-    background-image: url("../static/styles_design/bar.png");
-    height: 13px;
-    margin-top: -10px;
-    margin-bottom: -15px;
-    margin-left: -10px;
-    background-repeat: repeat-x;
-    background-color: #f8e0a7;
-  }
-
-  .nomargin {
-    margin-bottom: 0px;
-  }
-
-  .lang{
-    margin-top: 40px;
-    margin-bottom: 30px;
-    margin-left: 70px;
-  }
-
-</style>
-
-</head>
+    <link href="/static/css/global.css" rel="stylesheet" type="text/css">
 
 
-<body>
 
-  <div class="bgimg container-fluid">
-    <div class="row">
-      <div class="col-lg-6">
-        <a href="/"><div class="logo">
+</head><body>
 
-        </div></a><!-- /input-group -->
-      </div><!-- /.col-lg-6 -->
+<div class="bgimg container-fluid">
+    <div class="container">
+        <div class="col-lg-4">
+            <a href="/"><div class="logo"></div></a><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+            <div class="col-lg-8">
+                {% if blank %}
+                <input type="text" placeholder="Search" name="search" id="search">
+                {% else %}
+                <input type="text" placeholder="Search" name="search" id="search" value="{{ query|safe }}">
+                {% endif %}
+            </div>
     </div><!-- /.row -->
-  </div>
+</div>
 
-
-
- <div class="navbar navbar-custom" role="navigation">
-		<div class="container-fluid">
-			<ul class="nav navbar-nav">
-			    <li class="dropdown ">
-			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
-			        <ul class="dropdown-menu">
-			            {% for c in navcities %}
-			            <li><a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{c.name}},{{c.country}}</a></li>
-			            {% endfor %}
-			            <li class="divider"></li>
-			        </ul>
-			    </li>
-			    <li class="dropdown ">
-			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
-			        <ul class="dropdown-menu">
-			             {% for l in navlanguages %}
-			            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
-			            {% endfor %}
-			            <li class="divider"></li>
-			        </ul>
-			    </li>
-			    <li class="dropdown ">
-			    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
-			    	<ul class="dropdown-menu">
-			    		 {% for a in navactivities %}
-			            <li><a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{a.name}}</a></li>
-			            {% endfor %}
-			            <li class="divider"></li>
-			    	</ul>
-			    </li>
-			    <li>
-			    	<a href="http://flappybirds.pythonanywhere.com/about">Flappy Birds</a>
-			    </li>
-			</ul>
-		</div>
+<div class="navbar navbar-custom" role="navigation">
+	<div class="container">
+		<ul class="nav navbar-nav">
+		    <li class="dropdown">
+		        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		            {% for c in cities %}
+		            <li><a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{c.name}},{{c.country}}</a></li>
+		            {% endfor %}
+		        </ul>
+		    </li>
+		    <li class="dropdown ">
+		        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		             {% for l in languages %}
+		            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
+		            {% endfor %}
+		        </ul>
+		    </li>
+		    <li class="dropdown ">
+		    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
+		    	<ul class="dropdown-menu">
+		    		 {% for a in activities %}
+		            <li><a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{a.name}}</a></li>
+		            {% endfor %}
+		    	</ul>
+		    </li>
+		    <li>
+		    	<a href="http://flappybirds.pythonanywhere.com/about">Flappy Birds</a>
+		    </li>
+		</ul>
 	</div>
+</div>
 
-<div class="search_results">
+<div class="container penul search_results">
     {% if blank %}
-    <input type="text" placeholder="search" name="search" id="search">
     {% else %}
-    <input type="text" placeholder="search" name="search" id="search" value="{{ query|safe }}"><br>
     results for: {{ query }}
-    <div class="results container-fluid">
+    <div class="container-fluid">
         <div class="andbtn btn btn-lg btn-warning" role="button">AND</div>
         <div class="orbtn btn btn-lg btn-warning" role="button">OR</div>
 
-        <div class="andresult">
+        <div class="results andresult">
             {% if cbool %}
             	<h3>cities ({{ ccount }})</h3>
             	{% for c in cities %}
@@ -207,7 +104,7 @@
         	{% endif %}
         </div>
 
-        <div class="orresult">
+        <div class="results orresult">
             {% if cobool %}
             	<h3>cities ({{ cocount }})</h3>
             	{% for c in co %}
@@ -243,6 +140,27 @@
     {% endif %}
 </div>
 
+<div class="divider container-fluid"></div>
+<div class="footer">
+    <div class="container">
+        <div class="col-lg-3">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cities">Cities</a></li>
+                <li><a href="/activities">Activities</a></li>
+                <li><a href="/languages">Languages</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-3">
+            <ul>
+                <li><a href="/search">Search</a></li>
+                <li><a href="/about">Meet the team</a></li>
+                <li><a href="https://www.cs.utexas.edu/users/downing/cs373/drupal/" target="_new">Project for UT CS373</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <script src="http://code.jquery.com/jquery.min.js"></script>
 <script>
 
@@ -257,8 +175,9 @@ $('#search').on("keyup",function(e) {
 </script>
 <style>
 a { color:#00f; }
-h3 { border-top:1px solid #777; }
-.search_results { padding:10px; }
+.search_results { padding:10px;
+    min-height:400px; }
+.results div { padding:10px; }
 .results div:hover { background-color:#eee; }
 </style>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

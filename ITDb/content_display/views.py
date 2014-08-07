@@ -1,8 +1,8 @@
 # Create your views here.
 from django.http import HttpResponse
 from django.template.loader import get_template
-from django.shortcuts import render_to_response
-from django.template import Context
+from django.shortcuts import render_to_response, get_object_or_404, get_list_or_404
+from django.template import Context, RequestContext
 #from django.views.generic.base import TemplateView #with helloTemplate Class
 from django.http import HttpResponse, Http404
 from django.core.exceptions import ObjectDoesNotExist
@@ -51,6 +51,7 @@ def index (request):
 		'languages':languages
 	})
     return HttpResponse(template.render(context))
+
 
 
 # cities
@@ -175,7 +176,7 @@ def api_activities(request,acts_id=None):
     json_act = "["
     if(len(act) != 0):
         for a in act:
-            json_act  += '{"id": '+str(a.id)+', "name": "'+a.name+'", "description": "'+a.description+'"},'
+            json_act  += '{"id": '+str(a.id)+', "name": "'+a.name+'", "description": "'+a.description+'", "city": '+str(a.city.id)+'},'
         json_act = json_act[0:-1]+"]"
     else:
         json_act = '{"Error 400": "No such activity exists in the database."}'
@@ -188,6 +189,34 @@ def api_activities(request,acts_id=None):
     return HttpResponse(template.render(context))
 
 
+# ---------
+#   about
+# ---------
+def about (request):
+    languages = []
+    haserror = False
+    error_type = ""
+    cities= []
+    activities = []
+
+    try:
+        languages = Languages.objects.all()
+        cities = Cities.objects.all()
+        activities = Activities.objects.all()
+    except Exception as e:
+        haserror = True
+        error_type = e.__class__.__name__
+
+
+    template = loader.get_template('about.html')
+    context = Context({
+        'languages':languages,
+        'error':haserror,
+        'etype':error_type,
+        'cities':cities,
+        'activities':activities
+    })
+    return HttpResponse(template.render(context))
 
 
 def view_city(request, city_id=None) :
@@ -197,26 +226,24 @@ def view_city(request, city_id=None) :
     activities = []
     haserror = False
     act=[]
+    cover = ""
     pictures = {}
     lang_spoken =[]
     videos= {}
 
-    try:
-        if(city_id.isdigit()) :
-            city = Cities.objects.get(id=city_id)
-            coords = city.coords.split(",")
-        else :
-            city = Cities.objects.get(name=city_id)
+    if(city_id.isdigit()) :
+        city = get_object_or_404(Cities, id= city_id)
+        #city = Cities.objects.get(id=city_id)
+    else :
+        city = get_object_or_404(Cities, name=city_id)
+        #city = Cities.objects.get(name=city_id)
 
-        act = Activities.objects.filter(city = city.id)
-
-        lang_spoken = languages_spoken_in.objects.filter(cities = city.id)
-
-    except Exception:
-        haserror = True
-
-
+    act = Activities.objects.filter(city = city.id)
+    coords = city.coords.split(",")
+    lang_spoken = languages_spoken_in.objects.filter(cities = city.id)
+    cover = city.pictures.split(",")[0]
     videos[city.name] = city.videos.split(",")[0]
+
 
     for a in act :
         pictures[a.name] = a.pictures.split(",")[0]
@@ -236,7 +263,8 @@ def view_city(request, city_id=None) :
         'act': act,
         'pictures': pictures,
         'lang_spoken': lang_spoken,
-        'videos':videos
+        'videos':videos,
+        'cover':cover,
     })
 
     return HttpResponse(template.render(context))
@@ -250,16 +278,14 @@ def view_lang(request, lang_id=None):
     activities = []
     cities_in = []
 
-    try:
-        if(lang_id.isdigit()):
-            lang = Languages.objects.get(id=lang_id)
-        else:
-            lang = Languages.objects.get(name=lang_id)
+    if(lang_id.isdigit()):
+        #lang = Languages.objects.get(id=lang_id)
+        lang = get_object_or_404(Languages, id=lang_id)
+    else:
+        lang = get_object_or_404(Languages, name=lang_id)
+        #lang = Languages.objects.get(name=lang_id)
 
-        cities_in = languages_spoken_in.objects.filter(languages = lang.id)
-    except Exception as e:
-        error_type = e.__class__.__name__
-        haserror = True
+    cities_in = languages_spoken_in.objects.filter(languages = lang.id)
 
     cities = Cities.objects.all()
     languages = Languages.objects.all()
@@ -285,15 +311,13 @@ def view_activities(request, acts_id=None):
     activities = []
     city_acts = []
 
-    try:
-        if(acts_id.isdigit()):
-            acts = Activities.objects.get(id=acts_id)
-        else:
-            typename = acts_id
-            acts = Activities.objects.get(name=typename)
-    except Exception as e:
-        haserror = True
-        error_type = e.__class__.__name__
+    if(acts_id.isdigit()):
+        acts = get_object_or_404(Activities, id=acts_id)
+        #acts = Activities.objects.get(id=acts_id)
+    else:
+        typename = acts_id
+        acts = get_object_or_404(Activities, name = typename)
+        #acts = Activities.objects.get(name=typename)
 
     cities = Cities.objects.all()
     languages = Languages.objects.all()
@@ -324,7 +348,7 @@ def all_cities(request):
         cities = Cities.objects.all()
 
         for c in cities:
-            pictures[c.name] = c.pictures.split(",")
+            pictures[c.name] = c.pictures.split(",")[0]
 
     except Exception as e:
         haserror = True
@@ -358,7 +382,7 @@ def all_activities(request):
         languages = Languages.objects.all()
 
         for a in activities:
-            pictures[a.name] = a.pictures.split(",")
+            pictures[a.name] = a.pictures.split(",")[0]
 
     except Exception as e:
         haserror = True
@@ -390,6 +414,7 @@ def all_langs(request):
         languages = Languages.objects.all()
         cities = Cities.objects.all()
         activities = Activities.objects.all()
+
     except Exception as e:
         haserror = True
         error_type = e.__class__.__name__
@@ -401,7 +426,7 @@ def all_langs(request):
         'error':haserror,
         'etype':error_type,
         'cities':cities,
-        'activities':activities
+        'activities':activities,
     })
     return HttpResponse(template.render(context))
 
@@ -429,16 +454,31 @@ def search(request, query=""):
     #send to view
     template = loader.get_template('search.html')
 
-    sql = "SELECT DISTINCT * FROM content_display_cities WHERE name collate utf8_general_ci LIKE '%"+query1+"%' OR description LIKE '%"+query1+"%'"
+    sql = "SELECT DISTINCT * FROM content_display_cities WHERE name collate utf8_general_ci LIKE '%"+query1+"%' OR description LIKE '%"+query1+"%' OR country LIKE '%"+query1+"%'"
     c = Cities.objects.raw(sql)
     sql2 = "SELECT DISTINCT * FROM content_display_activities WHERE name collate utf8_general_ci LIKE '%"+query1+"%' OR description LIKE '%"+query1+"%' OR type_activity LIKE '%"+query1+"%'"
     a = Activities.objects.raw(sql2)
     sql3 = "SELECT DISTINCT * FROM content_display_languages WHERE name collate utf8_general_ci LIKE '%"+query1+"%' OR description LIKE '%"+query1+"%'"
     l = Languages.objects.raw(sql3)
 
+    # ---------
+    #   OR
+    # ---------
+    s = query1.split()
+    sql4 = "SELECT DISTINCT * FROM content_display_cities WHERE name collate utf8_general_ci LIKE '%" + ("%' OR name LIKE '%".join(s)) + "%' OR description LIKE '%" + ("%' OR description LIKE '%".join(s)) +"%' OR country LIKE '%" + ("%' OR country LIKE '%".join(s))+"%'"
+    co = Cities.objects.raw(sql4)
+    sql5 = "SELECT DISTINCT * FROM content_display_activities WHERE name collate utf8_general_ci LIKE '%" + ("%' OR name LIKE '%".join(s)) +"%' OR description LIKE '%" + ("%' OR description LIKE '%".join(s)) +"%' OR type_activity LIKE '%" + ("%' OR type_activity LIKE '%".join(s))+"%'"
+    ao = Activities.objects.raw(sql5)
+    sql6 = "SELECT DISTINCT * FROM content_display_languages WHERE name collate utf8_general_ci LIKE '%" + ("%' OR name LIKE '%".join(s)) + "%' OR description LIKE '%" + ("%' OR description LIKE '%".join(s)) +"%'"
+    lo = Languages.objects.raw(sql6)
+
     ccount = 0
     acount = 0
     lcount = 0
+
+    cocount = 0
+    aocount = 0
+    locount = 0
 
     try:
         ccount = len(list(c)) if (list(c) is not None) else 0
@@ -465,9 +505,36 @@ def search(request, query=""):
     except AttributeError:
         lcount = 0
 
+    try:
+        if(list(co) is None):
+            cocount = 0
+        else:
+            cocount = len(list(co))
+    except AttributeError:
+        cocount = 0
+
+    try:
+        if(list(ao) is None):
+            aocount = 0
+        else:
+            aocount = len(list(ao))
+    except AttributeError:
+        aocount = 0
+
+    try:
+        if(list(lo) is None):
+            locount = 0
+        else:
+            locount = len(list(lo))
+    except AttributeError:
+        locount = 0
+
     if(query == ""):
         context = Context({
             'blank':True,
+            'navcities':navcities,
+            'navlanguages':navlanguages,
+            'navactivities':navactivities
         })
     else:
         context = Context({
@@ -485,6 +552,16 @@ def search(request, query=""):
             'languages':l,
             'lcount':lcount,
             'lbool':lcount>0,
+            'co': co,
+            'cocount':cocount,
+            'cobool':cocount>0,
+            'ao': ao,
+            'aocount':aocount,
+            'aobool':aocount>0,
+            'lo': lo,
+            'locount':locount,
+            'lobool':locount>0
+
         })
 
     return HttpResponse(template.render(context))
@@ -510,4 +587,7 @@ def ut_api(request) :
     })
 
     return HttpResponse(template.render(context))
+
+def error404(request) :
+    return render_to_response('404.html', context_instance=RequestContext(request))
 

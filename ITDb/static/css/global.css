@@ -1,9 +1,9 @@
 @font-face { font-family:awesome; src:url("/static/styles_design/flappyBirdFont.TTF"); }
 
 html, body, #map-canvas {
-    height: 100%;
     margin: 0px;
-    padding: 0px
+    padding: 0px;
+    background-color:#fff;
 }
 
 .bgimg {
@@ -34,6 +34,9 @@ html, body, #map-canvas {
 #search:focus { border:1px solid #09f;
     box-shadow:0px 0px 10px #09f; }
 
+.navbar { box-shadow:5px 0px 10px rgba(0,0,0,0.3);
+    z-index:100; }
+
 .navbar .nav li a.dropdown-toggle:hover,
 .navbar .nav li a:hover { color:#fff; }
 .navbar .nav li a.dropdown-toggle:hover b.caret {
@@ -52,6 +55,8 @@ html, body, #map-canvas {
     background-color:#d19735;
 }
 
+.penul { padding-bottom:40px; }
+
 a.btn-warning { margin:10px; }
 
 .divider {
@@ -59,12 +64,20 @@ a.btn-warning { margin:10px; }
     background-position:0px -2px;
     height: 10px;
     margin:0px;
-    margin-top:40px;
+    /*margin-top:40px;*/
     /*margin-top: -45x;*/
     /*margin-bottom: 10px;*/
     /*margin-left: -10px;*/
     background-repeat: repeat-x;
     background-color: #f8e0a7; }
+
+#map-canvas { display:block;
+    position:relative;
+    top:0px;
+    padding:0px;
+    margin:0px;
+    margin-top:-20px;
+    z-index:99; }
 
 .footer { display:block;
     font-size:10pt;

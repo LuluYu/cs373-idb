@@ -262,3 +262,21 @@ git add ITDb/content_display/views.py
 git commit -m "prettier api output."
 git pull
 git push
+git status
+git add .
+git status
+git commit -m "Search bar, and Other groups api added"
+git push
+git pull
+git push
+git status
+git add .
+git commit -m "added a link from index to ut_api page"
+git push
+git status 
+git add ITDb/templates/*.html
+git add ITDb/ITDb/urls.py
+git add ITDb/content_display/views.py
+git commit -m "implementing the other group's api."
+git pull
+git push

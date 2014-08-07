@@ -4,10 +4,11 @@ conn = MySQLdb.connect("mysql.server", "FlappyBirds", "Admin2", "FlappyBirds$Fla
 
 c = conn.cursor()
 
-with open("actUpdate.sql") as f:
+with open("udpate_activities.sql") as f:
     for q in f:
-	    c.execute(q)
-	    conn.commit()
+        print(q)
+        c.execute(q)
+        conn.commit()
 
 
 rows = c.fetchall()

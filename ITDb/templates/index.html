@@ -16,19 +16,6 @@
     <!-- ESTP QUE ESTA AQUI!!!! -->
 
 
-</head>
-
-<style type="text/css">
-
-  html, body, #map-canvas {
-    height: 100%;
-    margin: 0px;
-    /*margin-top: -20px;*/
-    padding: 0px
-  }
-
-</style>
-
 <!-- Google API and Key-->
 <script type="text/javascript"
 
@@ -41,12 +28,44 @@
 	  var mapOptions = {
 
 	    zoom: 2,
+        scrollwheel: false,
 
-	    center: new google.maps.LatLng(-2.605433, 17.703638)
+	    center: new google.maps.LatLng(20.605433, 17.703638)
 	  };
 	  map = new google.maps.Map(document.getElementById('map-canvas'),
 	      mapOptions);
-
+        map.set('styles', [
+        	{
+        		featureType:'all',
+        		elementType:'all',
+        		stylers: [
+        			{ visibility: 'simplified' },
+        			{ hue: '#d5bc96' },
+        			{ gamma: 2 },
+        			{ saturation: 32 },
+        			{ lightness: 20 }
+        		]
+        	}, {
+        		featureType:'water',
+        		elementType:'geometry',
+        		stylers: [
+        			{ color: '#a6d5e3' }, //9ec2fd' },
+        			{ weight: 1.6 }
+        		]
+        	}, /*{
+        		featureType:'all',
+        		elementType:'labels',
+        		stylers: [
+        			{ visibility: 'off' }
+        		]
+        	},*/ {
+        		featureType:'landscape.natural',
+        		elementType:'all',
+        		stylers: [
+        			{ color:'#fff4e1' } //e8e3da' }
+        		]
+        	}
+        ]);
 
 	  var img = '/static/styles_design/marker.png';
 	  var img2 = '/static/styles_design/longhorn_marker.png'
@@ -118,62 +137,76 @@
 
 </script>
 
+</head><body>
 
-<body>
-	<div class="bgimg container-fluid">
-		<div class="row">
-			<div class="col-lg-6">
-				<div class="logo">
 
-				</div><!-- /input-group -->
-			</div><!-- /.col-lg-6 -->
-            <div class="col-lg-6">
-                <input type="text" placeholder="search" name="search" id="search">
+<div class="bgimg container-fluid">
+    <div class="container">
+        <div class="col-lg-4">
+            <a href="/"><div class="logo"></div></a><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+            <div class="col-lg-8">
+                <input type="text" placeholder="Search" name="search" id="search">
             </div>
-		</div><!-- /.row -->
+    </div><!-- /.row -->
+</div>
+
+<div class="navbar navbar-custom" role="navigation">
+	<div class="container">
+		<ul class="nav navbar-nav">
+		    <li class="dropdown">
+		        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		            {% for c in cities %}
+		            <li><a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{c.name}},{{c.country}}</a></li>
+		            {% endfor %}
+		        </ul>
+		    </li>
+		    <li class="dropdown ">
+		        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		             {% for l in languages %}
+		            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
+		            {% endfor %}
+		        </ul>
+		    </li>
+		    <li class="dropdown ">
+		    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
+		    	<ul class="dropdown-menu">
+		    		 {% for a in activities %}
+		            <li><a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{a.name}}</a></li>
+		            {% endfor %}
+		    	</ul>
+		    </li>
+		    <li>
+		    	<a href="http://flappybirds.pythonanywhere.com/about">Flappy Birds</a>
+		    </li>
+		</ul>
 	</div>
+</div>
 
+<div class="mapmar" id="map-canvas"> </div>
 
-
-	<div class="navbar navbar-custom" role="navigation">
-		<div class="container-fluid">
-			<ul class="nav navbar-nav">
-			    <li class="dropdown ">
-			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
-			        <ul class="dropdown-menu">
-			            {% for c in cities %}
-			            <li><a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{c.name}},{{c.country}}</a></li>
-			            {% endfor %}
-			            <li class="divider"></li>
-			        </ul>
-			    </li>
-			    <li class="dropdown ">
-			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
-			        <ul class="dropdown-menu">
-			             {% for l in languages %}
-			            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
-			            {% endfor %}
-			            <li class="divider"></li>
-			        </ul>
-			    </li>
-			    <li class="dropdown ">
-			    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
-			    	<ul class="dropdown-menu">
-			    		 {% for a in activities %}
-			            <li><a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{a.name}}</a></li>
-			            {% endfor %}
-			            <li class="divider"></li>
-			    	</ul>
-			    </li>
-			</ul>
-		</div>
-	</div>
-
-
-
-    <div class="mapmar" id="map-canvas"> </div>
-
-
+<div class="divider container-fluid"></div>
+<div class="footer">
+    <div class="container">
+        <div class="col-lg-3">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cities">Cities</a></li>
+                <li><a href="/activities">Activities</a></li>
+                <li><a href="/languages">Languages</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-3">
+            <ul>
+                <li><a href="/search">Search</a></li>
+                <li><a href="/about">Meet the team</a></li>
+                <li><a href="https://www.cs.utexas.edu/users/downing/cs373/drupal/" target="_new">Project for UT CS373</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 
 	<!-- Bootstrap core JavaScript
@@ -187,6 +220,10 @@ $('#search').on("keyup",function(e) {
 	if(e.which==13) {
 		window.location ="http://flappybirds.pythonanywhere.com/search/"+$('#search').val();
 	}
+});
+
+$('#map-canvas').css({
+    'height':(window.innerHeight-($('.navbar').height()+$('bgimg').height()))+'px',
 });
 </script>
 <!-- ESTO AQUI -->

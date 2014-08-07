@@ -1,0 +1,1 @@
+update content_display_activities set pictures='http://grandpalacebangkok.com/images/bangkok-grand-palace500.jpg,http://www.mrwallpaper.com/wallpapers/Grand-Palace-Bangkok.jpg,http://www.planetware.com/photos-large/THA/grand-palace.jpg' where name='Grand Palace';
