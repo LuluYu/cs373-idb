@@ -10,27 +10,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap core CSS -->
     <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!--<link rel="stylesheet" type="text/css" href="/home/FlappyBirds/ITDb../static/bootstrap/css/bootstrap.min.css"/>
-
+    <link href="../static/css/global.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/carousel.css" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template -->
+    <link href="navbar.css" rel="stylesheet">
     <!-- ESTP QUE ESTA AQUI!!!! -->
 
 
 </head>
 
 <style type="text/css">
-    /*@font-face { font-family:fantasy; src:url("../static/styles_design/flappyBirdFont.TTF");*/
-    /*@font-face { font-family:webdings; src:url("../static/styles_design/flappyBirdFont.TTF");*/
   .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
     background-color:  #e2a846;
     color:#ffffff;
   }
   .bgimg {
   	background-image: url("../static/styles_design/bg.png");
-  	/*height: 158px;*/
+  	height: 158px;
   	margin-top: -20px;
   	background-repeat: repeat-x;
-    /*background-color: #fffaf3;*/
-  }
+    background-color: #fffaf3;  }
+
   .logo{
   	background-image: url("../static/styles_design/logo.png");
   	height: 110px;
@@ -50,6 +50,13 @@
   .nomargin{
       margin-bottom: 0px;
   }
+	.bar2 {
+	background-image: url("../static/styles_design/bar.png");
+	height: 13px;
+	margin-left: -10px;
+	background-repeat: repeat-x;
+	background-color: #f8e0a7;
+  	}
 
   .infobox{
     /*height: 250px;
@@ -61,12 +68,8 @@
       background-color: #fff5e2;
   }
 
-  .nopadding{
-      padding:0px;
-  }
-
   .pplpic{
-      padding-top: 25px;
+      padding-top: 20px;
       width: 188x;
       height: 250px;
   }
@@ -102,27 +105,18 @@
 
 </style>
 
-<!-- Google API and Key-->
-<script type="text/javascript"
-
-	src="https://maps.googleapis.com/maps/api/js?Key=AIzaSyDqgEKn9SN-A15a5emKo1kFGamx7AXYRq4" >
-
-</script>
-
 <body bgcolor="#fffaf3">
 
-    <div class="bgimg container-fluid">
-		<div class="row">
-			<div class="col-lg-6">
-				<div class="logo">
-
-				</div>
-			</div><!-- /.col-lg-6 -->
-            <div class="col-lg-6">
-                <input type="text" placeholder=" search" name="search" id="search">
+<div class="bgimg container-fluid">
+    <div class="container">
+        <div class="col-lg-4">
+            <a href="/"><div class="logo"></div></a><!-- /input-group -->
+        </div>
+            <div class="col-lg-8">
+                <input type="text" placeholder=" Search" name="search" id="search">
             </div>
-		</div>
-	</div>
+    </div>
+</div>
 
   <div class="navbar navbar-custom nomargin" role="navigation">
 		<div class="container-fluid">
@@ -172,7 +166,7 @@
     </div>
 
 	<div class="row infobox">
-  		<div class="col-md-2 col-md-offset-3 nopadding">
+  		<div class="col-md-2 col-md-offset-3 ">
   		    <div class="pplpic">
               	<div id="cf">
               		<img class="bottom" src="../static/styles_design/samuel2.jpg" width="188" height="250"/>
@@ -180,10 +174,10 @@
               	</div>
   			</div>
   		</div>
-      <div class="col-md-4 nopadding">
+      <div class="col-md-4 ">
           <div align="justify"><p>
             <br><font size="6" face="optima"><b>Samuel Acuna</b> </font> <font size="4" face="optima"><em> Phase I Team Leader</em></font>
-            <font size="4" face="optima">
+            <font size="3" face="optima">
             <br> CS and Philosophy major, with a miner in Linguistics. Graduating in December 2014. Interested in data analysis and visualization.
             <br><em>Phase I:</em> I worked on the api design with <b>Apiary</b> and front end for some sections using <b>Twitter Bootstrap</b> and <b>CSS</b> and I was the group leader. I also helped collect data.
             <br><em>Phase II:</em> I worked on the dynamic content loading and the api implementation using <b>Django</b> and <b>mySQL</b>.
@@ -194,17 +188,23 @@
   </div>
 
   <div class="row infobox">
-  		<div class="col-md-4 col-md-offset-3 nopadding">
+  		<div class="col-md-10 col-md-offset-1 ">
+          <br>
+      </div>
+  </div>
+
+  <div class="row infobox">
+  		<div class="col-md-4 col-md-offset-3 ">
           <div align="justify"><p>
             <br><font size="6" face="optima"><b>Jose Coello</b> </font> <font size="4" face="optima"><em> Phase II Team Leader</em></font>
-            <font size="4" face="optima">
-            <br> Computer science major graduating December 2014. I love to play video games and am interested in application development and databases.
+            <font size="3" face="optima">
+            <br> Computer science major graduating December 2014. I am interested in video games, application development and databases.
             <br><em>Phase I:</em> I helped create the 3 static pages using <b>Twitter Bootstrap</b> by adding the navigation bar and implementing the <b>Google Map</b> api.
             <br><em>Phase II:</em> While being the group leader, I worked on creating the api and the views using <b>Django</b>.
-            <br><em>Phase III:</em> to be filled.
+            <br><em>Phase III:</em> I helped implement Git-a-grep's API and added a page using <b>Twitter Bootstrap</b> with their data.
             </font></p></div>
   		</div>
-      <div align="right" class="col-md-2 nopadding">
+      <div align="right" class="col-md-2 ">
         <div id="cf">
   		    <div class="pplpic">
               <img class="bottom" src="../static/styles_design/jose2.jpg" width="188" height="250"/>
@@ -215,7 +215,7 @@
   </div>
 
   <div class="row infobox">
-  		<div class="col-md-2 col-md-offset-3 nopadding">
+  		<div class="col-md-2 col-md-offset-3 ">
   			<div id="cf">
       		    <div class="pplpic">
     	  			<img class="bottom" src="../static/styles_design/lulu2.jpg" width="188" height="250"/>
@@ -223,30 +223,30 @@
     	  		</div>
   			</div>
   		</div>
-      <div class="col-md-4 nopadding">
+      <div class="col-md-4 ">
           <div align="justify"><p>
             <br><font size="6" face="optima"><b>Yu Lu</b> </font> <font size="4" face="optima"><em> Phase III Team Leader</em></font>
-            <font size="4" face="optima">
+            <font size="3" face="optima">
             <br> CS and Math major. Graduating in Spring 2016. Interested in application development and learning new technology.
             <br><em>Phase I:</em> I worked on the api design using <b>Apiary</b> and collected data for the static pages. I also helped with the page design using <b>Twitter Bootstrap</b> and <b>CSS</b>.
-            <br><em>Phase II:</em> I worked on the error handling for the pages and api requests with <b>Apiary</b> and <b>Django</b> models.
+            <br><em>Phase II:</em> I worked on the error handling for view and api on <b>Apiary</b> and <b>Django</b> models. I also made the birds on <b>Google Map</b> linkable.
             <br><em>Phase III:</em> I worked on this Flappy Birds page using <b>Twitter Bootstrap</b> and <b>CSS</b>. I was also the group leader.
             </font></p></div>
       </div>
   </div>
 
   <div class="row infobox">
-  		<div class="col-md-4 col-md-offset-3 nopadding">
+  		<div class="col-md-4 col-md-offset-3 ">
           <div align="justify"><p>
             <br><font size="6" face="optima"><b>Juan Mata</b> </font>
-            <font size="4" face="optima">
+            <font size="3" face="optima">
             <br> Computer Science major graduating in May 2015. I'm interested in mobile and web developement, databases, and new technology.
             <br><em>Phase I:</em> I worked on the backend creating <b>Django</b> models and tests for the models. I also collected data and helped set up the <b>PythonAnywhere</b> account.
             <br><em>Phase II:</em> I worked on implementing the <b>Django</b> models and creating a <b>MySQL</b> database with the data we collected.
             <br><em>Phase III:</em> I helped with the search implementation using <b>MySQL</b>. I also worked on the activities page rendering content from the database.
             </font></p></div>
   		</div>
-      <div align="right" class="col-md-2 nopadding">
+      <div align="right" class="col-md-2 ">
         <div id="cf">
             <div class="pplpic">
                 <img class="bottom" src="../static/styles_design/juan2.jpg" width="188" height="250"/>
@@ -257,7 +257,7 @@
   </div>
 
   <div class="row infobox">
-  		<div class="col-md-2 col-md-offset-3 nopadding">
+  		<div class="col-md-2 col-md-offset-3 ">
   			<div id="cf">
       		    <div class="pplpic">
                   <img class="bottom" src="../static/styles_design/jesus2.jpg" width="188" height="250"/>
@@ -265,10 +265,10 @@
       			</div>
   			</div>
   		</div>
-      <div class="col-md-4 nopadding">
+      <div class="col-md-4 ">
           <div align="justify"><p>
             <br><font size="6" face="optima"><b>Jesus Galvan</b> </font>
-            <font size="4" face="optima">
+            <font size="3" face="optima">
             <br> Computer Science major graduating Spring 2015. I am interested in web and mobile development but am open to trying out other areas of Computer Science.
             <br><em>Phase I:</em> I worked on setting up <b>PythonAnywhere</b> and <b>Django</b>, created the urls, views, models, and the tests for the models.
             <br><em>Phase II:</em> I helped create the Database with <b>MySQL</b>. I also updated the <b>Django</b> models and tests.
@@ -278,17 +278,17 @@
   </div>
 
   <div class="row infobox">
-  		<div class="col-md-4 col-md-offset-3 nopadding">
+  		<div class="col-md-4 col-md-offset-3 ">
           <div align="justify"><p>
             <br><font size="6" face="optima"><b>Daniel Garza</b> </font>
-            <font size="4" face="optima">
+            <font size="3" face="optima">
             <br> Computer Science major graduating in December 2015. I'm interested in networks, security,  databases, mobile and web development, A.I. and graphics.
             <br><em>Phase I:</em> I worked on the frontend with <b>Twitter Bootstrap</b>. I also collected data for our project.
             <br><em>Phase II:</em> I implemented and tested the <b>Django</b> models with our data and helped create the database with <b>MySQL</b>.
             <br><em>Phase III:</em> I contributed to the design of the website rendered by our classmates’ api using <b>Twitter Bootstrap</b>.
             </font></p></div>
   		</div>
-      <div align="right" class="col-md-2 nopadding">
+      <div align="right" class="col-md-2 ">
         <div id="cf">
             <div class="pplpic">
                 <img class="bottom" src="../static/styles_design/daniel2.jpg" width="188" height="250"/>
@@ -297,6 +297,35 @@
         </div>
       </div>
   </div>
+
+
+  <div class="row infobox">
+  		<div class="col-md-10 col-md-offset-1 ">
+          <br>
+      </div>
+  </div>
+
+  <div class="bar2 infobox"></div>
+  <div class="footer">
+    <div class="container">
+        <div class="col-lg-3">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cities">Cities</a></li>
+                <li><a href="/activities">Activities</a></li>
+                <li><a href="/languages">Languages</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-3">
+            <ul>
+                <li><a href="/search">Search</a></li>
+                <li><a href="/about">Meet the team</a></li>
+                <li><a href="https://www.cs.utexas.edu/users/downing/cs373/drupal/" target="_new">Project for UT CS373</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 
 
 	<!-- Bootstrap core JavaScript
