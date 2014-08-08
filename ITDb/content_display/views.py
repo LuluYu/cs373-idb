@@ -13,6 +13,7 @@ from django.shortcuts import render
 #import urllib2
 import urllib
 import json
+import random
 
 def hello_template (request):
     name = "Jesus"
@@ -36,7 +37,7 @@ def index (request):
 
         for c in temp:
             coords = c.coords.split(",")
-            k = {"name":c.name,"id":c.id,"x":coords[0],"y":coords[1]}
+            k = {"name":c.name,"country":c.country,"id":c.id,"x":coords[0],"y":coords[1]}
             cities.append(k)
     except Exception as e:
         error = True
@@ -277,6 +278,7 @@ def view_lang(request, lang_id=None):
     languages = []
     activities = []
     cities_in = []
+    activities_in = []
 
     if(lang_id.isdigit()):
         #lang = Languages.objects.get(id=lang_id)
@@ -286,6 +288,9 @@ def view_lang(request, lang_id=None):
         #lang = Languages.objects.get(name=lang_id)
 
     cities_in = languages_spoken_in.objects.filter(languages = lang.id)
+    if (len(cities_in) != 0):
+        randcity = cities_in[random.randrange(0, len(cities_in))]
+        activities_in = Activities.objects.filter(city = randcity.cities_id)
 
     cities = Cities.objects.all()
     languages = Languages.objects.all()
@@ -298,7 +303,8 @@ def view_lang(request, lang_id=None):
         'cities':cities,
         'activities':activities,
         'languages':languages,
-        'cities_in':cities_in
+        'cities_in':cities_in,
+        'activities_in':activities_in
     })
     return HttpResponse(template.render(context))
 
@@ -310,6 +316,7 @@ def view_activities(request, acts_id=None):
     languages = []
     activities = []
     city_acts = []
+    languages_in_city = []
 
     if(acts_id.isdigit()):
         acts = get_object_or_404(Activities, id=acts_id)
@@ -323,6 +330,7 @@ def view_activities(request, acts_id=None):
     languages = Languages.objects.all()
     activities = Activities.objects.all()
     city_acts = Activities.objects.filter(city_id = acts.city_id)
+    languages_in_city = languages_spoken_in.objects.filter(cities_id = acts.city_id)
     template = loader.get_template('act_template.html')
     context = Context({
         'acts':acts,
@@ -332,7 +340,8 @@ def view_activities(request, acts_id=None):
         'cities':cities,
         'languages':languages,
         'activities':activities,
-        'city_acts' :city_acts
+        'city_acts' :city_acts,
+        'languages_in_city': languages_in_city
     })
     return HttpResponse(template.render(context))
 
@@ -430,7 +439,6 @@ def all_langs(request):
     })
     return HttpResponse(template.render(context))
 
-
 #------------
 # Search
 #------------
@@ -454,6 +462,18 @@ def search(request, query=""):
     #send to view
     template = loader.get_template('search.html')
 
+    ccount = 0
+    acount = 0
+    lcount = 0
+
+    cocount = 0
+    aocount = 0
+    locount = 0
+
+    # --------
+    #   AND
+    # --------
+
     sql = "SELECT DISTINCT * FROM content_display_cities WHERE name collate utf8_general_ci LIKE '%"+query1+"%' OR description LIKE '%"+query1+"%' OR country LIKE '%"+query1+"%'"
     c = Cities.objects.raw(sql)
     sql2 = "SELECT DISTINCT * FROM content_display_activities WHERE name collate utf8_general_ci LIKE '%"+query1+"%' OR description LIKE '%"+query1+"%' OR type_activity LIKE '%"+query1+"%'"
@@ -472,6 +492,115 @@ def search(request, query=""):
     sql6 = "SELECT DISTINCT * FROM content_display_languages WHERE name collate utf8_general_ci LIKE '%" + ("%' OR name LIKE '%".join(s)) + "%' OR description LIKE '%" + ("%' OR description LIKE '%".join(s)) +"%'"
     lo = Languages.objects.raw(sql6)
 
+    try:
+        ccount = len(list(c)) if (list(c) is not None) else 0
+        # if(list(c) is None):
+        #     ccount = 0
+        # else:
+        #     ccount = len(list(c))
+    except AttributeError:
+        ccount = 0
+
+    try:
+        if(list(a) is None):
+            acount = 0
+        else:
+            acount = len(list(a))
+    except AttributeError:
+        acount = 0
+
+    try:
+        if(list(l) is None):
+            lcount = 0
+        else:
+            lcount = len(list(l))
+    except AttributeError:
+        lcount = 0
+
+    try:
+        if(list(co) is None):
+            cocount = 0
+        else:
+            cocount = len(list(co))
+    except AttributeError:
+        cocount = 0
+
+    try:
+        if(list(ao) is None):
+            aocount = 0
+        else:
+            aocount = len(list(ao))
+    except AttributeError:
+        aocount = 0
+
+    try:
+        if(list(lo) is None):
+            locount = 0
+        else:
+            locount = len(list(lo))
+    except AttributeError:
+        locount = 0
+    if(query == ""):
+        context = Context({
+            'blank':True,
+            'navcities':navcities,
+            'navlanguages':navlanguages,
+            'navactivities':navactivities
+        })
+    else:
+        context = Context({
+            'navcities':navcities,
+            'navlanguages':navlanguages,
+            'navactivities':navactivities,
+            'blank':False,
+            'query':query,
+            'cities':c,
+            'ccount':ccount,
+            'cbool':ccount>0,
+            'activities':a,
+            'acount':acount,
+            'abool':acount>0,
+            'languages':l,
+            'lcount':lcount,
+            'lbool':lcount>0,
+            'co': co,
+            'cocount':cocount,
+            'cobool':cocount>0,
+            'ao': ao,
+            'aocount':aocount,
+            'aobool':aocount>0,
+            'lo': lo,
+            'locount':locount,
+            'lobool':locount>0
+
+        })
+
+    return HttpResponse(template.render(context))
+def ut_api(request) :
+
+    template = loader.get_template('ut_api.html')
+    response = urllib.request.urlopen('https://gitagrep.pythonanywhere.com/rest/colleges/')
+    html = response.read().decode("utf-8")
+    content = json.loads(html)
+    c = Cities.objects.all()
+    a = Activities.objects.all()
+    l = Languages.objects.all()
+
+    context = Context({
+        'content':content,
+        'cities':c,
+        'activities':a,
+        'languages':l
+    })
+
+    return HttpResponse(template.render(context))
+
+def error404(request) :
+    return render_to_response('404.html', context_instance=RequestContext(request))
+
+def search_test(query=""):
+    query1 = query.upper()
+
     ccount = 0
     acount = 0
     lcount = 0
@@ -479,6 +608,28 @@ def search(request, query=""):
     cocount = 0
     aocount = 0
     locount = 0
+
+    # --------
+    #   AND
+    # --------
+
+    sql = "SELECT DISTINCT * FROM content_display_cities WHERE name collate utf8_general_ci LIKE '%"+query1+"%' OR description LIKE '%"+query1+"%' OR country LIKE '%"+query1+"%'"
+    c = Cities.objects.raw(sql)
+    sql2 = "SELECT DISTINCT * FROM content_display_activities WHERE name collate utf8_general_ci LIKE '%"+query1+"%' OR description LIKE '%"+query1+"%' OR type_activity LIKE '%"+query1+"%'"
+    a = Activities.objects.raw(sql2)
+    sql3 = "SELECT DISTINCT * FROM content_display_languages WHERE name collate utf8_general_ci LIKE '%"+query1+"%' OR description LIKE '%"+query1+"%'"
+    l = Languages.objects.raw(sql3)
+
+    # ---------
+    #   OR
+    # ---------
+    s = query1.split()
+    sql4 = "SELECT DISTINCT * FROM content_display_cities WHERE name collate utf8_general_ci LIKE '%" + ("%' OR name LIKE '%".join(s)) + "%' OR description LIKE '%" + ("%' OR description LIKE '%".join(s)) +"%' OR country LIKE '%" + ("%' OR country LIKE '%".join(s))+"%'"
+    co = Cities.objects.raw(sql4)
+    sql5 = "SELECT DISTINCT * FROM content_display_activities WHERE name collate utf8_general_ci LIKE '%" + ("%' OR name LIKE '%".join(s)) +"%' OR description LIKE '%" + ("%' OR description LIKE '%".join(s)) +"%' OR type_activity LIKE '%" + ("%' OR type_activity LIKE '%".join(s))+"%'"
+    ao = Activities.objects.raw(sql5)
+    sql6 = "SELECT DISTINCT * FROM content_display_languages WHERE name collate utf8_general_ci LIKE '%" + ("%' OR name LIKE '%".join(s)) + "%' OR description LIKE '%" + ("%' OR description LIKE '%".join(s)) +"%'"
+    lo = Languages.objects.raw(sql6)
 
     try:
         ccount = len(list(c)) if (list(c) is not None) else 0
@@ -529,19 +680,7 @@ def search(request, query=""):
     except AttributeError:
         locount = 0
 
-    if(query == ""):
-        context = Context({
-            'blank':True,
-            'navcities':navcities,
-            'navlanguages':navlanguages,
-            'navactivities':navactivities
-        })
-    else:
-        context = Context({
-            'navcities':navcities,
-            'navlanguages':navlanguages,
-            'navactivities':navactivities,
-            'blank':False,
+    context = {
             'query':query,
             'cities':c,
             'ccount':ccount,
@@ -561,33 +700,7 @@ def search(request, query=""):
             'lo': lo,
             'locount':locount,
             'lobool':locount>0
+            }
 
-        })
-
-    return HttpResponse(template.render(context))
-
-def ut_api(request) :
-
-    template = loader.get_template('ut_api.html')
-    #response = urllib2.urlopen('https://gitagrep.pythonanywhere.com/rest/colleges/')
-    #html = response.read()
-    #content = json.loads(html)
-    response = urllib.request.urlopen('https://gitagrep.pythonanywhere.com/rest/colleges/')
-    html = response.read().decode("utf-8")
-    content = json.loads(html)
-    c = Cities.objects.all()
-    a = Activities.objects.all()
-    l = Languages.objects.all()
-
-    context = Context({
-        'content':content,
-        'cities':c,
-        'activities':a,
-        'languages':l
-    })
-
-    return HttpResponse(template.render(context))
-
-def error404(request) :
-    return render_to_response('404.html', context_instance=RequestContext(request))
+    return context
 

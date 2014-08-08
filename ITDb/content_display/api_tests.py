@@ -4,13 +4,14 @@ when you run "manage.py test".
 
 Replace this with more appropriate tests for your application.
 """
-import os
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'ITDb.settings'
-
+from json import dumps, loads
 from django.test import TestCase
+from home.models import Languages, Activities, Cities
 import requests
-import json
+from requests.exceptions import HTTPError
+
+
 
 
 # Testing cities

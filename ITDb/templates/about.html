@@ -13,40 +13,13 @@
     <link href="../static/css/global.css" rel="stylesheet" type="text/css">
     <link href="../static/css/carousel.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template -->
-    <link href="navbar.css" rel="stylesheet">
+    <link href="/navbar.css" rel="stylesheet">
     <!-- ESTP QUE ESTA AQUI!!!! -->
 
 
 </head>
 
 <style type="text/css">
-  .navbar-custom .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
-    background-color:  #e2a846;
-    color:#ffffff;
-  }
-  .bgimg {
-  	background-image: url("../static/styles_design/bg.png");
-  	height: 158px;
-  	margin-top: -20px;
-  	background-repeat: repeat-x;
-    background-color: #fffaf3;  }
-
-  .logo{
-  	background-image: url("../static/styles_design/logo.png");
-  	height: 110px;
-  	width: 305px;
-  	margin-top: 50px;
-  	margin-left: 50px;
-  	background-repeat: no-repeat;
-  }
-  #search{
-  	margin-top: 60px;
-  	margin-left: 60px;
-  	width: 350px;
-  }
-  .dropb{
-  	width: 30%;
-  }
   .nomargin{
       margin-bottom: 0px;
   }
@@ -62,6 +35,9 @@
     /*height: 250px;
     margin-top: -20px;*/
     background-color: #fffaf3;
+  }
+  .infobox a{
+      color: black;
   }
   .description{
       padding-bottom: 20px;
@@ -94,66 +70,64 @@
     opacity: 0;
   }
 
-
-  html, body, #map-canvas {
-    height: 100%;
-    margin: 0px;
-    margin-top: -20px;
-    padding: 0px
+  .cap{
+    text-transform:capitalize;
   }
 
+  /*html, body, #map-canvas {*/
+  /*  height: 100%;*/
+  /*  margin: 0px;*/
+  /*  margin-top: -20px;*/
+  /*  padding: 0px*/
+  /*}*/
 
-</style>
 
-<body bgcolor="#fffaf3">
+</style><body bgcolor="#fffaf3">
 
 <div class="bgimg container-fluid">
     <div class="container">
         <div class="col-lg-4">
             <a href="/"><div class="logo"></div></a><!-- /input-group -->
-        </div>
+        </div><!-- /.col-lg-6 -->
             <div class="col-lg-8">
-                <input type="text" placeholder=" Search" name="search" id="search">
+                <input type="text" placeholder="Search" name="search" id="search">
             </div>
-    </div>
+    </div><!-- /.row -->
 </div>
 
-  <div class="navbar navbar-custom nomargin" role="navigation">
-		<div class="container-fluid">
-			<ul class="nav navbar-nav">
-			    <li class="dropdown ">
-			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
-			        <ul class="dropdown-menu">
-			            {% for c in cities %}
-			            <li><a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{c.name}},{{c.country}}</a></li>
-			            {% endfor %}
-			            <li class="divider"></li>
-			        </ul>
-			    </li>
-			    <li class="dropdown ">
-			        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
-			        <ul class="dropdown-menu">
-			             {% for l in languages %}
-			            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
-			            {% endfor %}
-			            <li class="divider"></li>
-			        </ul>
-			    </li>
-			    <li class="dropdown ">
-			    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
-			    	<ul class="dropdown-menu">
-			    		 {% for a in activities %}
-			            <li><a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{a.name}}</a></li>
-			            {% endfor %}
-			            <li class="divider"></li>
-			    	</ul>
-			    </li>
-			    <li>
-			    	<a href="http://flappybirds.pythonanywhere.com/about">Flappy Birds</a>
-			    </li>
-			</ul>
-		</div>
+<div class="navbar navbar-custom nomargin" role="navigation">
+	<div class="container">
+		<ul class="nav navbar-nav">
+		    <li class="dropdown">
+		        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		            {% for c in cities %}
+		            <li><a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{c.name}},{{c.country}}</a></li>
+		            {% endfor %}
+		        </ul>
+		    </li>
+		    <li class="dropdown ">
+		        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		             {% for l in languages %}
+		            <li><a class="cap" href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
+		            {% endfor %}
+		        </ul>
+		    </li>
+		    <li class="dropdown ">
+		    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
+		    	<ul class="dropdown-menu">
+		    		 {% for a in activities %}
+		            <li><a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{a.name}}</a></li>
+		            {% endfor %}
+		    	</ul>
+		    </li>
+		    <li>
+		    	<a href="http://flappybirds.pythonanywhere.com/about">Flappy Birds</a>
+		    </li>
+		</ul>
 	</div>
+</div>
 
     <div class="row description">
         <div class="col-md-6 col-md-offset-3">
@@ -176,7 +150,7 @@
   		</div>
       <div class="col-md-4 ">
           <div align="justify"><p>
-            <br><font size="6" face="optima"><b>Samuel Acuna</b> </font> <font size="4" face="optima"><em> Phase I Team Leader</em></font>
+            <br><font size="6" face="optima"><b><a href="http://samuelacuna.com/" target="_new">@</a>Samuel Acuna</b> </font> <font size="4" face="optima"><em> Phase I Team Leader</em></font>
             <font size="3" face="optima">
             <br> CS and Philosophy major, with a miner in Linguistics. Graduating in December 2014. Interested in data analysis and visualization.
             <br><em>Phase I:</em> I worked on the api design with <b>Apiary</b> and front end for some sections using <b>Twitter Bootstrap</b> and <b>CSS</b> and I was the group leader. I also helped collect data.
@@ -196,7 +170,7 @@
   <div class="row infobox">
   		<div class="col-md-4 col-md-offset-3 ">
           <div align="justify"><p>
-            <br><font size="6" face="optima"><b>Jose Coello</b> </font> <font size="4" face="optima"><em> Phase II Team Leader</em></font>
+            <br><font size="6" face="optima"><b><a href="https://github.com/jlc3938" target="_new">@</a>Jose Coello</b> </font> <font size="4" face="optima"><em> Phase II Team Leader</em></font>
             <font size="3" face="optima">
             <br> Computer science major graduating December 2014. I am interested in video games, application development and databases.
             <br><em>Phase I:</em> I helped create the 3 static pages using <b>Twitter Bootstrap</b> by adding the navigation bar and implementing the <b>Google Map</b> api.
@@ -225,12 +199,12 @@
   		</div>
       <div class="col-md-4 ">
           <div align="justify"><p>
-            <br><font size="6" face="optima"><b>Yu Lu</b> </font> <font size="4" face="optima"><em> Phase III Team Leader</em></font>
+            <br><font size="6" face="optima"><b><a href="https://seelio.com/luyu" target="_new">@</a>Yu Lu</b> </font> <font size="4" face="optima"><em> Phase III Team Leader</em></font>
             <font size="3" face="optima">
             <br> CS and Math major. Graduating in Spring 2016. Interested in application development and learning new technology.
             <br><em>Phase I:</em> I worked on the api design using <b>Apiary</b> and collected data for the static pages. I also helped with the page design using <b>Twitter Bootstrap</b> and <b>CSS</b>.
             <br><em>Phase II:</em> I worked on the error handling for view and api on <b>Apiary</b> and <b>Django</b> models. I also made the birds on <b>Google Map</b> linkable.
-            <br><em>Phase III:</em> I worked on this Flappy Birds page using <b>Twitter Bootstrap</b> and <b>CSS</b>. I was also the group leader.
+            <br><em>Phase III:</em> I worked on this About Our Team page using <b>Twitter Bootstrap</b> and <b>CSS</b>. I was also the group leader.
             </font></p></div>
       </div>
   </div>
@@ -238,7 +212,7 @@
   <div class="row infobox">
   		<div class="col-md-4 col-md-offset-3 ">
           <div align="justify"><p>
-            <br><font size="6" face="optima"><b>Juan Mata</b> </font>
+            <br><font size="6" face="optima"><b><a href="https://github.com/jpmata1" target="_new">@</a>Juan Mata</b> </font>
             <font size="3" face="optima">
             <br> Computer Science major graduating in May 2015. I'm interested in mobile and web developement, databases, and new technology.
             <br><em>Phase I:</em> I worked on the backend creating <b>Django</b> models and tests for the models. I also collected data and helped set up the <b>PythonAnywhere</b> account.
@@ -267,7 +241,7 @@
   		</div>
       <div class="col-md-4 ">
           <div align="justify"><p>
-            <br><font size="6" face="optima"><b>Jesus Galvan</b> </font>
+            <br><font size="6" face="optima"><b><a href="https://flappybirds.pythonanywhere.com" target="_new">@</a>Jesus Galvan</b> </font>
             <font size="3" face="optima">
             <br> Computer Science major graduating Spring 2015. I am interested in web and mobile development but am open to trying out other areas of Computer Science.
             <br><em>Phase I:</em> I worked on setting up <b>PythonAnywhere</b> and <b>Django</b>, created the urls, views, models, and the tests for the models.
@@ -280,7 +254,7 @@
   <div class="row infobox">
   		<div class="col-md-4 col-md-offset-3 ">
           <div align="justify"><p>
-            <br><font size="6" face="optima"><b>Daniel Garza</b> </font>
+            <br><font size="6" face="optima"><b><a href="https://github.com/Dag2788" target="_new">@</a>Daniel Garza</b> </font>
             <font size="3" face="optima">
             <br> Computer Science major graduating in December 2015. I'm interested in networks, security,  databases, mobile and web development, A.I. and graphics.
             <br><em>Phase I:</em> I worked on the frontend with <b>Twitter Bootstrap</b>. I also collected data for our project.
@@ -321,6 +295,7 @@
                 <li><a href="/search">Search</a></li>
                 <li><a href="/about">Meet the team</a></li>
                 <li><a href="https://www.cs.utexas.edu/users/downing/cs373/drupal/" target="_new">Project for UT CS373</a></li>
+                <li><a href="https://github.com/LuluYu/cs373-idb" target="_new"> Github Repo </a></li>
             </ul>
         </div>
     </div>
@@ -333,6 +308,14 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<script>
+$('#search').on("keyup",function(e) {
+	if(e.which==13) {
+		window.location ="http://flappybirds.pythonanywhere.com/search/"+$('#search').val();
+	}
+});
+</script>
 
 <!-- ESTO AQUI -->
 </body></html>

@@ -89,6 +89,10 @@
     margin-left: 70px;
   }
 
+  .capitalize{
+    text-transform:capitalize;
+    }
+
 
 </style>
 
@@ -117,12 +121,14 @@
 		        </ul>
 		    </li>
 		    <li class="dropdown ">
+
 		        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
 		        <ul class="dropdown-menu">
 		             {% for l in languages %}
-		            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
+		            <li><a class="capitalize" href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
 		            {% endfor %}
 		        </ul>
+
 		    </li>
 		    <li class="dropdown ">
 		    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
@@ -173,8 +179,14 @@
         <div>
             {%for c in cities %}
                 {% if c.id == acts.city_id %}
-                    <p><a class="btn btn-lg btn-warning" href="http://flappybirds.pythonanywhere.com/cities/{{c.id}}" role="button">{{c.name}}</a></p>
+                    <a class="btn btn-lg btn-warning" href="http://flappybirds.pythonanywhere.com/cities/{{c.id}}" role="button">{{c.name}}</a>
                 {% endif %}
+            {% endfor %}
+        </div>
+        <h3>Languages</h3>
+        <div>
+            {%for l in languages_in_city %}
+                <a class="btn btn-lg btn-warning capitalize" href="http://flappybirds.pythonanywhere.com/languages/{{l.languages.id}}" role="button">{{l.languages.name}}</a>
             {% endfor %}
         </div>
         <h3>Other Activities</h3>
@@ -182,7 +194,7 @@
                 <div class="col-md-3">
                     {% for a in city_acts %}
                         {% if a.id != acts.id %}
-                            <p><a class="btn btn-lg btn-warning"  href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}" role="button">{{a.name}}</a></p>
+                        <a class="btn btn-lg btn-warning"  href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}" role="button">{{a.name}}</a>
                         {% endif %}
                     {% endfor %}
                 </div><!-- /.col-lg-6 -->
@@ -207,6 +219,7 @@
                 <li><a href="/search">Search</a></li>
                 <li><a href="/about">Meet the team</a></li>
                 <li><a href="https://www.cs.utexas.edu/users/downing/cs373/drupal/" target="_new">Project for UT CS373</a></li>
+                <li><a href="https://github.com/LuluYu/cs373-idb.git" target="_new">Github Repo</a></li>
             </ul>
         </div>
     </div>

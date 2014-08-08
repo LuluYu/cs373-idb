@@ -13,7 +13,17 @@
 
 
 
-</head><body>
+</head>
+
+<style type="text/css">
+
+ .cap{
+    text-transform:capitalize;
+ }
+
+</style>
+
+<body>
 
 <div class="bgimg container-fluid">
     <div class="container">
@@ -36,7 +46,7 @@
 		    <li class="dropdown">
 		        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Cities <b class="caret"></b></a>
 		        <ul class="dropdown-menu">
-		            {% for c in cities %}
+		            {% for c in navcities %}
 		            <li><a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{c.name}},{{c.country}}</a></li>
 		            {% endfor %}
 		        </ul>
@@ -44,15 +54,15 @@
 		    <li class="dropdown ">
 		        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
 		        <ul class="dropdown-menu">
-		             {% for l in languages %}
-		            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
+		             {% for l in navlanguages %}
+		            <li><a class="cap" href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
 		            {% endfor %}
 		        </ul>
 		    </li>
 		    <li class="dropdown ">
 		    	<a href="#" data-toggle="dropdown" class="dropdown-toggle">Activities<b class="caret"></b></a>
 		    	<ul class="dropdown-menu">
-		    		 {% for a in activities %}
+		    		 {% for a in navactivities %}
 		            <li><a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{a.name}}</a></li>
 		            {% endfor %}
 		    	</ul>
@@ -74,17 +84,17 @@
 
         <div class="results andresult">
             {% if cbool %}
-            	<h3>cities ({{ ccount }})</h3>
+            	<h3 class="cap">cities ({{ ccount }})</h3>
             	{% for c in cities %}
             		<div>
-            			<a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{ c.name|safe }}</a>
+            			<a class="cap" href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{ c.name|safe }}</a>
             			<p>{{ c.description|safe }}</p>
             		</div>
             	{% endfor %}
             {% endif %}
 
         	{% if abool %}
-        		<h3>activities ({{ acount }})</h3>
+        		<h3 class="cap">activities ({{ acount }})</h3>
         		{% for a in activities %}
         			<div>
         				<a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{ a.name|safe }}</a>
@@ -94,10 +104,10 @@
         	{% endif %}
 
         	{% if lbool %}
-        		<h3>languages ({{ lcount }})</h3>
+        		<h3 class="cap">languages ({{ lcount }})</h3>
         		{% for l in languages %}
         			<div>
-        				<a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{ l.name|safe }}</a>
+        				<a class="cap" href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{ l.name|safe }}</a>
         				<p>{{ l.description|safe }}</p>
         			</div>
         		{% endfor %}
@@ -106,7 +116,7 @@
 
         <div class="results orresult">
             {% if cobool %}
-            	<h3>cities ({{ cocount }})</h3>
+            	<h3 class="cap">cities ({{ cocount }})</h3>
             	{% for c in co %}
             		<div>
             			<a href="http://flappybirds.pythonanywhere.com/cities/{{ c.id }}">{{ c.name|safe }}</a>
@@ -116,7 +126,7 @@
             {% endif %}
 
         	{% if aobool %}
-        		<h3>activities ({{ aocount }})</h3>
+        		<h3 class="cap">activities ({{ aocount }})</h3>
         		{% for a in ao %}
         			<div>
         				<a href="http://flappybirds.pythonanywhere.com/activities/{{ a.id }}">{{ a.name|safe }}</a>
@@ -126,10 +136,10 @@
         	{% endif %}
 
         	{% if lobool %}
-        		<h3>languages ({{ locount }})</h3>
+        		<h3 class="cap">languages ({{ locount }})</h3>
         		{% for l in lo %}
         			<div>
-        				<a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{ l.name|safe }}</a>
+        				<a class="cap" href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{ l.name|safe }}</a>
         				<p>{{ l.description|safe }}</p>
         			</div>
         		{% endfor %}

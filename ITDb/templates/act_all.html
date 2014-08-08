@@ -15,6 +15,14 @@ error: {{ etype }}
 
 </head><body>
 
+<style type="text/css">
+
+ .cap{
+    text-transform:capitalize;
+ }
+
+</style>
+
 <div class="bgimg container-fluid">
     <div class="container">
         <div class="col-lg-4">
@@ -41,7 +49,7 @@ error: {{ etype }}
 		        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
 		        <ul class="dropdown-menu">
 		             {% for l in languages %}
-		            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
+		            <li><a class="cap" href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
 		            {% endfor %}
 		        </ul>
 		    </li>
@@ -85,6 +93,7 @@ error: {{ etype }}
                 <li><a href="/search">Search</a></li>
                 <li><a href="/about">Meet the team</a></li>
                 <li><a href="https://www.cs.utexas.edu/users/downing/cs373/drupal/" target="_new">Project for UT CS373</a></li>
+                <li><a href="https://github.com/LuluYu/cs373-idb.git" target="_new">Github Repo</a></li>
             </ul>
         </div>
     </div>

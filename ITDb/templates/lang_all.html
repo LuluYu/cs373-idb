@@ -13,7 +13,16 @@ error: {{ etype }}
     <link href="/static/css/global.css" rel="stylesheet" type="text/css">
     <link href="/static/css/allelements.css" rel="stylesheet" type="text/css">
 
-</head><body>
+</head>
+<style type="text/css">
+
+ .cap{
+    text-transform:capitalize;
+ }
+
+</style>
+
+<body>
 
 <div class="bgimg container-fluid">
     <div class="container">
@@ -41,7 +50,7 @@ error: {{ etype }}
 		        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
 		        <ul class="dropdown-menu">
 		             {% for l in languages %}
-		            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
+		            <li><a class="cap" href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
 		            {% endfor %}
 		        </ul>
 		    </li>
@@ -64,7 +73,7 @@ error: {{ etype }}
     <h1>All Languages</h1>
     {% for a in languages %}
         <div class="item col-lg-2">
-            <a href="http://flappybirds.pythonanywhere.com/languages/{{ a.id }}" class="btn btn-lg">{{ a.name }}</a>
+            <a href="http://flappybirds.pythonanywhere.com/languages/{{ a.id }}" class="btn btn-lg cap">{{ a.name }}</a>
         </div>
     {% endfor %}
 </div>
@@ -85,6 +94,7 @@ error: {{ etype }}
                 <li><a href="/search">Search</a></li>
                 <li><a href="/about">Meet the team</a></li>
                 <li><a href="https://www.cs.utexas.edu/users/downing/cs373/drupal/" target="_new">Project for UT CS373</a></li>
+                <li><a href="https://github.com/LuluYu/cs373-idb.git" target="_new">Github Repo</a></li>
             </ul>
         </div>
     </div>

@@ -88,6 +88,10 @@
     margin-left: 70px;
   }
 
+ .cap{
+    text-transform:capitalize;
+ }
+
 
 </style>
 
@@ -122,7 +126,7 @@
 		        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Languages <b class="caret"></b></a>
 		        <ul class="dropdown-menu">
 		             {% for l in languages %}
-		            <li><a href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
+		            <li><a class="cap" href="http://flappybirds.pythonanywhere.com/languages/{{ l.id }}">{{l.name}}</a></li>
 		            {% endfor %}
 		        </ul>
 		    </li>
@@ -143,7 +147,7 @@
 
 <div class="container penul" id="language">
     <div class="col-md-8">
-        <h1>{{ lang.name }}</h1>
+        <h1 class="cap">{{ lang.name }}</h1>
         <p align="justify">{{ lang.description }}</p>
         <!--<p><a class="btn btn-primary btn-lg" href="http://en.wikipedia.org/wiki/English_language" role="button" target="_blank">Learn more &raquo;</a></p>-->
         <h3>Script</h3>
@@ -153,9 +157,13 @@
         <h3>Spoken In</h3>
         <div class="row">
             {% for i in cities_in%}
-            <div class="col-md-3">
-                <p><a class="btn btn-lg btn-warning" href="http://flappybirds.pythonanywhere.com/cities/{{i.cities.id}}" role="button">{{i.cities.name}}</a></p>
-            </div>
+            <a class="btn btn-lg btn-warning" href="http://flappybirds.pythonanywhere.com/cities/{{i.cities.id}}" role="button">{{i.cities.name}}</a>
+            {% endfor %}
+        </div><!-- /.row -->
+        <h3>Related Activities</h3>
+        <div class="row">
+            {% for i in activities_in%}
+            <a class="btn btn-lg btn-warning" href="http://flappybirds.pythonanywhere.com/activities/{{i.id}}" role="button">{{i.name}}</a>
             {% endfor %}
         </div><!-- /.row -->
     </div>
@@ -177,6 +185,7 @@
                 <li><a href="/search">Search</a></li>
                 <li><a href="/about">Meet the team</a></li>
                 <li><a href="https://www.cs.utexas.edu/users/downing/cs373/drupal/" target="_new">Project for UT CS373</a></li>
+                <li><a href="https://github.com/LuluYu/cs373-idb.git" target="_new">Github Repo</a></li>
             </ul>
         </div>
     </div>

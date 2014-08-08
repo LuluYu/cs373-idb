@@ -4,13 +4,9 @@ when you run "manage.py test".
 
 Replace this with more appropriate tests for your application.
 """
-import os
-
-os.environ['DJANGO_SETTINGS_MODULE'] = 'ITDb.settings'
-
 from django.test import TestCase
 import requests
-import json
+
 
 
 # Testing cities
