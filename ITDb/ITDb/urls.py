@@ -66,4 +66,5 @@ urlpatterns = patterns('',
     url(r'^.+$', 'content_display.views.error404', name="404!"),
 )
 
+handler404 = 'content_display.views.error404'
 

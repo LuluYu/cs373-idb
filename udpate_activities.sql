@@ -1,1 +1,1 @@
-update content_display_activities set pictures='http://grandpalacebangkok.com/images/bangkok-grand-palace500.jpg,http://www.mrwallpaper.com/wallpapers/Grand-Palace-Bangkok.jpg,http://www.planetware.com/photos-large/THA/grand-palace.jpg' where name='Grand Palace';
+update content_display_activities set pictures='http://media-cdn.tripadvisor.com/media/photo-s/00/1e/14/72/table-mountain.jpg,http://www.sa-venues.com/gallery/tablemountain-06.jpg' where id=14;
