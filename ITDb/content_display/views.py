@@ -465,10 +465,12 @@ def search(request, query=""):
     ccount = 0
     acount = 0
     lcount = 0
+    total_count_and = 0
 
     cocount = 0
     aocount = 0
     locount = 0
+    total_count_or = 0
 
     # --------
     #   AND
@@ -540,6 +542,10 @@ def search(request, query=""):
             locount = len(list(lo))
     except AttributeError:
         locount = 0
+
+    total_count_and = ccount + acount + lcount
+    total_count_or = cocount + aocount + locount
+
     if(query == ""):
         context = Context({
             'blank':True,
@@ -571,7 +577,9 @@ def search(request, query=""):
             'aobool':aocount>0,
             'lo': lo,
             'locount':locount,
-            'lobool':locount>0
+            'lobool':locount>0,
+            'totaland':total_count_and,
+            'totalor':total_count_or
 
         })
 

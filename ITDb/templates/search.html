@@ -21,6 +21,12 @@
     text-transform:capitalize;
  }
 
+ .btn-lg { background-color:#ddd; }
+ .btn-lg:hover { background-color:#ccc; }
+
+ .btn-warning { background-color:#f0ad4e; }
+ .btn-warning:hover { background-color:#ec971f; }
+
 </style>
 
 <body>
@@ -77,10 +83,10 @@
 <div class="container penul search_results">
     {% if blank %}
     {% else %}
-    results for: {{ query }}
+    <h3>results for: {{ query }}</h3>
     <div class="container-fluid">
-        <div class="andbtn btn btn-lg btn-warning" role="button">AND</div>
-        <div class="orbtn btn btn-lg btn-warning" role="button">OR</div>
+        <div class="andbtn btn btn-lg btn-warning" role="button">AND ({{ totaland }})</div>
+        <div class="orbtn btn btn-lg" role="button">OR ({{ totalor }})</div>
 
         <div class="results andresult">
             {% if cbool %}
@@ -200,12 +206,22 @@ a { color:#00f; }
     $('.andbtn').on('click', function(){
         $('.orresult').hide();
         $('.andresult').fadeIn();
+        $('.orbtn').removeClass('btn-warning');
+        $('.andbtn').addClass('btn-warning');
      });
 
      $('.orbtn').on('click', function(){
         $('.andresult').hide();
         $('.orresult').fadeIn();
+        $('.orbtn').addClass('btn-warning');
+        $('.andbtn').removeClass('btn-warning');
      });
+
+$('#search').on("keyup",function(e) {
+	if(e.which==13) {
+		window.location ="http://flappybirds.pythonanywhere.com/search/"+$('#search').val();
+	}
+});
  </script>
 
 

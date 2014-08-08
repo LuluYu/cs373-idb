@@ -280,3 +280,17 @@ git add ITDb/content_display/views.py
 git commit -m "implementing the other group's api."
 git pull
 git push
+git status
+git add ITDb/templates/*.html
+git add ITDb/static/css/*.css
+git add ITDb/static/styles_design/search_glass.png
+git commit -m "html templates edited."
+git pull
+git push
+git status
+git add .
+git status
+git add -u
+git status
+git commit -m 'Added a bunch of changes from many of us. Almost Done!!!'
+git push origin master
